@@ -73,7 +73,7 @@ RUN a2enmod rewrite headers
 
 # Copy and enable CiviCRM apache conf
 
-COPY ./civicrm.conf /etc/apache2/conf-available/civicrm.conf
+COPY ./config/apache/civicrm.conf /etc/apache2/conf-available/civicrm.conf
 
 RUN a2enconf civicrm
 
@@ -88,22 +88,13 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 
 COPY ./utils/download_civicrm.sh /usr/local/bin
 
+RUN curl -LsS https://download.civicrm.org/cv/cv.phar -o /usr/local/bin/cv \
+  && chmod +x /usr/local/bin/cv
+
 # Create civicrm user
 
 RUN useradd civicrm --home-dir /home/civicrm --create-home 
 
 RUN chown -R civicrm:civicrm /var/www 
 
-# Enter userspace
-
-USER civicrm
-
-ENV PATH="/home/civicrm/.composer/vendor/bin:${PATH}"
-
 ENV APACHE_RUN_USER=civicrm
-
-# see https://github.com/consolidation/cgr
-RUN composer global require consolidation/cgr
-
-RUN cgr civicrm/cv
-

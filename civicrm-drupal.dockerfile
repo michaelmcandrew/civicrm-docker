@@ -1,4 +1,10 @@
-FROM civicrm-base
+FROM civicrm-base 
+
+USER civicrm
+
+ENV PATH="/home/civicrm/.composer/vendor/bin:${PATH}"
+
+RUN composer global require consolidation/cgr
 
 RUN cgr drush/drush:8
 
