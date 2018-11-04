@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  civicrm:
+    image: civicrm-drupal
+    hostname: $PROJECT_NAME
+    environment: 
+      - PROJECT_NAME
+      - BASE_URL
+    ports:
+      - 8073:80
