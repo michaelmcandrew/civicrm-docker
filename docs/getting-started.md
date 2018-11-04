@@ -56,6 +56,3 @@ FROM civicrm:drupal
 
 RUN drush dl views webform webform_civicrm
 ```
-
-
-
