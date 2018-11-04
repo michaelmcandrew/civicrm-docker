@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+<?php
+$url = parse_url('mysql://gpie:L8sLmhrRiooUZvQe@mysql/gpie_drupal?new_link=true');
+// var_dump($url);
+var_dump(getenv('MYSQL_ROOT_PASSWORD'));
