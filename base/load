@@ -1,0 +1,49 @@
+#!/usr/bin/env php
+<?php
+
+if(isset($argv[1])){
+    $dump = "/state/{$argv[1]}";
+    if(!file_exists($dump)){
+        die("Error: could not find '$var' was not found.\n");
+    }
+}else{
+    $states = explode("\n", trim(`ls -1t /state/*.tar`));
+    if(!count($states)){
+        die("Error: could not find any state dumps in /state.\n");
+    }
+    echo "Choose the number for the state you want to load (or 'Enter' for the most recent):\n";
+    foreach($states as $n => $state){
+        echo "[$n] " . basename($state) . "\n"; 
+    }
+    $key = readline();
+    if($key == ''){
+        $key = 0;
+    }
+    if(array_key_exists($key, $states)){
+        $dump = $states[$key];
+    }else{
+        die("Error: '$key' was not an option.\n");
+    }
+
+}
+
+$loadDir = tempnam('/tmp', 'civicrm_load_');
+`rm $loadDir; mkdir $loadDir`;
+`tar -xf $dump -C $loadDir `;
+
+$state = json_decode(file_get_contents("$loadDir/state.json"), 1);
+foreach($state['databases'] as $name){
+    foreach(['USER', 'PASS', 'HOST', 'PORT', 'NAME'] as $var){
+        $$var = getenv(strtoupper($name) . '_DB_' . $var);
+    }
+    `mysql -p$PASS -u $USER -h $HOST -e "DROP DATABASE IF EXISTS $NAME; CREATE DATABASE $NAME"`;
+    `mysql -p$PASS -u $USER -h $HOST $name < $loadDir/$name.sql`;
+}
+
+echo `ls -la $loadDir`;
+`rm -r $loadDir`;
+exit;
+
+
+
+// var_dump($states);
