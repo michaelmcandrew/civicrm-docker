@@ -1,10 +1,12 @@
 version: '3.4'
 services:
   civicrm:
-    image: civicrm-drupal
+    image: civicrm-wordpress
     hostname: $PROJECT_NAME
     environment: 
       - PROJECT_NAME
       - BASE_URL
     ports:
-      - 8073:80
+      - 8072:80
+  mysql:
+    image: mysql:5.6
