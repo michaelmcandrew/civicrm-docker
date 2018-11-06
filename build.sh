@@ -1,7 +1,7 @@
 set -xe
-docker build -f civicrm-base.dockerfile -t civicrm-base .
-docker build -f civicrm-wordpress.dockerfile -t civicrm-wordpress .
-docker build -f civicrm-drupal.dockerfile -t civicrm-drupal .
-docker build -f civicrm-mysql.dockerfile -t civicrm-mysql .
+docker build -t civicrm-base base
+docker build -t civicrm-wordpress wordpress
+docker build -t civicrm-drupal drupal
+docker build -t civicrm-mysql mysql
 set +xe
 echo "Build process completed successfully"
