@@ -11,6 +11,7 @@ if(isset($argv[1])){
     if(!$states){
         die("Error: could not find any state dumps in /state.\n");
     }
+    $states = explode("\n", $states);
     echo "Choose the number for the state you want to load (or 'Enter' for the most recent):\n";
     foreach($states as $n => $state){
         echo "[$n] " . basename($state) . "\n"; 
@@ -24,20 +25,25 @@ if(isset($argv[1])){
     }else{
         die("Error: '$key' was not an option.\n");
     }
-
 }
 
 $loadDir = tempnam('/tmp', 'civicrm_load_');
 `rm $loadDir; mkdir $loadDir`;
+echo "Opening $dump\n";
 `tar -xf $dump -C $loadDir `;
-
 $state = json_decode(file_get_contents("$loadDir/state.json"), 1);
 foreach($state['databases'] as $name){
     foreach(['USER', 'PASS', 'HOST', 'PORT', 'NAME'] as $var){
         $$var = getenv(strtoupper($name) . '_DB_' . $var);
     }
+    echo "Importing $name.sql into $NAME database\n";
     `mysql -p$PASS -u $USER -h $HOST -e "DROP DATABASE IF EXISTS $NAME; CREATE DATABASE $NAME"`;
     `mysql -p$PASS -u $USER -h $HOST $name < $loadDir/$name.sql`;
+}
+
+foreach($state['directories'] as $name => $path){
+    echo "Unpacking $name.tar database into $path\n";
+    `tar -xf {$loadDir}/{$name}.tar -C $path`;
 }
 
 `rm -r $loadDir`;
