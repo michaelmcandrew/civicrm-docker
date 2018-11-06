@@ -2,9 +2,9 @@
 <?php
 
 if(isset($argv[1])){
-    $dump = "/state/{$argv[1]}";
+    $dump = "{$argv[1]}";
     if(!file_exists($dump)){
-        die("Error: could not find '$var' was not found.\n");
+        die("Error: could not find state: '$dump'.\n");
     }
 }else{
     $states = trim(`ls -1t /state/*.tar 2> /dev/null`);
