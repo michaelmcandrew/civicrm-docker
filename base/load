@@ -7,8 +7,8 @@ if(isset($argv[1])){
         die("Error: could not find '$var' was not found.\n");
     }
 }else{
-    $states = explode("\n", trim(`ls -1t /state/*.tar`));
-    if(!count($states)){
+    $states = trim(`ls -1t /state/*.tar 2> /dev/null`);
+    if(!$states){
         die("Error: could not find any state dumps in /state.\n");
     }
     echo "Choose the number for the state you want to load (or 'Enter' for the most recent):\n";
@@ -40,10 +40,5 @@ foreach($state['databases'] as $name){
     `mysql -p$PASS -u $USER -h $HOST $name < $loadDir/$name.sql`;
 }
 
-echo `ls -la $loadDir`;
 `rm -r $loadDir`;
-exit;
-
-
-
-// var_dump($states);
+`cv flush -T`;
