@@ -14,3 +14,5 @@ COPY ./wp-config.php /var/www/html
 COPY ./civicrm.settings.php /var/www/html
 
 USER root
+
+COPY ./init ./dump /usr/local/bin/
