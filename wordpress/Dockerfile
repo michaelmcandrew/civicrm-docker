@@ -32,4 +32,4 @@ ENV CIVICRM_SETTINGS=civicrm.settings.php
 
 USER root
 
-COPY ./init ./dump /usr/local/bin/
+COPY ./init ./dump ./civicrm-docker-wp-plugin-install /usr/local/bin/
