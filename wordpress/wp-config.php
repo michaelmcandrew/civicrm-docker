@@ -20,16 +20,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', getenv('WP_DB_NAME'));
+define('DB_NAME', getenv('WORDPRESS_DB_NAME'));
 
 /** MySQL database username */
-define('DB_USER', getenv('***'));
+define('DB_USER', getenv('WORDPRESS_DB_USER'));
 
 /** MySQL database password */
-define('DB_PASSWORD', getenv('***'));
+define('DB_PASSWORD', getenv('WORDPRESS_DB_PASS'));
 
 /** MySQL hostname */
-define('DB_HOST', getenv('***'));
+define('DB_HOST', getenv('WORDPRESS_DB_HOST'));
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -46,14 +46,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         getenv('WP_AUTH_KEY'));
-define('SECURE_AUTH_KEY',  getenv('WP_SECURE_AUTH_KEY'));
-define('LOGGED_IN_KEY',    getenv('WP_LOGGED_IN_KEY'));
-define('NONCE_KEY',        getenv('WP_NONCE_KEY'));
-define('AUTH_SALT',        getenv('WP_AUTH_SALT'));
-define('SECURE_AUTH_SALT', getenv('WP_SECURE_AUTH_SALT'));
-define('LOGGED_IN_SALT',   getenv('WP_LOGGED_IN_SALT'));
-define('NONCE_SALT',       getenv('WP_NONCE_SALT'));
+define('AUTH_KEY',         getenv('WORDPRESS_AUTH_KEY'));
+define('SECURE_AUTH_KEY',  getenv('WORDPRESS_SECURE_AUTH_KEY'));
+define('LOGGED_IN_KEY',    getenv('WORDPRESS_LOGGED_IN_KEY'));
+define('NONCE_KEY',        getenv('WORDPRESS_NONCE_KEY'));
+define('AUTH_SALT',        getenv('WORDPRESS_AUTH_SALT'));
+define('SECURE_AUTH_SALT', getenv('WORDPRESS_SECURE_AUTH_SALT'));
+define('LOGGED_IN_SALT',   getenv('WORDPRESS_LOGGED_IN_SALT'));
+define('NONCE_SALT',       getenv('WORDPRESS_NONCE_SALT'));
 
 /**#@-*/
 
@@ -69,7 +69,7 @@ $table_prefix  = 'wp_';
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * It is strongly recommended that plugin and theme developers use WORDPRESS_DEBUG
  * in their development environments.
  *
  * For information on other constants that can be used for debugging,
@@ -83,8 +83,16 @@ define('WP_DEBUG', false);
  * Extra config added for CiviCRM Docker
  */
 
-define( 'WP_HOME', getenv('***') );
-define( 'WP_SITEURL', getenv('***') );
+define( 'WP_HOME', getenv('BASE_URL') );
+define( 'WP_SITEURL', getenv('BASE_URL') );
+
+define('CIVICRM_SETTINGS_PATH', '/var/www/html/civicrm.settings.php');
+
+define('FORCE_SSL_ADMIN', true);
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false){
+	$_SERVER['HTTPS']='on';
+}
+
 
 /* That's all, stop editing! Happy blogging. */
 
