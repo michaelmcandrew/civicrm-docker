@@ -24,6 +24,6 @@ function civicrm_dump($state){
 
     `rm -r $dumpDir`;
 
-    echo "Dumped state to $tarName\n";
+    echo "$tarName\n";
 
 }
