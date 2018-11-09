@@ -27,6 +27,9 @@ COPY --chown=civicrm:civicrm ./wp-config.php /var/www/html
 
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /var/www/html
 
+# Help cv find the civicrm.settings.php file
+ENV CIVICRM_SETTINGS=civicrm.settings.php
+
 USER root
 
 COPY ./init ./dump /usr/local/bin/
