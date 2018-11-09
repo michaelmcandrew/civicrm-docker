@@ -1,6 +1,8 @@
-FROM civicrm-base 
+FROM michaelmcandrew/civicrm-base 
 
-ENV CIVICRM_UF="Drupal"
+ENV CIVICRM_UF=Drupal
+
+ARG CIVICRM_VERSION
 
 USER civicrm
 

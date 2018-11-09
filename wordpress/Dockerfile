@@ -1,6 +1,8 @@
-FROM civicrm-base
+FROM michaelmcandrew/civicrm-base
 
-ENV CIVICRM_UF="WordPress"
+ENV CIVICRM_UF=WordPress
+
+ARG CIVICRM_VERSION
 
 RUN curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
   && chmod +x /usr/local/bin/wp
