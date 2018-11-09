@@ -18,6 +18,16 @@ COPY --chown=civicrm:civicrm ./civicrm.settings.php /var/www/html/sites/default
 
 RUN mkdir /var/www/html/sites/default/files
 
+RUN cd /var/www/html/sites/all/modules \
+  && curl -L https://download.civicrm.org/civicrm-$CIVICRM_VERSION-drupal.tar.gz > civicrm-drupal.tar.gz \
+  && tar xzf civicrm-drupal.tar.gz \
+  && rm civicrm-drupal.tar.gz
+
+RUN cd /var/www/html/sites/all/modules \
+  && curl -L https://download.civicrm.org/civicrm-$CIVICRM_VERSION-l10n.tar.gz > civicrm-l10n.tar.gz \
+  && tar xzf civicrm-l10n.tar.gz \
+  && rm civicrm-l10n.tar.gz
+
 USER root
 
 COPY ./init ./dump /usr/local/bin/
