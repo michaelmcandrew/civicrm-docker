@@ -12,7 +12,7 @@ FROM php:7.1-apache
 # libmcrypt-dev required for mcrypt        
 # libpng-dev required for gd            
 # libxml2-dev required for soap          
-#
+# msmtp-mta allows us to globally redirect email via SMTP
 # unzip is required for composer
 
 RUN apt-get update \
@@ -24,6 +24,7 @@ RUN apt-get update \
   libmcrypt-dev \
   libpng-dev \
   libxml2-dev \
+  msmtp-mta \
   mysql-client \
   unzip \
   && rm -r /var/lib/apt/lists/*
@@ -107,3 +108,10 @@ COPY ./php.ini /usr/local/etc/php/conf.d/civicrm.ini
 COPY ./load /usr/local/bin
 
 COPY ./civicrm_dump.php /usr/local/src/civicrm_dump.php
+
+COPY ./docker-civicrm-entrypoint /usr/local/bin
+
+ENTRYPOINT [ "docker-civicrm-entrypoint" ]
+
+CMD ["apache2-foreground"]
+
