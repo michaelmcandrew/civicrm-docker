@@ -1,16 +1,28 @@
 #!/bin/sh
+set -e
 
+# sendmail via smtp
 cat << EOF > /etc/msmtprc
 host $SMTP_HOST
 auto_from on
 maildomain $SMTP_MAILDOMAIN
 EOF
 
-set -e
+
+if [ "$DEBUG" = "ON" ]; then
+	cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+	XDEBUG_REMOTE_HOST=`/sbin/ip route|awk '/default/ { print $3 }'`
+    cat << EOF > /usr/local/etc/php/conf.d/debug.ini
+zend_extension=xdebug.so
+xdebug.show_error_trace=On
+xdebug.remote_enable=On
+xdebug.remote_autostart=1
+xdebug.remote_host=${XDEBUG_REMOTE_HOST}
+EOF
+fi
 
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
 	set -- apache2-foreground "$@"
 fi
-
 exec "$@"
