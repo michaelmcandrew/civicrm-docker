@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  civicrm:
+    image: thirdsectordesign/activedevon
+    hostname: civicrm
+    environment:
+      - PROJECT_NAME
+      - BASE_URL
+      - CIVICRM_DB_NAME
+      - CIVICRM_DB_USER
+      - CIVICRM_DB_PASS
+      - CIVICRM_DB_HOST
+      - CIVICRM_DB_PORT
+      - WORDPRESS_DB_NAME
+      - WORDPRESS_DB_USER
+      - WORDPRESS_DB_PASS
+      - WORDPRESS_DB_HOST
+      - WORDPRESS_DB_PORT
+      - MYSQL_ROOT_PASSWORD
+      - SMTP_HOST
+      - SMTP_MAILDOMAIN
+    ports:
+      - 2411:80
+    restart: always
+    volumes:
+      - uploads:/var/www/html/wp-content/uploads 
+      - ./state:/state
+      - ./.bash_history:/home/civicrm/.bash_history
+  mysql:
+    image: michaelmcandrew/civicrm-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD
+    volumes:
+      - mysql:/var/lib/mysql
+    restart: always
+  maildev:
+    image: djfarrelly/maildev
+    restart: always
+    ports:
+     - 2412:80
+volumes:
+  mysql:
+  uploads:
