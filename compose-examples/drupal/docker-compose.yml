@@ -16,10 +16,12 @@ services:
       - DRUPAL_DB_PASS
       - DRUPAL_DB_HOST
       - DRUPAL_DB_PORT
-      - MYSQL_ROOT_PASSWORD # only useful during initialisation
+      - MYSQL_ROOT_PASSWORD
+      # - DEBUG # Should be turned off in production
     ports:
       - 2401:80
     volumes:
+      - ./src:/var/www/html
       - files:/var/www/html/sites/default/files
       - ./state:/state
   mysql:
