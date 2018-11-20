@@ -4,19 +4,20 @@
 
 FROM php:7.1-apache
 
-# The following packages are required for required PHP extensions
-#
-# libc-client-dev and libkrb5-dev required for imap          
-# libicu-dev required for intl          
-# libmagickwand-dev required for imagick       
-# libmcrypt-dev required for mcrypt        
-# libpng-dev required for gd            
-# libxml2-dev required for soap          
+# libc-client-dev and libkrb5-dev required for the imap php extension
+# libicu-dev required for the intl php extension
+# libmagickwand-dev required for the imagick php extension
+# libmcrypt-dev required for the mcrypt php extension
+# libpng-dev required for the gd php extension
+# libxml2-dev required for the soap php extension
+# iproute2 is required to get the host ip at runtime for XDEBUG_REMOTE_HOST environment variable
 # msmtp-mta allows us to globally redirect email via SMTP
 # unzip is required for composer
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
+  iproute2 \
+  less \
   libc-client-dev \
   libicu-dev \
   libkrb5-dev \
@@ -61,9 +62,10 @@ RUN docker-php-ext-install bcmath \
   && docker-php-ext-install soap \
   && docker-php-ext-install zip
 
-# Install imagick PECL extension
+# Install imagick and xdebug PECL extensions
 
-RUN pecl install imagick
+RUN pecl install imagick \
+  && pecl install xdebug
 
 # Install composer using the method described at https://getcomposer.org/download/ (TODO consider whether this is really necessary - we could remove from this image)
 
