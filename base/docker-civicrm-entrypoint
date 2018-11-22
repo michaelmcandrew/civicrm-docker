@@ -10,6 +10,7 @@ EOF
 
 echo 127.0.0.1 $DOMAIN >> /etc/hosts
 
+
 if [ "$DEBUG" = "ON" ]; then
 	cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 	XDEBUG_REMOTE_HOST=`/sbin/ip route|awk '/default/ { print $3 }'`
