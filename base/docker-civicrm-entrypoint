@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+CONTAINER_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
+
 # sendmail via smtp
 cat << EOF > /etc/msmtprc
 host $SMTP_HOST
@@ -8,7 +10,7 @@ auto_from on
 maildomain $SMTP_MAILDOMAIN
 EOF
 
-echo 127.0.0.1 $DOMAIN >> /etc/hosts
+echo $CONTAINER_IP $DOMAIN >> /etc/hosts
 
 
 if [ "$DEBUG" = "ON" ]; then
@@ -20,7 +22,8 @@ xdebug.show_error_trace=On
 xdebug.remote_enable=On
 xdebug.remote_autostart=1
 xdebug.var_display_max_depth=7
-xdebug.remote_host=${XDEBUG_REMOTE_HOST}
+xdebug.remote_host=${CONTAINER_IP}
+max_execution_time=600
 EOF
 fi
 
