@@ -53,6 +53,7 @@ $postLoadScripts = trim(`ls -1t /home/civicrm/postLoad/ 2> /dev/null`);
 if($postLoadScripts){
     $postLoadScripts = explode("\n", $postLoadScripts);
     foreach($postLoadScripts as $script){
+        echo "Running post load script '$script'\n";
         `/home/civicrm/postLoad/$script`; 
     }
 
