@@ -1,8 +1,7 @@
 version: '3.4'
-
 services:
   civicrm:
-    build: .
+    image: michaelmcandrew/civicrm-wordpress
     hostname: civicrm
     environment:
       - PROJECT_NAME
@@ -25,11 +24,10 @@ services:
       - 2411:80
     restart: always
     volumes:
-      - ./src:/var/www/html
       - uploads:/var/www/html/wp-content/uploads 
       - ./.bash_history:/home/civicrm/.bash_history
       - ./state:/state
-      - ./docker-civicrm-entrypoint:/usr/local/bin/docker-civicrm-entrypoint
+      - ./src:/var/www/html
   mysql:
     image: michaelmcandrew/civicrm-mysql
     environment:
@@ -42,8 +40,6 @@ services:
     restart: always
     ports:
      - 2412:80
-
-
 volumes:
   mysql:
   uploads:

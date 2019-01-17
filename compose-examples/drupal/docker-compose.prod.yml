@@ -1,9 +1,9 @@
 version: '3.4'
 services:
   civicrm:
-    image: michaelmcandrew/civicrm-wordpress
-    hostname: civicrm
-    environment:
+    image: civicrm-drupal
+    hostname: $PROJECT_NAME
+    environment: 
       - PROJECT_NAME
       - BASE_URL
       - CIVICRM_DB_NAME
@@ -11,22 +11,21 @@ services:
       - CIVICRM_DB_PASS
       - CIVICRM_DB_HOST
       - CIVICRM_DB_PORT
-      - WORDPRESS_DB_NAME
-      - WORDPRESS_DB_USER
-      - WORDPRESS_DB_PASS
-      - WORDPRESS_DB_HOST
-      - WORDPRESS_DB_PORT
+      - DRUPAL_DB_NAME
+      - DRUPAL_DB_USER
+      - DRUPAL_DB_PASS
+      - DRUPAL_DB_HOST
+      - DRUPAL_DB_PORT
       - MYSQL_ROOT_PASSWORD
-      - SMTP_HOST
-      - SMTP_MAILDOMAIN
-
+      # - DEBUG # Should be turned off in production
     ports:
-      - 2411:80
-    restart: always
+      - 2401:80
     volumes:
-      - uploads:/var/www/html/wp-content/uploads 
-      - ./.bash_history:/home/civicrm/.bash_history
+      - ./src:/var/www/html
+      - files:/var/www/html/sites/default/files
       - ./state:/state
+      - ./.bash_history:/home/civicrm/.bash_history
+    restart: always
   mysql:
     image: michaelmcandrew/civicrm-mysql
     environment:
@@ -35,5 +34,5 @@ services:
       - mysql:/var/lib/mysql
     restart: always
 volumes:
+  files:
   mysql:
-  uploads:
