@@ -19,7 +19,7 @@ services:
       - MYSQL_ROOT_PASSWORD
       - SMTP_HOST
       - SMTP_MAILDOMAIN
-      - DEBUG
+      - DEBUG=ON
     ports:
       - NNNN:80
     restart: always

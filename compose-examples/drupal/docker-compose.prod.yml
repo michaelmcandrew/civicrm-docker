@@ -17,7 +17,6 @@ services:
       - DRUPAL_DB_HOST
       - DRUPAL_DB_PORT
       - MYSQL_ROOT_PASSWORD
-      # - DEBUG # Should be turned off in production
     ports:
       - NNNN:80
     volumes:

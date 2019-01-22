@@ -19,7 +19,6 @@ services:
       - MYSQL_ROOT_PASSWORD
       - SMTP_HOST
       - SMTP_MAILDOMAIN
-
     ports:
       - NNNN:80
     restart: always
