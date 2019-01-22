@@ -33,6 +33,11 @@ services:
     volumes:
       - mysql:/var/lib/mysql
     restart: always
+  maildev:
+    image: djfarrelly/maildev
+    restart: always
+    ports:
+     - NNNN:80
 volumes:
   files:
   mysql:
