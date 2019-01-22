@@ -19,7 +19,7 @@ services:
       - MYSQL_ROOT_PASSWORD
       # - DEBUG # Should be turned off in production
     ports:
-      - 2401:80
+      - NNNN:80
     volumes:
       - ./src:/var/www/html
       - files:/var/www/html/sites/default/files

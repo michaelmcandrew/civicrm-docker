@@ -21,7 +21,7 @@ services:
       - SMTP_MAILDOMAIN
 
     ports:
-      - 2411:80
+      - NNNN:80
     restart: always
     volumes:
       - uploads:/var/www/html/wp-content/uploads 
