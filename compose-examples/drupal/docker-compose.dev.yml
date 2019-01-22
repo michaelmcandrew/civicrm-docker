@@ -17,6 +17,8 @@ services:
       - DRUPAL_DB_HOST
       - DRUPAL_DB_PORT
       - MYSQL_ROOT_PASSWORD
+      - SMTP_HOST
+      - SMTP_MAILDOMAIN
       - DEBUG=ON
     ports:
       - NNNN:80
