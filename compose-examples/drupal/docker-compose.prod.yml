@@ -21,7 +21,6 @@ services:
     ports:
       - NNNN:80
     volumes:
-      - ./src:/var/www/html
       - files:/var/www/html/sites/default/files
       - ./state:/state
       - ./.bash_history:/home/civicrm/.bash_history
