@@ -62,10 +62,13 @@ RUN docker-php-ext-install bcmath \
   && docker-php-ext-install soap \
   && docker-php-ext-install zip
 
-# Install imagick and xdebug PECL extensions
+# Install and enable imagick PECL extensions
 
 RUN pecl install imagick \
-  && pecl install xdebug
+  && docker-php-ext-enable imagick
+
+# Install xdebug PECL extension
+RUN pecl install xdebug
 
 # Install composer using the method described at https://getcomposer.org/download/ (TODO consider whether this is really necessary - we could remove from this image)
 
