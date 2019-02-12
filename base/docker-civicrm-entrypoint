@@ -10,6 +10,14 @@ auto_from on
 maildomain $SMTP_MAILDOMAIN
 EOF
 
+# my.cnf config
+cat << EOF > /home/civicrm/.my.cnf
+[client]
+user=root
+password=$MYSQL_ROOT_PASSWORD
+host=$CIVICRM_DB_HOST
+EOF
+
 echo $CONTAINER_IP $DOMAIN >> /etc/hosts
 
 
