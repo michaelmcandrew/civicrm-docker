@@ -26,9 +26,10 @@ if [ "$DEBUG" = "ON" ]; then
 	XDEBUG_REMOTE_HOST=`/sbin/ip route|awk '/default/ { print $3 }'`
     cat << EOF > /usr/local/etc/php/conf.d/debug.ini
 zend_extension=xdebug.so
-xdebug.show_error_trace=On
-xdebug.remote_enable=On
-xdebug.remote_autostart=1
+xdebug.show_error_trace=1
+xdebug.remote_enable=1
+xdebug.profiler_enable_trigger=1
+xdebug.profiler_output_dir=/debug
 xdebug.var_display_max_depth=7
 xdebug.remote_host=${CONTAINER_IP}
 max_execution_time=600
