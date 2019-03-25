@@ -1,9 +1,10 @@
-version: '3.4'
+version: "3.4"
 services:
   civicrm:
     image: michaelmcandrew/civicrm-drupal
     hostname: $PROJECT_NAME
-    environment: 
+    environment:
+      - APACHE_RUN_USER=civicrm
       - PROJECT_NAME
       - BASE_URL
       - CIVICRM_DB_NAME
@@ -11,6 +12,7 @@ services:
       - CIVICRM_DB_PASS
       - CIVICRM_DB_HOST
       - CIVICRM_DB_PORT
+      - DEBUG=ON
       - DRUPAL_DB_NAME
       - DRUPAL_DB_USER
       - DRUPAL_DB_PASS
@@ -19,7 +21,6 @@ services:
       - MYSQL_ROOT_PASSWORD
       - SMTP_HOST
       - SMTP_MAILDOMAIN
-      - DEBUG=ON
     ports:
       - NNNN:80
     volumes:
@@ -39,7 +40,7 @@ services:
     image: djfarrelly/maildev
     restart: always
     ports:
-     - NNNN:80
+      - NNNN:80
 volumes:
   files:
   mysql:
