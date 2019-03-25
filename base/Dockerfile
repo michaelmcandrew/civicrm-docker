@@ -8,7 +8,7 @@ FROM php:7.1-apache
 # libicu-dev required for the intl php extension
 # libmagickwand-dev required for the imagick php extension
 # libmcrypt-dev required for the mcrypt php extension
-# libpng-dev required for the gd php extension
+# libjpeg62-turbo-dev and libpng-dev required for the gd php extension
 # libxml2-dev required for the soap php extension
 # iproute2 is required to get the host ip at runtime for XDEBUG_REMOTE_HOST environment variable
 # msmtp-mta allows us to globally redirect email via SMTP
@@ -20,6 +20,7 @@ RUN apt-get update \
   less \
   libc-client-dev \
   libicu-dev \
+  libjpeg62-turbo-dev \
   libkrb5-dev \
   libmagickwand-dev \
   libmcrypt-dev \
@@ -49,9 +50,12 @@ RUN apt-get update \
 # * soap
 # * zip
 
-# Install php extensions
+# Configure and install php extensions (not configuration comes before installation)
+
+
 
 RUN docker-php-ext-install bcmath \
+  && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
   && docker-php-ext-install gd \
   && docker-php-ext-install gettext \
   && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
