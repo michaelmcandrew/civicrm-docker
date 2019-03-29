@@ -83,21 +83,21 @@ define('WP_DEBUG', false);
  * Extra config added for CiviCRM Docker
  */
 
-define( 'WP_HOME', getenv('BASE_URL') );
-define( 'WP_SITEURL', getenv('BASE_URL') );
-
+define('WP_HOME', getenv('BASE_URL'));
+define('WP_SITEURL', getenv('BASE_URL'));
+define('WP_AUTO_UPDATE_CORE', false);
 define('CIVICRM_SETTINGS_PATH', '/var/www/html/civicrm.settings.php');
 
 define('FORCE_SSL_ADMIN', true);
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false){
-	$_SERVER['HTTPS']='on';
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
+	$_SERVER['HTTPS'] = 'on';
 }
 
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
+if (!defined('ABSPATH'))
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
