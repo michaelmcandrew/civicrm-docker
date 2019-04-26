@@ -2,7 +2,7 @@
 function civicrm_dump($state){
 
     $state['start'] = date(DATE_ISO8601);
-    $tarName = "/state/{$state['project']}." . date('Ymd\THis') . ".tar";
+    $tarName = "/state/{$state['project']}." . date('Ymd\THis') . ".tar.gz";
     
     $dumpDir = tempnam('/tmp', 'civicrm_dump_');
     `rm $dumpDir; mkdir $dumpDir`;
@@ -13,8 +13,8 @@ function civicrm_dump($state){
         }
         `mysqldump -u $USER -p$PASS -h $HOST -P $PORT $NAME --skip-triggers > {$dumpDir}/{$name}.sql`;
     }
-    foreach($state['directories'] as $name => $path){
-        `tar -czf {$dumpDir}/{$name}.tar -C $path .`;
+    foreach ($state['directories'] as $name => $path) {
+        `tar -czf {$dumpDir}/{$name}.tar.gz -C $path .`;
     }
     
     $state['end'] = date(DATE_ISO8601);
