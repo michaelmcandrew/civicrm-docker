@@ -34,4 +34,11 @@ ENV CIVICRM_SETTINGS=civicrm.settings.php
 
 USER root
 
+RUN mkdir /usr/local/etc/civicrm
+
 COPY ./init ./dump ./civicrm-docker-wp-plugin-install /usr/local/bin/
+
+COPY --chown=civicrm:civicrm ./settings.php /usr/local/etc/civicrm
+
+COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm
+

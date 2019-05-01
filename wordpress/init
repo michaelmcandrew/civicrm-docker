@@ -1,10 +1,14 @@
 #!/bin/bash
-set -xe
-
 read -p "This will destroy any existing databases. Do you want to continue? (y/n)?" CONT
 if [ "$CONT" != "y" ]; then
   exit
 fi
+
+cp /usr/local/etc/civicrm/settings.php /var/www/html/sites/default
+cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html/sites/default
+chmod a-rwx,u+r /var/www/html/sites/default/settings.php
+chmod a-rwx,u+r /var/www/html/sites/default/civicrm.settings.php
+
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "DROP DATABASE IF EXISTS $CIVICRM_DB_NAME; CREATE DATABASE $CIVICRM_DB_NAME"
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $WORDPRESS_DB_HOST -e "DROP DATABASE IF EXISTS $WORDPRESS_DB_NAME; CREATE DATABASE $WORDPRESS_DB_NAME"
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "GRANT ALL PRIVILEGES ON $CIVICRM_DB_NAME.* TO '$CIVICRM_DB_USER' IDENTIFIED BY '$CIVICRM_DB_PASS'"
