@@ -23,12 +23,6 @@ RUN cd /var/www/html/wp-content/plugins \
   && tar xzf civicrm-l10n.tar.gz \
   && rm civicrm-l10n.tar.gz
 
-COPY --chown=civicrm:civicrm ./wp-config.php /var/www/html
-
-COPY --chown=civicrm:civicrm ./civicrm.settings.php /var/www/html
-
-COPY --chown=civicrm:civicrm ./.htaccess /var/www/html
-
 # Help cv find the civicrm.settings.php file
 ENV CIVICRM_SETTINGS=civicrm.settings.php
 
@@ -42,3 +36,4 @@ COPY --chown=civicrm:civicrm ./settings.php /usr/local/etc/civicrm
 
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm
 
+COPY --chown=civicrm:civicrm ./.htaccess /usr/local/etc/civicrm

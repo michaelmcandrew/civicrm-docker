@@ -4,10 +4,12 @@ if [ "$CONT" != "y" ]; then
   exit
 fi
 
-cp /usr/local/etc/civicrm/settings.php /var/www/html/sites/default
-cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html/sites/default
-chmod a-rwx,u+r /var/www/html/sites/default/settings.php
-chmod a-rwx,u+r /var/www/html/sites/default/civicrm.settings.php
+cp /usr/local/etc/civicrm/wp-config /var/www/html
+cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html
+cp /usr/local/etc/civicrm/.htaccess /var/www/html
+chmod a-rwx,u+r /var/www/html/wp-config.php
+chmod a-rwx,u+r /var/www/html/civicrm.settings.php
+chmod a-rwx,u+r /var/www/html/.htaccess
 
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "DROP DATABASE IF EXISTS $CIVICRM_DB_NAME; CREATE DATABASE $CIVICRM_DB_NAME"
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $WORDPRESS_DB_HOST -e "DROP DATABASE IF EXISTS $WORDPRESS_DB_NAME; CREATE DATABASE $WORDPRESS_DB_NAME"
