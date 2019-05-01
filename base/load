@@ -1,28 +1,28 @@
 #!/usr/bin/env php
 <?php
 
-if(isset($argv[1])){
+if (isset($argv[1])) {
     $dump = "{$argv[1]}";
-    if(!file_exists($dump)){
+    if (!file_exists($dump)) {
         die("Error: could not find state: '$dump'.\n");
     }
-}else{
-    $states = trim(`ls -1t /state/*.tar 2> /dev/null`);
-    if(!$states){
+} else {
+    $states = trim(`ls -1t /state/*.tar.gz 2> /dev/null`);
+    if (!$states) {
         die("Error: could not find any state dumps in /state.\n");
     }
     $states = explode("\n", $states);
     echo "Choose the number for the state you want to load (or 'Enter' for the most recent):\n";
-    foreach($states as $n => $state){
-        echo "[$n] " . basename($state) . "\n"; 
+    foreach ($states as $n => $state) {
+        echo "[$n] " . basename($state) . "\n";
     }
     $key = readline();
-    if($key == ''){
+    if ($key == '') {
         $key = 0;
     }
-    if(array_key_exists($key, $states)){
+    if (array_key_exists($key, $states)) {
         $dump = $states[$key];
-    }else{
+    } else {
         die("Error: '$key' was not an option.\n");
     }
 }
@@ -32,8 +32,8 @@ $loadDir = tempnam('/tmp', 'civicrm_load_');
 echo "Opening $dump\n";
 `tar -xf $dump -C $loadDir `;
 $state = json_decode(file_get_contents("$loadDir/state.json"), 1);
-foreach($state['databases'] as $name){
-    foreach(['USER', 'PASS', 'HOST', 'PORT', 'NAME'] as $var){
+foreach ($state['databases'] as $name) {
+    foreach (['USER', 'PASS', 'HOST', 'PORT', 'NAME'] as $var) {
         $$var = getenv(strtoupper($name) . '_DB_' . $var);
     }
     echo "Importing $name.sql into $NAME database\n";
@@ -41,14 +41,14 @@ foreach($state['databases'] as $name){
     `mysql -p\$MYSQL_ROOT_PASSWORD -u root -h $HOST $NAME < $loadDir/$name.sql`;
 }
 
-foreach($state['directories'] as $name => $path){
+foreach ($state['directories'] as $name => $path) {
     echo "Unpacking $name.tar database into $path\n";
-    `tar -xf {$loadDir}/{$name}.tar -C $path`;
+    `tar -xf {$loadDir}/{$name}.tar.gz -C $path`;
 }
 
 `rm -r $loadDir`;
 `cv flush -T`;
 
-if(is_executable('/home/civicrm/postLoad')){
+if (is_executable('/home/civicrm/postLoad')) {
     `/home/civicrm/postLoad`;
 }
