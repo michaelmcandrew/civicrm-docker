@@ -1,0 +1,19 @@
+#!/bin/bash
+read -p "This will destroy any existing databases. Do you want to continue? (y/n)?" CONT
+if [ "$CONT" != "y" ]; then
+  exit
+fi
+
+cp /usr/local/etc/civicrm/settings.php /var/www/html/sites/default
+cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html/sites/default
+chmod a-rwx,u+r /var/www/html/sites/default/settings.php
+chmod a-rwx,u+r /var/www/html/sites/default/civicrm.settings.php
+
+mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "DROP DATABASE IF EXISTS $CIVICRM_DB_NAME; CREATE DATABASE $CIVICRM_DB_NAME"
+mysql -p$MYSQL_ROOT_PASSWORD -u root -h $DRUPAL_DB_HOST -e "DROP DATABASE IF EXISTS $DRUPAL_DB_NAME; CREATE DATABASE $DRUPAL_DB_NAME"
+mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "GRANT ALL PRIVILEGES ON $CIVICRM_DB_NAME.* TO '$CIVICRM_DB_USER' IDENTIFIED BY '$CIVICRM_DB_PASS'"
+mysql -p$MYSQL_ROOT_PASSWORD -u root -h $DRUPAL_DB_HOST -e "GRANT ALL PRIVILEGES ON $DRUPAL_DB_NAME.* TO '$DRUPAL_DB_USER' IDENTIFIED BY '$DRUPAL_DB_PASS'"
+
+drush -r /var/www/html/ site-install -y
+drush dis overlay -y
+cv core:install --settings-path=/var/www/html/sites/default/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME
