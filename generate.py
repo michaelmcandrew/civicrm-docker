@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-import subprocess
+from subprocess import run
 import jinja2
 import itertools
 import json
@@ -79,14 +79,14 @@ for combo in combos.values():
     cms = combo["variables"]["cms"]
     combo_dir = root_dir + "/" + combo["dir"]
 
-    subprocess.run(["mkdir", "-p", combo_dir])
+    run(["mkdir", "-p", combo_dir])
 
     # Dockerfile
     docker_file = templates.get_template("Dockerfile")
     docker_file.stream(**combo["variables"]).dump(f"{combo_dir}/Dockerfile")
 
     # civicrm.settings.php
-    subprocess.run(
+    run(
         [
             "cp",
             f"templates/{cms}.civicrm.settings.php",
@@ -101,7 +101,7 @@ for combo in combos.values():
         "wordpress": "wp-config.php",
     }
     cms_settings_file = cms_settings_file_lookup[cms]
-    subprocess.run(
+    run(
         [
             "cp",
             f"templates/{cms}.{cms_settings_file}",
@@ -110,19 +110,19 @@ for combo in combos.values():
     )
 
     # init mysql, ready for load or install
-    subprocess.run(["cp", f"templates/{cms}.init", f"{combo_dir}/init"])
+    run(["cp", f"templates/{cms}.init", f"{combo_dir}/init"])
 
     # dump
-    subprocess.run(["cp", f"templates/{cms}.dump", f"{combo_dir}/dump"])
+    run(["cp", f"templates/{cms}.dump", f"{combo_dir}/dump"])
 
     # load
-    subprocess.run(["cp", "templates/load", combo_dir])
+    run(["cp", "templates/load", combo_dir])
 
     # install (todo: split from init)
-    # subprocess.run(["cp", f"templates/{cms}.install", f"{combo_dir}/install"])
+    # run(["cp", f"templates/{cms}.install", f"{combo_dir}/install"])
 
     # common files
-    subprocess.run(
+    run(
         [
             "cp",
             "templates/apache.conf",
@@ -135,9 +135,7 @@ for combo in combos.values():
 
     # CMS specific
     if cms == "wordpress":
-        subprocess.run(
-            ["cp", "templates/wordpress..htaccess", f"{combo_dir}/.htaccess"]
-        )
+        run(["cp", "templates/wordpress..htaccess", f"{combo_dir}/.htaccess"])
 
 with open("combos.json", "w") as combos_file:
     json.dump(combos, combos_file, sort_keys=True, indent=4)
