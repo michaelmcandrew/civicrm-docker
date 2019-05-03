@@ -39,7 +39,7 @@ RUN apt-get update \
 # * imap
 # * intl
 # * json (already enabled)
-# * mbstring (already enabled)w
+# * mbstring (already enabled)
 # * mcrypt
 # * mysqli
 # * openssl (already enabled)

@@ -5,8 +5,8 @@ FROM php:{{ php }}-apache
 # libc-client-dev and libkrb5-dev required for the imap php extension
 # libicu-dev required for the intl php extension
 # libmagickwand-dev required for the imagick php extension
-# libmcrypt-dev required for the mcrypt php extension
-# libjpeg62-turbo-dev and libpng-dev required for the gd php extension
+{% if php not in ['7.2', '7.3'] %}# libmcrypt-dev required for the mcrypt php extension
+{% endif %}# libjpeg62-turbo-dev and libpng-dev required for the gd php extension
 # libxml2-dev required for the soap php extension
 # iproute2 is required to get the host ip at runtime for XDEBUG_REMOTE_HOST environment variable
 # msmtp-mta allows us to globally redirect email via SMTP
@@ -21,8 +21,8 @@ RUN apt-get update \
   libjpeg62-turbo-dev \
   libkrb5-dev \
   libmagickwand-dev \
-  libmcrypt-dev \
-  libpng-dev \
+  {% if php not in ['7.2', '7.3'] %}libmcrypt-dev \
+  {% endif %}libpng-dev \
   libxml2-dev \
   msmtp-mta \
   mysql-client \
@@ -39,9 +39,9 @@ RUN apt-get update \
 # * imap
 # * intl
 # * json (already enabled)
-# * mbstring (already enabled)w
-# * mcrypt
-# * mysqli
+# * mbstring (already enabled)
+{% if php not in ['7.2', '7.3'] %}# * mcrypt
+{% endif %}# * mysqli
 # * openssl (already enabled)
 # * pdo_mysql
 # * phar (already enabled)
@@ -58,8 +58,8 @@ RUN docker-php-ext-install bcmath \
   && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
   && docker-php-ext-install imap \
   && docker-php-ext-install intl \
-  && docker-php-ext-install mcrypt \
-  {% if php == '5.6' %}&& docker-php-ext-install mysql \
+  {% if php not in ['7.2', '7.3'] %}&& docker-php-ext-install mcrypt \
+  {% endif %}{% if php == '5.6' %}&& docker-php-ext-install mysql \
   {% endif %}&& docker-php-ext-install mysqli \
   && docker-php-ext-install opcache \
   && docker-php-ext-install pdo_mysql \
