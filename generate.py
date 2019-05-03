@@ -137,5 +137,28 @@ for combo in combos.values():
     if cms == "wordpress":
         run(["cp", "templates/wordpress..htaccess", f"{combo_dir}/.htaccess"])
 
+
+# Update tags section of the README.md
+tag_text = []
+for combo in combos.values():
+    tag_list = " ".join([f"`{tag}`" for tag in combo["tags"]])
+    combo_dir = combo["dir"]
+    tag_text.append(f"* {tag_list} [({combo_dir})]({combo_dir})\n")
+    # print("* " + combo["dir"] + str(combo["tags"]))
+
+readme = list(open("README.md", "r"))
+start = readme.index("<!---START_TAGS-->\n")
+end = readme.index("<!---END_TAGS-->\n")
+readme = readme[: start + 1] + tag_text + readme[end:]
+print("".join(readme))
+
+writeme = open("README.md", "w")
+writeme.write("".join(readme))
+
+exit()
+#     print(start, end)
+
+
+# Dump combos to a json file for other scripts
 with open("combos.json", "w") as combos_file:
     json.dump(combos, combos_file, sort_keys=True, indent=4)
