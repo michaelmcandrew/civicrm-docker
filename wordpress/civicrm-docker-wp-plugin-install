@@ -1,4 +1,0 @@
-cd /var/www/html/wp-content/plugins
-curl -L $1 > plugin.zip
-unzip plugin.zip
-rm plugin.zip

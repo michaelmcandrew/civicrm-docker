@@ -1,8 +1,4 @@
-FROM michaelmcandrew/civicrm-base 
-
 ENV CIVICRM_UF=Drupal
-
-ARG CIVICRM_VERSION
 
 USER civicrm
 
@@ -15,14 +11,14 @@ RUN drush dl drupal-7 --destination=/var/www --drupal-project-rename=html -y
 RUN mkdir /var/www/html/sites/default/files
 
 RUN cd /var/www/html/sites/all/modules \
-  && curl -L https://download.civicrm.org/civicrm-$CIVICRM_VERSION-drupal.tar.gz > civicrm-drupal.tar.gz \
-  && tar xzf civicrm-drupal.tar.gz \
-  && rm civicrm-drupal.tar.gz
+    && curl -L https://download.civicrm.org/civicrm-{{ civi }}-drupal.tar.gz > civicrm-drupal.tar.gz \
+    && tar xzf civicrm-drupal.tar.gz \
+    && rm civicrm-drupal.tar.gz
 
 RUN cd /var/www/html/sites/all/modules \
-  && curl -L https://download.civicrm.org/civicrm-$CIVICRM_VERSION-l10n.tar.gz > civicrm-l10n.tar.gz \
-  && tar xzf civicrm-l10n.tar.gz \
-  && rm civicrm-l10n.tar.gz
+    && curl -L https://download.civicrm.org/civicrm-{{ civi }}-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && tar xzf civicrm-l10n.tar.gz \
+    && rm civicrm-l10n.tar.gz
 
 USER root
 

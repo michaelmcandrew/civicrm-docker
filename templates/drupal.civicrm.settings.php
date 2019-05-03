@@ -30,33 +30,31 @@
  */
 global $civicrm_root, $civicrm_setting, $civicrm_paths;
 
-define( 'CIVICRM_UF', 'WordPress');
-define( 'CIVICRM_UF_DSN', 'mysql://' . getenv('WORDPRESS_DB_USER') . ':' . getenv('WORDPRESS_DB_PASS') . '@' . getenv('WORDPRESS_DB_HOST') . '/' . getenv('WORDPRESS_DB_NAME') . '?new_link=true');
-define( 'CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIVICRM_DB_PASS') . '@' . getenv('CIVICRM_DB_HOST') . '/' . getenv('CIVICRM_DB_NAME') . '?new_link=true');
+define('CIVICRM_UF', 'Drupal');
+define('CIVICRM_UF_DSN', 'mysql://' . getenv('DRUPAL_DB_USER') . ':' . getenv('DRUPAL_DB_PASS') . '@' . getenv('DRUPAL_DB_HOST') . '/' . getenv('DRUPAL_DB_NAME') . '?new_link=true');
+define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIVICRM_DB_PASS') . '@' . getenv('CIVICRM_DB_HOST') . '/' . getenv('CIVICRM_DB_NAME') . '?new_link=true');
 define('CIVICRM_LOGGING_DSN', CIVICRM_DSN);
-$civicrm_root = '/var/www/html/wp-content/plugins/civicrm/civicrm/';
-define( 'CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/html/wp-content/uploads/civicrm/templates_c/');
-define( 'CIVICRM_UF_BASEURL', getenv('BASE_URL'));
-define( 'CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
+$civicrm_root = '/var/www/html/sites/all/modules/civicrm/';
+define('CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/html/sites/default/files/civicrm/templates_c/');
+define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
+define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 define('CIVICRM_PSR16_STRICT', FALSE);
 define('CIVICRM_DEADLOCK_RETRIES', 3);
 $include_path = '.'           . PATH_SEPARATOR .
-                $civicrm_root . PATH_SEPARATOR .
-                $civicrm_root . DIRECTORY_SEPARATOR . 'packages' . PATH_SEPARATOR .
-                get_include_path( );
-if ( set_include_path( $include_path ) === false ) {
-   echo "Could not set the include path<p>";
-   exit( );
+  $civicrm_root . PATH_SEPARATOR .
+  $civicrm_root . DIRECTORY_SEPARATOR . 'packages' . PATH_SEPARATOR .
+  get_include_path();
+if (set_include_path($include_path) === false) {
+  echo "Could not set the include path<p>";
+  exit();
 }
 
 if (!defined('CIVICRM_CLEANURL')) {
-  if ( function_exists('variable_get') && variable_get('clean_url', '0') != '0') {
-    define('CIVICRM_CLEANURL', 1 );
-  }
-  elseif ( function_exists('config_get') && config_get('system.core', 'clean_url') != 0) {
-    define('CIVICRM_CLEANURL', 1 );
-  }
-  else {
+  if (function_exists('variable_get') && variable_get('clean_url', '0') != '0') {
+    define('CIVICRM_CLEANURL', 1);
+  } elseif (function_exists('config_get') && config_get('system.core', 'clean_url') != 0) {
+    define('CIVICRM_CLEANURL', 1);
+  } else {
     define('CIVICRM_CLEANURL', 0);
   }
 }
@@ -67,14 +65,17 @@ ini_set('auto_detect_line_endings', '1');
 // make sure the memory_limit is at least 64 MB
 $memLimitString = trim(ini_get('memory_limit'));
 $memLimitUnit   = strtolower(substr($memLimitString, -1));
-$memLimit       = (int) $memLimitString;
+$memLimit       = (int)$memLimitString;
 switch ($memLimitUnit) {
-    case 'g': $memLimit *= 1024;
-    case 'm': $memLimit *= 1024;
-    case 'k': $memLimit *= 1024;
+  case 'g':
+    $memLimit *= 1024;
+  case 'm':
+    $memLimit *= 1024;
+  case 'k':
+    $memLimit *= 1024;
 }
 if ($memLimit >= 0 and $memLimit < 134217728) {
-    ini_set('memory_limit', '128M');
+  ini_set('memory_limit', '128M');
 }
 
 require_once 'CRM/Core/ClassLoader.php';
