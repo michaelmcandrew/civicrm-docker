@@ -150,14 +150,8 @@ readme = list(open("README.md", "r"))
 start = readme.index("<!---START_TAGS-->\n")
 end = readme.index("<!---END_TAGS-->\n")
 readme = readme[: start + 1] + tag_text + readme[end:]
-print("".join(readme))
-
 writeme = open("README.md", "w")
 writeme.write("".join(readme))
-
-exit()
-#     print(start, end)
-
 
 # Dump combos to a json file for other scripts
 with open("combos.json", "w") as combos_file:

@@ -22,6 +22,7 @@ RUN apt-get update \
   libmagickwand-dev \
   libpng-dev \
   libxml2-dev \
+  libzip-dev \
   msmtp-mta \
   mysql-client \
   unzip \

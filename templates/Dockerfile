@@ -24,6 +24,7 @@ RUN apt-get update \
   {% if php not in ['7.2', '7.3'] %}libmcrypt-dev \
   {% endif %}libpng-dev \
   libxml2-dev \
+  libzip-dev \
   msmtp-mta \
   mysql-client \
   unzip \

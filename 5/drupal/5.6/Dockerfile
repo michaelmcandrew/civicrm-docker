@@ -24,6 +24,7 @@ RUN apt-get update \
   libmcrypt-dev \
   libpng-dev \
   libxml2-dev \
+  libzip-dev \
   msmtp-mta \
   mysql-client \
   unzip \
