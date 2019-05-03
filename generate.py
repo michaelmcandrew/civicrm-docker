@@ -119,7 +119,7 @@ for combo in combos.values():
     run(["cp", "templates/load", combo_dir])
 
     # install (todo: split from init)
-    # run(["cp", f"templates/{cms}.install", f"{combo_dir}/install"])
+    run(["cp", f"templates/{cms}.install", f"{combo_dir}/install"])
 
     # common files
     run(

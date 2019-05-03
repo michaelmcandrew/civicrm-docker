@@ -4,7 +4,7 @@ An opinionated repository for production hosting of CiviCRM on Docker (your opin
 
 All images are based php-apache.
 
-An appropriate version of php is selected for you.
+In most cases, just choose the CMS that you would like to use, e.g. `civicrm:wordpress`. Everything else (php version, etc.) will be set to sensible defaults. You can get more specific with one of the tags below.
 
 # Tags
 
@@ -28,15 +28,7 @@ The following tags are available:
 * `5.13.1-backdrop-php5.6` `5.13-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` [(5/backdrop/5.6)](5/backdrop/5.6)
 <!---END_TAGS-->
 
-civicrm:version/cms/php-version
-
-# Usage
-
-Select the version of CiviCRM and the CMS that you want to use, e.g. `civicrm:5-drupal` or `civicrm:5.13-backdrop`.
-
-You can optionally select the PHP version as well e.g. civicrm:5-php7.3, though most users should be happy with the default.
-
-# docker-compose
+red# docker-compose
 
 ## Quick start
 
