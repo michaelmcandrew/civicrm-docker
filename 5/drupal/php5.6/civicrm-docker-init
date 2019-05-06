@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "This will initialise CiviCRM and Drupal ready for install, destroying any existing data. Do you want to continue? (y/n)?" CONT
+read -p "This will initialise CiviCRM and Drupal ready for installation or for loading an existing state. It will destroy any existing data. Do you want to continue? (y/n)?" CONT
 if [ "$CONT" != "y" ]; then
   exit
 fi

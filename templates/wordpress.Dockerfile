@@ -26,6 +26,8 @@ ENV CIVICRM_SETTINGS=civicrm.settings.php
 
 USER root
 
+COPY ./civicrm-docker-entrypoint ./civicrm-docker-init ./civicrm-docker-dump ./civicrm-docker-install /usr/local/bin/
+
 COPY --chown=civicrm:civicrm ./wp-config.php /usr/local/etc/civicrm
 
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm

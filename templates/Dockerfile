@@ -126,8 +126,6 @@ COPY ./civicrm-docker-load /usr/local/bin
 
 COPY ./civicrm_dump.php /usr/local/src/civicrm_dump.php
 
-COPY ./civicrm-docker-entrypoint ./civicrm-docker-init ./civicrm-docker-dump ./civicrm-docker-install /usr/local/bin/
-
 RUN mkdir /usr/local/etc/civicrm
 
 ENTRYPOINT [ "civicrm-docker-entrypoint" ]

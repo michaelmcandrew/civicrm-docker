@@ -158,6 +158,10 @@ RUN cd /var/www/html/modules \
 
 USER root
 
+RUN mkdir -p /var/www/config/active \
+    && mkdir -p /var/www/config/staging \
+    && chown civicrm:civicrm /var/www/config/*
+
 COPY --chown=civicrm:civicrm ./settings.php /usr/local/etc/civicrm
 
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm
