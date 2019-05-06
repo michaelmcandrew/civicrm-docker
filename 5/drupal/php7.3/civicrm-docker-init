@@ -4,10 +4,12 @@ if [ "$CONT" != "y" ]; then
   exit
 fi
 
+chmod u+w /var/www/html/sites/default
 cp /usr/local/etc/civicrm/settings.php /var/www/html/sites/default
 cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html/sites/default
 chmod a-rwx,u+r /var/www/html/sites/default/settings.php
 chmod a-rwx,u+r /var/www/html/sites/default/civicrm.settings.php
+chmod u-w /var/www/html/sites/default
 
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "DROP DATABASE IF EXISTS $CIVICRM_DB_NAME; CREATE DATABASE $CIVICRM_DB_NAME"
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $DRUPAL_DB_HOST -e "DROP DATABASE IF EXISTS $DRUPAL_DB_NAME; CREATE DATABASE $DRUPAL_DB_NAME"

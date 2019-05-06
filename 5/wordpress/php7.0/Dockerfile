@@ -124,9 +124,11 @@ COPY ./civicrm-docker-load /usr/local/bin
 
 COPY ./civicrm_dump.php /usr/local/src/civicrm_dump.php
 
-COPY ./docker-civicrm-entrypoint /usr/local/bin
+COPY ./civicrm-docker-entrypoint ./civicrm-docker-init ./civicrm-docker-dump ./civicrm-docker-install /usr/local/bin/
 
-ENTRYPOINT [ "docker-civicrm-entrypoint" ]
+RUN mkdir /usr/local/etc/civicrm
+
+ENTRYPOINT [ "civicrm-docker-entrypoint" ]
 
 CMD ["apache2-foreground"]
 
@@ -157,10 +159,6 @@ RUN cd /var/www/html/wp-content/plugins \
 ENV CIVICRM_SETTINGS=civicrm.settings.php
 
 USER root
-
-RUN mkdir /usr/local/etc/civicrm
-
-COPY ./civicrm-docker-init ./civicrm-docker-dump /usr/local/bin/
 
 COPY --chown=civicrm:civicrm ./wp-config.php /usr/local/etc/civicrm
 
