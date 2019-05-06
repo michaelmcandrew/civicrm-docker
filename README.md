@@ -11,21 +11,21 @@ In most cases, just choose the CMS that you would like to use, e.g. `civicrm:wor
 The following tags are available:
 
 <!---START_TAGS-->
-* `5.13.1-drupal-php7.3` `5.13-drupal-php7.3` `5-drupal-php7.3` `5.13.1-php7.3` `5.13-php7.3` `5-php7.3` `drupal-php7.3` `php7.3` [(5/drupal/7.3)](5/drupal/7.3)
-* `5.13.1-drupal-php7.2` `5.13-drupal-php7.2` `5-drupal-php7.2` `5.13.1-drupal` `5.13-drupal` `5-drupal` `5.13.1-php7.2` `5.13-php7.2` `5-php7.2` `5.13.1` `5.13` `5` `drupal-php7.2` `drupal` `php7.2` `latest` [(5/drupal/7.2)](5/drupal/7.2)
-* `5.13.1-drupal-php7.1` `5.13-drupal-php7.1` `5-drupal-php7.1` `5.13.1-php7.1` `5.13-php7.1` `5-php7.1` `drupal-php7.1` `php7.1` [(5/drupal/7.1)](5/drupal/7.1)
-* `5.13.1-drupal-php7.0` `5.13-drupal-php7.0` `5-drupal-php7.0` `5.13.1-php7.0` `5.13-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` [(5/drupal/7.0)](5/drupal/7.0)
-* `5.13.1-drupal-php5.6` `5.13-drupal-php5.6` `5-drupal-php5.6` `5.13.1-php5.6` `5.13-php5.6` `5-php5.6` `drupal-php5.6` `php5.6` [(5/drupal/5.6)](5/drupal/5.6)
-* `5.13.1-wordpress-php7.3` `5.13-wordpress-php7.3` `5-wordpress-php7.3` `wordpress-php7.3` [(5/wordpress/7.3)](5/wordpress/7.3)
-* `5.13.1-wordpress-php7.2` `5.13-wordpress-php7.2` `5-wordpress-php7.2` `5.13.1-wordpress` `5.13-wordpress` `5-wordpress` `wordpress-php7.2` `wordpress` [(5/wordpress/7.2)](5/wordpress/7.2)
-* `5.13.1-wordpress-php7.1` `5.13-wordpress-php7.1` `5-wordpress-php7.1` `wordpress-php7.1` [(5/wordpress/7.1)](5/wordpress/7.1)
-* `5.13.1-wordpress-php7.0` `5.13-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` [(5/wordpress/7.0)](5/wordpress/7.0)
-* `5.13.1-wordpress-php5.6` `5.13-wordpress-php5.6` `5-wordpress-php5.6` `wordpress-php5.6` [(5/wordpress/5.6)](5/wordpress/5.6)
-* `5.13.1-backdrop-php7.3` `5.13-backdrop-php7.3` `5-backdrop-php7.3` `backdrop-php7.3` [(5/backdrop/7.3)](5/backdrop/7.3)
-* `5.13.1-backdrop-php7.2` `5.13-backdrop-php7.2` `5-backdrop-php7.2` `5.13.1-backdrop` `5.13-backdrop` `5-backdrop` `backdrop-php7.2` `backdrop` [(5/backdrop/7.2)](5/backdrop/7.2)
-* `5.13.1-backdrop-php7.1` `5.13-backdrop-php7.1` `5-backdrop-php7.1` `backdrop-php7.1` [(5/backdrop/7.1)](5/backdrop/7.1)
-* `5.13.1-backdrop-php7.0` `5.13-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` [(5/backdrop/7.0)](5/backdrop/7.0)
-* `5.13.1-backdrop-php5.6` `5.13-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` [(5/backdrop/5.6)](5/backdrop/5.6)
+* `5.13.1-drupal-php7.3` `5.13-drupal-php7.3` `5-drupal-php7.3` `5.13.1-php7.3` `5.13-php7.3` `5-php7.3` `drupal-php7.3` `php7.3` [(5/drupal/php7.3)](5/drupal/php7.3)
+* `5.13.1-drupal-php7.2` `5.13-drupal-php7.2` `5-drupal-php7.2` `5.13.1-drupal` `5.13-drupal` `5-drupal` `5.13.1-php7.2` `5.13-php7.2` `5-php7.2` `5.13.1` `5.13` `5` `drupal-php7.2` `drupal` `php7.2` `latest` [(5/drupal/php7.2)](5/drupal/php7.2)
+* `5.13.1-drupal-php7.1` `5.13-drupal-php7.1` `5-drupal-php7.1` `5.13.1-php7.1` `5.13-php7.1` `5-php7.1` `drupal-php7.1` `php7.1` [(5/drupal/php7.1)](5/drupal/php7.1)
+* `5.13.1-drupal-php7.0` `5.13-drupal-php7.0` `5-drupal-php7.0` `5.13.1-php7.0` `5.13-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` [(5/drupal/php7.0)](5/drupal/php7.0)
+* `5.13.1-drupal-php5.6` `5.13-drupal-php5.6` `5-drupal-php5.6` `5.13.1-php5.6` `5.13-php5.6` `5-php5.6` `drupal-php5.6` `php5.6` [(5/drupal/php5.6)](5/drupal/php5.6)
+* `5.13.1-wordpress-php7.3` `5.13-wordpress-php7.3` `5-wordpress-php7.3` `wordpress-php7.3` [(5/wordpress/php7.3)](5/wordpress/php7.3)
+* `5.13.1-wordpress-php7.2` `5.13-wordpress-php7.2` `5-wordpress-php7.2` `5.13.1-wordpress` `5.13-wordpress` `5-wordpress` `wordpress-php7.2` `wordpress` [(5/wordpress/php7.2)](5/wordpress/php7.2)
+* `5.13.1-wordpress-php7.1` `5.13-wordpress-php7.1` `5-wordpress-php7.1` `wordpress-php7.1` [(5/wordpress/php7.1)](5/wordpress/php7.1)
+* `5.13.1-wordpress-php7.0` `5.13-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` [(5/wordpress/php7.0)](5/wordpress/php7.0)
+* `5.13.1-wordpress-php5.6` `5.13-wordpress-php5.6` `5-wordpress-php5.6` `wordpress-php5.6` [(5/wordpress/php5.6)](5/wordpress/php5.6)
+* `5.13.1-backdrop-php7.3` `5.13-backdrop-php7.3` `5-backdrop-php7.3` `backdrop-php7.3` [(5/backdrop/php7.3)](5/backdrop/php7.3)
+* `5.13.1-backdrop-php7.2` `5.13-backdrop-php7.2` `5-backdrop-php7.2` `5.13.1-backdrop` `5.13-backdrop` `5-backdrop` `backdrop-php7.2` `backdrop` [(5/backdrop/php7.2)](5/backdrop/php7.2)
+* `5.13.1-backdrop-php7.1` `5.13-backdrop-php7.1` `5-backdrop-php7.1` `backdrop-php7.1` [(5/backdrop/php7.1)](5/backdrop/php7.1)
+* `5.13.1-backdrop-php7.0` `5.13-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` [(5/backdrop/php7.0)](5/backdrop/php7.0)
+* `5.13.1-backdrop-php5.6` `5.13-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` [(5/backdrop/php5.6)](5/backdrop/php5.6)
 <!---END_TAGS-->
 
 red# docker-compose
