@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   civicrm:
-    image: michaelmcandrew/civicrm-backdrop
+    image: michaelmcandrew/civicrm:backdrop
     hostname: $PROJECT_NAME
     environment:
       - APACHE_RUN_USER=civicrm
@@ -18,9 +18,13 @@ services:
       - BACKDROP_DB_HOST
       - BACKDROP_DB_PORT
       - MYSQL_ROOT_PASSWORD
+      - DEBUG=ON
+      - SMTP_HOST
+      - SMTP_MAILDOMAIN
     ports:
       - NNNN:80
     volumes:
+      - ./src:/var/www/html
       - files:/var/www/html/files
       - ./state:/state
       - ./.bash_history:/home/civicrm/.bash_history
@@ -32,6 +36,11 @@ services:
     volumes:
       - mysql:/var/lib/mysql
     restart: always
+  maildev:
+    image: djfarrelly/maildev
+    restart: always
+    ports:
+      - NNNN:80
 volumes:
   files:
   mysql:
