@@ -8,11 +8,11 @@ In most cases, just choose the CMS that you would like to use, e.g. `civicrm:wor
 
 ## Health warning
 
-**WORK IN PROGRESS - USE AT YOUR OWN RISK**.1
+**WORK IN PROGRESS - USE AT YOUR OWN RISK**.
 
 These images are largely untested in production.  Questions about how to use these images are very welcome in the issue queue. Answers will likely come in the form of updates to this README.md and other bits of documentation. Please share your experiences using these images so we can improve them as we go.
 
-Implementation may well be behind the documentation for some CMS. If you are having difficulty getting going, I (michaelmcandrew) am normally available in the CiviCRM docker chat channel here:  https://chat.civicrm.org/civicrm/channels/docker.
+Implementation may well be behind the documentation for some CMS. If you are having difficulty getting going, please ping michaelmcandrew in the CiviCRM docker chat channel here:  https://chat.civicrm.org/civicrm/channels/docker and I will try and help, else feel free to create and issue.
 
 ## Tags
 
