@@ -1,27 +1,45 @@
 #!/bin/bash
-read -p "This will install CiviCRM on Backdrop, destroying any existing data. Do you want to continue? (y/n)?" CONT
-if [ "$CONT" != "y" ]; then
-  exit
-fi
+set -x
+# Fresh install of CiviCRM on Backdrop. Destroys any existing data and files (starts by running civicrm-docker-init)
 
-cd /var/www/html
+civicrm-docker-init
 
-# Prepare for Backdrop install
-chmod u+w .
-rm -f settings.php
-touch settings.php
+pushd /var/www/html
 
-# Run Backdrop install script
-drush backdrop-site-install --db-url="mysql://$BACKDROP_DB_NAME:$BACKDROP_DB_PASS@$BACKDROP_DB_HOST/$BACKDROP_DB_NAME"
+  chmod u+w .
 
-# Prepare for CiviCRM install
-rm -f /var/www/html/civicrm.settings.php
+  # Prepare for Backdrop install
+  if test -f settings.php; then
+    chmod u+w settings.php
+    rm settings.php
+  fi
+  touch settings.php
 
-# Run CiviCRM install script
-cv core:install --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME --cms-base-url=$BASE_URL
+  # Run Backdrop install script
+  drush backdrop-site-install --db-url="mysql://$BACKDROP_DB_NAME:$BACKDROP_DB_PASS@$BACKDROP_DB_HOST/$BACKDROP_DB_NAME"
 
+  # Prepare for CiviCRM install
+    if test -f civicrm.settings.php; then
+    chmod u+w civicrm.settings.php
+    rm civicrm.settings.php
+  fi
 
-# cp /usr/local/etc/civicrm/settings.php /var/www/html
-# cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html
-chmod a-w /var/www/html /var/www/html/settings.php /var/www/html/civicrm.settings.php
+  # Run CiviCRM install script
+  cv core:install --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME --cms-base-url=$BASE_URL
+
+  # Overwrite generated settings files with ones from /usr/local/etc/
+  for FILE in settings.php civicrm.settings.php; do
+    chmod u+w $FILE
+    cp /usr/local/etc/civicrm/$FILE .
+    chmod a-wx $FILE
+  done
+
+  # Copy config from html/config_* to config
+  for ENV in active staging; do
+    rm -rf ../config/$ENV/*
+    cp files/config_*/$ENV/* ../config/$ENV
+  done
+
+popd
+
 

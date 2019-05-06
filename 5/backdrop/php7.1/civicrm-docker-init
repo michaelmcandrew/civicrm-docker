@@ -1,17 +1,23 @@
 #!/bin/bash
-read -p "This will initialise CiviCRM and Backdrop ready for installation or for loading an existing state. It will destroy any existing data. Do you want to continue? (y/n)?" CONT
-if [ "$CONT" != "y" ]; then
-  exit
-fi
+set -x
+# Initialise CiviCRM and Backdrop ready for loading an existing state dump or a fresh installation. Destroys any existing data and files.
+# Called automatically by civicrm-docker-install.
 
-chmod u+w /var/www/html{,/settings.php,/civicrm.settings.php}
-cp /usr/local/etc/civicrm/settings.php /var/www/html
-cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html
-chmod o-rwx,u-wx /var/www/html/settings.php
-chmod o-rwx,u-wx /var/www/html/civicrm.settings.php
-rm -rf /var/www/html/files
-mkdir /var/www/html/files
-chmod u-w /var/www/html
+pushd /var/www/html
+
+  chmod u+w .
+  for FILE in settings.php civicrm.settings.php; do
+    if test -f "$FILE"; then
+      chmod u+w $FILE
+      cp /usr/local/etc/civicrm/$FILE /var/www/html
+      chmod a-wx $FILE
+    fi
+  done
+  rm -rf files
+  mkdir files
+  chmod u-w .
+
+popd
 
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "DROP DATABASE IF EXISTS $CIVICRM_DB_NAME; CREATE DATABASE $CIVICRM_DB_NAME"
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $BACKDROP_DB_HOST -e "DROP DATABASE IF EXISTS $BACKDROP_DB_NAME; CREATE DATABASE $BACKDROP_DB_NAME"
