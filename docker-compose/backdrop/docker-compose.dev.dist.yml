@@ -24,7 +24,7 @@ services:
     ports:
       - NNNN:80
     volumes:
-      - ./src:/var/www/html
+      # - ./src:/var/www/html # uncomment for a mono-repo mounted from the host
       - files:/var/www/html/files
       - ./state:/state
       - ./.bash_history:/home/civicrm/.bash_history

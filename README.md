@@ -36,7 +36,7 @@ The following tags are available:
 * `5.13.1-backdrop-php5.6` `5.13-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` [(5/backdrop/php5.6)](5/backdrop/php5.6)
 <!---END_TAGS-->
 
-## Quick start
+## 'Quick' start
 
 There are a couple of options for getting started. Here are a couple of common workflows that I use.
 
@@ -48,7 +48,7 @@ To get a local project up and running, choose your CMS flavour  from the [docker
 
 1. Copy the `dev.dist.env` file to `.env`. and edit as appropriate (choose sensible passwords, set the base url and other required environment variables, e.g. the domain you want the site to be available at.
 2. Copy `docker-compose.dev.dist.yml` to `docker-compose.yml` and assign port numbers as appropriate (see *Reverse proxies* for more details).
-3. *If you are mounting a mono repo from the host to the container* (see above), place it in  the `src` folder.
+3. *If you are mounting a mono repo from the host to the container* (see above), place it in  the `src` folder, and uncomment the `./src:/var/www/html` volume.
 4. *If you want development site to be available at a memorable address and/or you want to serve it via https*, configure it now.
 5. Run `docker-compose up -d`
 6. Install a new site with something like `docker-compose exec civicrm civicrm-docker-install` .
