@@ -1,5 +1,6 @@
 #!/bin/bash
-read -p "This will install CiviCRM on Drupal, destroying any existing data. Do you want to continue? (y/n)?" CONTif [ "$CONT" != "y" ]; then
+read -p "This will install CiviCRM on Drupal, destroying any existing data. Do you want to continue? (y/n)?" CONT
+if [ "$CONT" != "y" ]; then
   exit
 fi
 
