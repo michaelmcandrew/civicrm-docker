@@ -1,0 +1,9 @@
+#!/bin/bash
+read -p "This will install CiviCRM on WordPress, destroying any existing data. Do you want to continue? (y/n)?" CONT
+if [ "$CONT" != "y" ]; then
+  exit
+fi
+
+wp core install --url=$BASE_URL --title=civicrm-on-wordpress --admin_user=admin --admin_email=admin@example.org
+cv core:install --settings-path=/var/www/html/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME
+wp plugin activate civicrm

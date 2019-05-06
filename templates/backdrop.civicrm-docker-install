@@ -1,0 +1,7 @@
+#!/bin/bash
+read -p "This will install CiviCRM on Backdrop, destroying any existing data. Do you want to continue? (y/n)?" CONTif [ "$CONT" != "y" ]; then
+  exit
+fi
+
+drush backdrop-site-install --db-url="mysql://$BACKDROP_DB_NAME:$BACKDROP_DB_PASS@$BACKDROP_DB_HOST/$BACKDROP_DB_NAME" -y 
+cv core:install --settings-path=/var/www/html/sites/default/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME

@@ -24,7 +24,7 @@ for civi, cms, php in itertools.product(civi_releases, cms_variants, php_release
     combos[key] = {
         "tags": [],
         "variables": {"civi": civi, "cms": cms, "php": php},
-        "dir": f"{major}/{cms}/{php}",
+        "dir": f"{major}/{cms}/php{php}",
     }
 
 
@@ -34,11 +34,6 @@ for civi, cms, php in itertools.product(
     civi_releases + [False], cms_variants + [False], php_releases + [False]
 ):
     tags.append({"civi": civi, "cms": cms, "php": php})
-
-
-def parse_civi_release(civi):
-    return major, minor, rev
-
 
 # Attach tags to combinations
 for tag in tags:
@@ -71,8 +66,10 @@ for tag in tags:
         combos[key]["tags"].append(t)
 
 # Populate directories
-root_dir = os.path.dirname(__file__)
 
+
+root_dir = os.path.dirname(__file__)
+run(["rm", "-r", root_dir + "/5"])
 templates = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
 for combo in combos.values():
 
@@ -110,16 +107,34 @@ for combo in combos.values():
     )
 
     # init mysql, ready for load or install
-    run(["cp", f"templates/{cms}.init", f"{combo_dir}/init"])
+    run(
+        [
+            "cp",
+            f"templates/{cms}.civicrm-docker-init",
+            f"{combo_dir}/civicrm-docker-init",
+        ]
+    )
 
     # dump
-    run(["cp", f"templates/{cms}.dump", f"{combo_dir}/dump"])
+    run(
+        [
+            "cp",
+            f"templates/{cms}.civicrm-docker-dump",
+            f"{combo_dir}/civicrm-docker-dump",
+        ]
+    )
 
     # load
-    run(["cp", "templates/load", combo_dir])
+    run(["cp", "templates/civicrm-docker-load", combo_dir])
 
     # install (todo: split from init)
-    run(["cp", f"templates/{cms}.install", f"{combo_dir}/install"])
+    run(
+        [
+            "cp",
+            f"templates/{cms}.civicrm-docker-install",
+            f"{combo_dir}/civicrm-docker-install",
+        ]
+    )
 
     # common files
     run(

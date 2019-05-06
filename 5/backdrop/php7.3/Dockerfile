@@ -5,7 +5,6 @@ FROM php:7.3-apache
 # libc-client-dev and libkrb5-dev required for the imap php extension
 # libicu-dev required for the intl php extension
 # libmagickwand-dev required for the imagick php extension
-# libmcrypt-dev required for the mcrypt php extension
 # libjpeg62-turbo-dev and libpng-dev required for the gd php extension
 # libxml2-dev required for the soap php extension
 # iproute2 is required to get the host ip at runtime for XDEBUG_REMOTE_HOST environment variable
@@ -21,9 +20,9 @@ RUN apt-get update \
   libjpeg62-turbo-dev \
   libkrb5-dev \
   libmagickwand-dev \
-  libmcrypt-dev \
   libpng-dev \
   libxml2-dev \
+  libzip-dev \
   msmtp-mta \
   mysql-client \
   unzip \
@@ -39,8 +38,7 @@ RUN apt-get update \
 # * imap
 # * intl
 # * json (already enabled)
-# * mbstring (already enabled)w
-# * mcrypt
+# * mbstring (already enabled)
 # * mysqli
 # * openssl (already enabled)
 # * pdo_mysql
@@ -58,7 +56,6 @@ RUN docker-php-ext-install bcmath \
   && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
   && docker-php-ext-install imap \
   && docker-php-ext-install intl \
-  && docker-php-ext-install mcrypt \
   && docker-php-ext-install mysqli \
   && docker-php-ext-install opcache \
   && docker-php-ext-install pdo_mysql \
@@ -119,7 +116,7 @@ RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
 COPY ./php.ini /usr/local/etc/php/conf.d/civicrm.ini
 
-COPY ./load /usr/local/bin
+COPY ./civicrm-docker-load /usr/local/bin
 
 COPY ./civicrm_dump.php /usr/local/src/civicrm_dump.php
 
@@ -159,7 +156,7 @@ RUN cd /var/www/html/modules \
 
 USER root
 
-COPY ./init ./dump /usr/local/bin/
+COPY ./civicrm-docker-init ./civicrm-docker-dump /usr/local/bin/
 
 COPY --chown=civicrm:civicrm ./settings.php /usr/local/etc/civicrm
 

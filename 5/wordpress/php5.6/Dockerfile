@@ -24,6 +24,7 @@ RUN apt-get update \
   libmcrypt-dev \
   libpng-dev \
   libxml2-dev \
+  libzip-dev \
   msmtp-mta \
   mysql-client \
   unzip \
@@ -39,7 +40,7 @@ RUN apt-get update \
 # * imap
 # * intl
 # * json (already enabled)
-# * mbstring (already enabled)w
+# * mbstring (already enabled)
 # * mcrypt
 # * mysqli
 # * openssl (already enabled)
@@ -120,7 +121,7 @@ RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
 COPY ./php.ini /usr/local/etc/php/conf.d/civicrm.ini
 
-COPY ./load /usr/local/bin
+COPY ./civicrm-docker-load /usr/local/bin
 
 COPY ./civicrm_dump.php /usr/local/src/civicrm_dump.php
 
@@ -160,7 +161,7 @@ USER root
 
 RUN mkdir /usr/local/etc/civicrm
 
-COPY ./init ./dump /usr/local/bin/
+COPY ./civicrm-docker-init ./civicrm-docker-dump /usr/local/bin/
 
 COPY --chown=civicrm:civicrm ./wp-config.php /usr/local/etc/civicrm
 

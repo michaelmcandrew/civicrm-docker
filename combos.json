@@ -1,6 +1,6 @@
 {
     "5.13.1/backdrop/5.6": {
-        "dir": "5/backdrop/5.6",
+        "dir": "5/backdrop/php5.6",
         "tags": [
             "5.13.1-backdrop-php5.6",
             "5.13-backdrop-php5.6",
@@ -14,7 +14,7 @@
         }
     },
     "5.13.1/backdrop/7.0": {
-        "dir": "5/backdrop/7.0",
+        "dir": "5/backdrop/php7.0",
         "tags": [
             "5.13.1-backdrop-php7.0",
             "5.13-backdrop-php7.0",
@@ -28,7 +28,7 @@
         }
     },
     "5.13.1/backdrop/7.1": {
-        "dir": "5/backdrop/7.1",
+        "dir": "5/backdrop/php7.1",
         "tags": [
             "5.13.1-backdrop-php7.1",
             "5.13-backdrop-php7.1",
@@ -42,7 +42,7 @@
         }
     },
     "5.13.1/backdrop/7.2": {
-        "dir": "5/backdrop/7.2",
+        "dir": "5/backdrop/php7.2",
         "tags": [
             "5.13.1-backdrop-php7.2",
             "5.13-backdrop-php7.2",
@@ -60,7 +60,7 @@
         }
     },
     "5.13.1/backdrop/7.3": {
-        "dir": "5/backdrop/7.3",
+        "dir": "5/backdrop/php7.3",
         "tags": [
             "5.13.1-backdrop-php7.3",
             "5.13-backdrop-php7.3",
@@ -74,7 +74,7 @@
         }
     },
     "5.13.1/drupal/5.6": {
-        "dir": "5/drupal/5.6",
+        "dir": "5/drupal/php5.6",
         "tags": [
             "5.13.1-drupal-php5.6",
             "5.13-drupal-php5.6",
@@ -92,7 +92,7 @@
         }
     },
     "5.13.1/drupal/7.0": {
-        "dir": "5/drupal/7.0",
+        "dir": "5/drupal/php7.0",
         "tags": [
             "5.13.1-drupal-php7.0",
             "5.13-drupal-php7.0",
@@ -110,7 +110,7 @@
         }
     },
     "5.13.1/drupal/7.1": {
-        "dir": "5/drupal/7.1",
+        "dir": "5/drupal/php7.1",
         "tags": [
             "5.13.1-drupal-php7.1",
             "5.13-drupal-php7.1",
@@ -128,7 +128,7 @@
         }
     },
     "5.13.1/drupal/7.2": {
-        "dir": "5/drupal/7.2",
+        "dir": "5/drupal/php7.2",
         "tags": [
             "5.13.1-drupal-php7.2",
             "5.13-drupal-php7.2",
@@ -154,7 +154,7 @@
         }
     },
     "5.13.1/drupal/7.3": {
-        "dir": "5/drupal/7.3",
+        "dir": "5/drupal/php7.3",
         "tags": [
             "5.13.1-drupal-php7.3",
             "5.13-drupal-php7.3",
@@ -172,7 +172,7 @@
         }
     },
     "5.13.1/wordpress/5.6": {
-        "dir": "5/wordpress/5.6",
+        "dir": "5/wordpress/php5.6",
         "tags": [
             "5.13.1-wordpress-php5.6",
             "5.13-wordpress-php5.6",
@@ -186,7 +186,7 @@
         }
     },
     "5.13.1/wordpress/7.0": {
-        "dir": "5/wordpress/7.0",
+        "dir": "5/wordpress/php7.0",
         "tags": [
             "5.13.1-wordpress-php7.0",
             "5.13-wordpress-php7.0",
@@ -200,7 +200,7 @@
         }
     },
     "5.13.1/wordpress/7.1": {
-        "dir": "5/wordpress/7.1",
+        "dir": "5/wordpress/php7.1",
         "tags": [
             "5.13.1-wordpress-php7.1",
             "5.13-wordpress-php7.1",
@@ -214,7 +214,7 @@
         }
     },
     "5.13.1/wordpress/7.2": {
-        "dir": "5/wordpress/7.2",
+        "dir": "5/wordpress/php7.2",
         "tags": [
             "5.13.1-wordpress-php7.2",
             "5.13-wordpress-php7.2",
@@ -232,7 +232,7 @@
         }
     },
     "5.13.1/wordpress/7.3": {
-        "dir": "5/wordpress/7.3",
+        "dir": "5/wordpress/php7.3",
         "tags": [
             "5.13.1-wordpress-php7.3",
             "5.13-wordpress-php7.3",

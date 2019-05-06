@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "This will install CiviCRM on Drupal, destroying any existing data. Do you want to continue? (y/n)?" CONTif [ "$CONT" != "y" ]; then
+  exit
+fi
+
+drush -r /var/www/html/ site-install -y
+drush dis overlay -y
+cv core:install --settings-path=/var/www/html/sites/default/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME
