@@ -28,8 +28,6 @@ RUN cd /var/www/html/modules \
 
 USER root
 
-COPY ./civicrm-docker-init ./civicrm-docker-dump /usr/local/bin/
-
 COPY --chown=civicrm:civicrm ./settings.php /usr/local/etc/civicrm
 
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm
