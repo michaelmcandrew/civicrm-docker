@@ -145,12 +145,12 @@ RUN cd /var/www \
     && drush dlb backdrop --path="html"
 
 RUN cd /var/www/html/modules \
-    && curl -L https://download.civicrm.org/civicrm-5.13.1-backdrop.tar.gz > civicrm-backdrop.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.13.2-backdrop.tar.gz > civicrm-backdrop.tar.gz \
     && tar xzf civicrm-backdrop.tar.gz \
     && rm civicrm-backdrop.tar.gz
 
 RUN cd /var/www/html/modules \
-    && curl -L https://download.civicrm.org/civicrm-5.13.1-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.13.2-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 
