@@ -1,15 +1,24 @@
 #!/bin/bash
-read -p "This will initialise CiviCRM and Drupal ready for installation or for loading an existing state. It will destroy any existing data. Do you want to continue? (y/n)?" CONT
-if [ "$CONT" != "y" ]; then
-  exit
-fi
+set -x
 
-chmod u+w /var/www/html/sites/default
-cp /usr/local/etc/civicrm/settings.php /var/www/html/sites/default
-cp /usr/local/etc/civicrm/civicrm.settings.php /var/www/html/sites/default
-chmod a-rwx,u+r /var/www/html/sites/default/settings.php
-chmod a-rwx,u+r /var/www/html/sites/default/civicrm.settings.php
-chmod u-w /var/www/html/sites/default
+# Initialise CiviCRM and Drupal ready for loading an existing state dump or a fresh installation. Destroys any existing data and files.
+# Called automatically by civicrm-docker-install.
+
+pushd /var/www/html/sites/default
+
+  chmod u+w .
+  for FILE in settings.php civicrm.settings.php; do
+    if test -f "$FILE"; then
+      chmod u+w $FILE
+    fi
+    cp /usr/local/etc/civicrm/$FILE .
+    chmod a-wx $FILE
+  done
+  rm -rf files
+  mkdir files
+  chmod u-w .
+
+popd
 
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "DROP DATABASE IF EXISTS $CIVICRM_DB_NAME; CREATE DATABASE $CIVICRM_DB_NAME"
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $DRUPAL_DB_HOST -e "DROP DATABASE IF EXISTS $DRUPAL_DB_NAME; CREATE DATABASE $DRUPAL_DB_NAME"

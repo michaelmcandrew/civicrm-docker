@@ -1,5 +1,6 @@
 #!/bin/bash
 set -x
+
 # Initialise CiviCRM and Backdrop ready for loading an existing state dump or a fresh installation. Destroys any existing data and files.
 # Called automatically by civicrm-docker-install.
 
@@ -9,9 +10,9 @@ pushd /var/www/html
   for FILE in settings.php civicrm.settings.php; do
     if test -f "$FILE"; then
       chmod u+w $FILE
-      cp /usr/local/etc/civicrm/$FILE /var/www/html
-      chmod a-wx $FILE
     fi
+    cp /usr/local/etc/civicrm/$FILE .
+    chmod a-wx $FILE
   done
   rm -rf files
   mkdir files
