@@ -14,10 +14,10 @@ pushd /var/www/html/sites/default
     cp /usr/local/etc/civicrm/$FILE .
     chmod a-wx $FILE
   done
-  rm -rf files
-  mkdir files
+  if test -d "files"; then
+    rm -rf files/*
+  fi
   chmod u-w .
-
 popd
 
 mysql -p$MYSQL_ROOT_PASSWORD -u root -h $CIVICRM_DB_HOST -e "DROP DATABASE IF EXISTS $CIVICRM_DB_NAME; CREATE DATABASE $CIVICRM_DB_NAME"

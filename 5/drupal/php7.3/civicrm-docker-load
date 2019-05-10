@@ -7,7 +7,7 @@ if (isset($argv[1])) {
         die("Error: could not find state: '$dump'.\n");
     }
 } else {
-    $states = trim(`ls -1t /state/*.tar.gz 2> /dev/null`);
+    $states = trim(`ls -1r /state/*.tar.gz 2> /dev/null`);
     if (!$states) {
         die("Error: could not find any state dumps in /state.\n");
     }
@@ -38,7 +38,7 @@ foreach ($state['databases'] as $name) {
     }
     echo "Importing $name.sql into $NAME database\n";
     `mysql -p$PASS -u $USER -h $HOST -e "DROP DATABASE IF EXISTS $NAME; CREATE DATABASE $NAME"`;
-    `mysql -p\$MYSQL_ROOT_PASSWORD -u root -h $HOST $NAME < $loadDir/$name.sql`;
+    `sed -E "/^\/\*\![[:digit:]]+ DEFINER/d" $loadDir/$name.sql | mysql -p\$MYSQL_ROOT_PASSWORD -u root -h $HOST $NAME`;
 }
 
 foreach ($state['directories'] as $name => $path) {
