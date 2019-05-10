@@ -2,6 +2,7 @@
 set -e
 
 CONTAINER_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
+echo $CONTAINER_IP $DOMAIN >> /etc/hosts
 
 # sendmail via smtp
 cat << EOF > /etc/msmtprc
