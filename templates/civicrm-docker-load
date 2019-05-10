@@ -38,7 +38,7 @@ foreach ($state['databases'] as $name) {
     }
     echo "Importing $name.sql into $NAME database\n";
     `mysql -p$PASS -u $USER -h $HOST -e "DROP DATABASE IF EXISTS $NAME; CREATE DATABASE $NAME"`;
-    `sed -E "/\/\*\![[:digit:]]+ DEFINER/d" $loadDir/$name.sql | mysql -p\$MYSQL_ROOT_PASSWORD -u root -h $HOST $NAME`;
+    `sed -E "/^\/\*\![[:digit:]]+ DEFINER/d" $loadDir/$name.sql | mysql -p\$MYSQL_ROOT_PASSWORD -u root -h $HOST $NAME`;
 }
 
 foreach ($state['directories'] as $name => $path) {
