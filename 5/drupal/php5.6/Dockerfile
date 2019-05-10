@@ -119,8 +119,6 @@ RUN a2enconf civicrm
 
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
-COPY ./php.ini /usr/local/etc/php/conf.d/civicrm.ini
-
 COPY ./civicrm-docker-load /usr/local/bin
 
 COPY ./civicrm_dump.php /usr/local/src/civicrm_dump.php

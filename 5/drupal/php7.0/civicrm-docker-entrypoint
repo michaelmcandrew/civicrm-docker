@@ -2,6 +2,7 @@
 set -e
 
 CONTAINER_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
+echo $CONTAINER_IP $DOMAIN >> /etc/hosts
 
 # sendmail via smtp
 cat << EOF > /etc/msmtprc
@@ -18,8 +19,16 @@ password=$MYSQL_ROOT_PASSWORD
 host=$CIVICRM_DB_HOST
 EOF
 
-echo $CONTAINER_IP $DOMAIN >> /etc/hosts
-
+# civicrm php.ini settings
+cat << EOF > /usr/local/etc/php/conf.d/civicrm.ini
+memory_limit = 1024M
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time=300
+max_input_time  = -1
+sendmail_path=/usr/sbin/sendmail -t -i
+date.timezone=$PHP_DATE_TIMEZONE
+EOF
 
 if [ "$DEBUG" = "ON" ]; then
 	cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini

@@ -143,7 +143,6 @@ for combo in combos.values():
             "templates/apache.conf",
             "templates/civicrm_dump.php",
             "templates/civicrm-docker-entrypoint",
-            "templates/php.ini",
             combo_dir,
         ]
     )
