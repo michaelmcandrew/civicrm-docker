@@ -19,7 +19,7 @@ pushd /var/www/html
   drush backdrop-site-install --db-url="mysql://$BACKDROP_DB_NAME:$BACKDROP_DB_PASS@$BACKDROP_DB_HOST/$BACKDROP_DB_NAME"
 
   # Prepare for CiviCRM install
-    if test -f civicrm.settings.php; then
+  if test -f civicrm.settings.php; then
     chmod u+w civicrm.settings.php
     rm civicrm.settings.php
   fi
@@ -28,6 +28,7 @@ pushd /var/www/html
   cv core:install --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME --cms-base-url=$BASE_URL
 
   # Overwrite generated settings files with ones from /usr/local/etc/
+  # TODO: check that this is actually needed.
   for FILE in settings.php civicrm.settings.php; do
     chmod u+w $FILE
     cp /usr/local/etc/civicrm/$FILE .
