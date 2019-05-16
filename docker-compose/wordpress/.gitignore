@@ -1,3 +1,4 @@
 .env
 state
 .bash_history
+docker-compose.yml

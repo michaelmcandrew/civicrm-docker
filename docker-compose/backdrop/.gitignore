@@ -1,5 +1,4 @@
 .env
-docker-compose.yml
 state
-debug
 .bash_history
+docker-compose.yml
