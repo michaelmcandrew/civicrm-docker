@@ -88,11 +88,9 @@ define('WP_SITEURL', getenv('BASE_URL'));
 define('WP_AUTO_UPDATE_CORE', false);
 define('CIVICRM_SETTINGS_PATH', '/var/www/html/civicrm.settings.php');
 
-define('FORCE_SSL_ADMIN', true);
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
 	$_SERVER['HTTPS'] = 'on';
 }
-
 
 /* That's all, stop editing! Happy blogging. */
 
