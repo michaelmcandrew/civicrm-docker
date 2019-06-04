@@ -1,3 +1,3 @@
-FROM mysql:5.6
+FROM mysql:5.7
 
 COPY ./my.cnf /etc/mysql/conf.d/civicrm.cnf
