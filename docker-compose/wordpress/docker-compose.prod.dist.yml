@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 services:
   civicrm:
     image: michaelmcandrew/civicrm-wordpress
@@ -16,23 +16,14 @@ services:
       - WORDPRESS_DB_PASS
       - WORDPRESS_DB_HOST
       - WORDPRESS_DB_PORT
-      - MYSQL_ROOT_PASSWORD
       - SMTP_HOST
       - SMTP_MAILDOMAIN
     ports:
       - NNNN:80
     restart: always
     volumes:
-      - uploads:/var/www/html/wp-content/uploads 
+      - uploads:/var/www/html/wp-content/uploads
       - ./.bash_history:/home/civicrm/.bash_history
       - ./state:/state
-  mysql:
-    image: michaelmcandrew/civicrm-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD
-    volumes:
-      - mysql:/var/lib/mysql
-    restart: always
 volumes:
-  mysql:
   uploads:

@@ -17,20 +17,11 @@ services:
       - BACKDROP_DB_PASS
       - BACKDROP_DB_HOST
       - BACKDROP_DB_PORT
-      - MYSQL_ROOT_PASSWORD
     ports:
       - NNNN:80
     volumes:
       - files:/var/www/html/files
       - ./state:/state
     restart: always
-  mysql:
-    image: michaelmcandrew/civicrm-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD
-    volumes:
-      - mysql:/var/lib/mysql
-    restart: always
 volumes:
   files:
-  mysql:

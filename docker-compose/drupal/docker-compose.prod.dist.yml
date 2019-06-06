@@ -17,7 +17,6 @@ services:
       - DRUPAL_DB_PASS
       - DRUPAL_DB_HOST
       - DRUPAL_DB_PORT
-      - MYSQL_ROOT_PASSWORD
     ports:
       - NNNN:80
     volumes:
@@ -25,13 +24,5 @@ services:
       - ./state:/state
       - ./.bash_history:/home/civicrm/.bash_history
     restart: always
-  mysql:
-    image: michaelmcandrew/civicrm-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD
-    volumes:
-      - mysql:/var/lib/mysql
-    restart: always
 volumes:
   files:
-  mysql:

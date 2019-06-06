@@ -11,14 +11,6 @@ auto_from on
 maildomain $SMTP_MAILDOMAIN
 EOF
 
-# my.cnf config
-cat << EOF > /home/civicrm/.my.cnf
-[client]
-user=root
-password=$MYSQL_ROOT_PASSWORD
-host=$CIVICRM_DB_HOST
-EOF
-
 # civicrm php.ini settings
 cat << EOF > /usr/local/etc/php/conf.d/civicrm.ini
 memory_limit = 1024M

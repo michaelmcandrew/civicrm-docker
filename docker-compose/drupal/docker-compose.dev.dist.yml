@@ -18,7 +18,6 @@ services:
       - DRUPAL_DB_PASS
       - DRUPAL_DB_HOST
       - DRUPAL_DB_PORT
-      - MYSQL_ROOT_PASSWORD
       - SMTP_HOST
       - SMTP_MAILDOMAIN
     ports:
@@ -29,13 +28,6 @@ services:
       - ./state:/state
       - ./.bash_history:/home/civicrm/.bash_history
     restart: always
-  mysql:
-    image: michaelmcandrew/civicrm-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD
-    volumes:
-      - mysql:/var/lib/mysql
-    restart: always
   maildev:
     image: djfarrelly/maildev
     restart: always
@@ -43,4 +35,3 @@ services:
       - NNNN:80
 volumes:
   files:
-  mysql:
