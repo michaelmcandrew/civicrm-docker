@@ -36,13 +36,13 @@ foreach ($state['databases'] as $name) {
     foreach (['USER', 'PASS', 'HOST', 'PORT', 'NAME'] as $var) {
         $$var = getenv(strtoupper($name) . '_DB_' . $var);
     }
-    echo "Importing $name.sql into $NAME database\n";
+    echo "Importing $name dump into $NAME database\n";
     `mysql -p$PASS -u $USER -h $HOST -e "DROP DATABASE IF EXISTS $NAME; CREATE DATABASE $NAME"`;
     `sed -E "/^\/\*\![[:digit:]]+ DEFINER/d" $loadDir/$name.sql | mysql -p$PASS -u $USER -h $HOST $NAME`;
 }
 
 foreach ($state['directories'] as $name => $path) {
-    echo "Unpacking $name.tar database into $path\n";
+    echo "Unpacking $name tar into $path\n";
     `tar -xf {$loadDir}/{$name}.tar.gz -C $path`;
 }
 
