@@ -1,29 +1,27 @@
-version: "3.4"
+version: "3.6"
 services:
   civicrm:
     image: michaelmcandrew/civicrm:drupal
-    hostname: $PROJECT_NAME
+    hostname: example
     environment:
-      - APACHE_RUN_USER=civicrm
-      - PROJECT_NAME
-      - BASE_URL
-      - CIVICRM_DB_NAME
-      - CIVICRM_DB_USER
+      - PROJECT_NAME=example
+      - BASE_URL=http://example.localhost
+      - CIVICRM_DB_NAME=example_civicrm
+      - CIVICRM_DB_USER=example
       - CIVICRM_DB_PASS
-      - CIVICRM_DB_HOST
-      - CIVICRM_DB_PORT
-      - DEBUG=ON
-      - DRUPAL_DB_NAME
-      - DRUPAL_DB_USER
+      - CIVICRM_DB_HOST=mysql.localhost
+      - CIVICRM_DB_PORT=3306
+      - DRUPAL_DB_NAME=example_drupal
+      - DRUPAL_DB_USER=example
       - DRUPAL_DB_PASS
-      - DRUPAL_DB_HOST
-      - DRUPAL_DB_PORT
+      - DRUPAL_DB_HOST=mysql.localhost
+      - DRUPAL_DB_PORT=3306
+      - PHP_DATE_TIMEZONE="UTC"
+
+      - DEBUG=ON
       - SMTP_HOST
       - SMTP_MAILDOMAIN
-    ports:
-      - NNNN:80
     volumes:
-      # - ./src:/var/www/html # uncomment for a mono-repo mounted from the host
       - files:/var/www/html/sites/default/files
       - ./state:/state
       - ./.bash_history:/home/civicrm/.bash_history
@@ -31,7 +29,5 @@ services:
   maildev:
     image: djfarrelly/maildev
     restart: always
-    ports:
-      - NNNN:80
 volumes:
   files:
