@@ -67,8 +67,7 @@ for tag in tags:
 
 # Populate directories
 
-
-root_dir = os.path.dirname(__file__)
+root_dir = os.path.dirname(os.path.abspath(__file__))
 run(["rm", "-r", root_dir + "/5"])
 templates = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
 for combo in combos.values():
