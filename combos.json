@@ -1,146 +1,146 @@
 {
-    "5.18.4/backdrop/5.6": {
+    "5.19.0/backdrop/5.6": {
         "dir": "5/backdrop/php5.6",
         "tags": [
-            "5.18.4-backdrop-php5.6",
-            "5.18-backdrop-php5.6",
+            "5.19.0-backdrop-php5.6",
+            "5.19-backdrop-php5.6",
             "5-backdrop-php5.6",
             "backdrop-php5.6"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "backdrop",
             "php": "5.6"
         }
     },
-    "5.18.4/backdrop/7.0": {
+    "5.19.0/backdrop/7.0": {
         "dir": "5/backdrop/php7.0",
         "tags": [
-            "5.18.4-backdrop-php7.0",
-            "5.18-backdrop-php7.0",
+            "5.19.0-backdrop-php7.0",
+            "5.19-backdrop-php7.0",
             "5-backdrop-php7.0",
             "backdrop-php7.0"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "backdrop",
             "php": "7.0"
         }
     },
-    "5.18.4/backdrop/7.1": {
+    "5.19.0/backdrop/7.1": {
         "dir": "5/backdrop/php7.1",
         "tags": [
-            "5.18.4-backdrop-php7.1",
-            "5.18-backdrop-php7.1",
+            "5.19.0-backdrop-php7.1",
+            "5.19-backdrop-php7.1",
             "5-backdrop-php7.1",
             "backdrop-php7.1"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "backdrop",
             "php": "7.1"
         }
     },
-    "5.18.4/backdrop/7.2": {
+    "5.19.0/backdrop/7.2": {
         "dir": "5/backdrop/php7.2",
         "tags": [
-            "5.18.4-backdrop-php7.2",
-            "5.18-backdrop-php7.2",
+            "5.19.0-backdrop-php7.2",
+            "5.19-backdrop-php7.2",
             "5-backdrop-php7.2",
-            "5.18.4-backdrop",
-            "5.18-backdrop",
+            "5.19.0-backdrop",
+            "5.19-backdrop",
             "5-backdrop",
             "backdrop-php7.2",
             "backdrop"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "backdrop",
             "php": "7.2"
         }
     },
-    "5.18.4/backdrop/7.3": {
+    "5.19.0/backdrop/7.3": {
         "dir": "5/backdrop/php7.3",
         "tags": [
-            "5.18.4-backdrop-php7.3",
-            "5.18-backdrop-php7.3",
+            "5.19.0-backdrop-php7.3",
+            "5.19-backdrop-php7.3",
             "5-backdrop-php7.3",
             "backdrop-php7.3"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "backdrop",
             "php": "7.3"
         }
     },
-    "5.18.4/drupal/5.6": {
+    "5.19.0/drupal/5.6": {
         "dir": "5/drupal/php5.6",
         "tags": [
-            "5.18.4-drupal-php5.6",
-            "5.18-drupal-php5.6",
+            "5.19.0-drupal-php5.6",
+            "5.19-drupal-php5.6",
             "5-drupal-php5.6",
-            "5.18.4-php5.6",
-            "5.18-php5.6",
+            "5.19.0-php5.6",
+            "5.19-php5.6",
             "5-php5.6",
             "drupal-php5.6",
             "php5.6"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "drupal",
             "php": "5.6"
         }
     },
-    "5.18.4/drupal/7.0": {
+    "5.19.0/drupal/7.0": {
         "dir": "5/drupal/php7.0",
         "tags": [
-            "5.18.4-drupal-php7.0",
-            "5.18-drupal-php7.0",
+            "5.19.0-drupal-php7.0",
+            "5.19-drupal-php7.0",
             "5-drupal-php7.0",
-            "5.18.4-php7.0",
-            "5.18-php7.0",
+            "5.19.0-php7.0",
+            "5.19-php7.0",
             "5-php7.0",
             "drupal-php7.0",
             "php7.0"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "drupal",
             "php": "7.0"
         }
     },
-    "5.18.4/drupal/7.1": {
+    "5.19.0/drupal/7.1": {
         "dir": "5/drupal/php7.1",
         "tags": [
-            "5.18.4-drupal-php7.1",
-            "5.18-drupal-php7.1",
+            "5.19.0-drupal-php7.1",
+            "5.19-drupal-php7.1",
             "5-drupal-php7.1",
-            "5.18.4-php7.1",
-            "5.18-php7.1",
+            "5.19.0-php7.1",
+            "5.19-php7.1",
             "5-php7.1",
             "drupal-php7.1",
             "php7.1"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "drupal",
             "php": "7.1"
         }
     },
-    "5.18.4/drupal/7.2": {
+    "5.19.0/drupal/7.2": {
         "dir": "5/drupal/php7.2",
         "tags": [
-            "5.18.4-drupal-php7.2",
-            "5.18-drupal-php7.2",
+            "5.19.0-drupal-php7.2",
+            "5.19-drupal-php7.2",
             "5-drupal-php7.2",
-            "5.18.4-drupal",
-            "5.18-drupal",
+            "5.19.0-drupal",
+            "5.19-drupal",
             "5-drupal",
-            "5.18.4-php7.2",
-            "5.18-php7.2",
+            "5.19.0-php7.2",
+            "5.19-php7.2",
             "5-php7.2",
-            "5.18.4",
-            "5.18",
+            "5.19.0",
+            "5.19",
             "5",
             "drupal-php7.2",
             "drupal",
@@ -148,99 +148,99 @@
             "latest"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "drupal",
             "php": "7.2"
         }
     },
-    "5.18.4/drupal/7.3": {
+    "5.19.0/drupal/7.3": {
         "dir": "5/drupal/php7.3",
         "tags": [
-            "5.18.4-drupal-php7.3",
-            "5.18-drupal-php7.3",
+            "5.19.0-drupal-php7.3",
+            "5.19-drupal-php7.3",
             "5-drupal-php7.3",
-            "5.18.4-php7.3",
-            "5.18-php7.3",
+            "5.19.0-php7.3",
+            "5.19-php7.3",
             "5-php7.3",
             "drupal-php7.3",
             "php7.3"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "drupal",
             "php": "7.3"
         }
     },
-    "5.18.4/wordpress/5.6": {
+    "5.19.0/wordpress/5.6": {
         "dir": "5/wordpress/php5.6",
         "tags": [
-            "5.18.4-wordpress-php5.6",
-            "5.18-wordpress-php5.6",
+            "5.19.0-wordpress-php5.6",
+            "5.19-wordpress-php5.6",
             "5-wordpress-php5.6",
             "wordpress-php5.6"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "wordpress",
             "php": "5.6"
         }
     },
-    "5.18.4/wordpress/7.0": {
+    "5.19.0/wordpress/7.0": {
         "dir": "5/wordpress/php7.0",
         "tags": [
-            "5.18.4-wordpress-php7.0",
-            "5.18-wordpress-php7.0",
+            "5.19.0-wordpress-php7.0",
+            "5.19-wordpress-php7.0",
             "5-wordpress-php7.0",
             "wordpress-php7.0"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "wordpress",
             "php": "7.0"
         }
     },
-    "5.18.4/wordpress/7.1": {
+    "5.19.0/wordpress/7.1": {
         "dir": "5/wordpress/php7.1",
         "tags": [
-            "5.18.4-wordpress-php7.1",
-            "5.18-wordpress-php7.1",
+            "5.19.0-wordpress-php7.1",
+            "5.19-wordpress-php7.1",
             "5-wordpress-php7.1",
             "wordpress-php7.1"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "wordpress",
             "php": "7.1"
         }
     },
-    "5.18.4/wordpress/7.2": {
+    "5.19.0/wordpress/7.2": {
         "dir": "5/wordpress/php7.2",
         "tags": [
-            "5.18.4-wordpress-php7.2",
-            "5.18-wordpress-php7.2",
+            "5.19.0-wordpress-php7.2",
+            "5.19-wordpress-php7.2",
             "5-wordpress-php7.2",
-            "5.18.4-wordpress",
-            "5.18-wordpress",
+            "5.19.0-wordpress",
+            "5.19-wordpress",
             "5-wordpress",
             "wordpress-php7.2",
             "wordpress"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "wordpress",
             "php": "7.2"
         }
     },
-    "5.18.4/wordpress/7.3": {
+    "5.19.0/wordpress/7.3": {
         "dir": "5/wordpress/php7.3",
         "tags": [
-            "5.18.4-wordpress-php7.3",
-            "5.18-wordpress-php7.3",
+            "5.19.0-wordpress-php7.3",
+            "5.19-wordpress-php7.3",
             "5-wordpress-php7.3",
             "wordpress-php7.3"
         ],
         "variables": {
-            "civi": "5.18.4",
+            "civi": "5.19.0",
             "cms": "wordpress",
             "php": "7.3"
         }
