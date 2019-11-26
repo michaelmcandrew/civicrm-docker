@@ -19,21 +19,21 @@ Implementation may well be behind the documentation for some CMS. If you are hav
 The following tags are available:
 
 <!---START_TAGS-->
-* `5.19.2-drupal-php7.3` `5.19-drupal-php7.3` `5-drupal-php7.3` `5.19.2-php7.3` `5.19-php7.3` `5-php7.3` `drupal-php7.3` `php7.3` [(5/drupal/php7.3)](5/drupal/php7.3)
-* `5.19.2-drupal-php7.2` `5.19-drupal-php7.2` `5-drupal-php7.2` `5.19.2-drupal` `5.19-drupal` `5-drupal` `5.19.2-php7.2` `5.19-php7.2` `5-php7.2` `5.19.2` `5.19` `5` `drupal-php7.2` `drupal` `php7.2` `latest` [(5/drupal/php7.2)](5/drupal/php7.2)
-* `5.19.2-drupal-php7.1` `5.19-drupal-php7.1` `5-drupal-php7.1` `5.19.2-php7.1` `5.19-php7.1` `5-php7.1` `drupal-php7.1` `php7.1` [(5/drupal/php7.1)](5/drupal/php7.1)
-* `5.19.2-drupal-php7.0` `5.19-drupal-php7.0` `5-drupal-php7.0` `5.19.2-php7.0` `5.19-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` [(5/drupal/php7.0)](5/drupal/php7.0)
-* `5.19.2-drupal-php5.6` `5.19-drupal-php5.6` `5-drupal-php5.6` `5.19.2-php5.6` `5.19-php5.6` `5-php5.6` `drupal-php5.6` `php5.6` [(5/drupal/php5.6)](5/drupal/php5.6)
-* `5.19.2-wordpress-php7.3` `5.19-wordpress-php7.3` `5-wordpress-php7.3` `wordpress-php7.3` [(5/wordpress/php7.3)](5/wordpress/php7.3)
-* `5.19.2-wordpress-php7.2` `5.19-wordpress-php7.2` `5-wordpress-php7.2` `5.19.2-wordpress` `5.19-wordpress` `5-wordpress` `wordpress-php7.2` `wordpress` [(5/wordpress/php7.2)](5/wordpress/php7.2)
-* `5.19.2-wordpress-php7.1` `5.19-wordpress-php7.1` `5-wordpress-php7.1` `wordpress-php7.1` [(5/wordpress/php7.1)](5/wordpress/php7.1)
-* `5.19.2-wordpress-php7.0` `5.19-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` [(5/wordpress/php7.0)](5/wordpress/php7.0)
-* `5.19.2-wordpress-php5.6` `5.19-wordpress-php5.6` `5-wordpress-php5.6` `wordpress-php5.6` [(5/wordpress/php5.6)](5/wordpress/php5.6)
-* `5.19.2-backdrop-php7.3` `5.19-backdrop-php7.3` `5-backdrop-php7.3` `backdrop-php7.3` [(5/backdrop/php7.3)](5/backdrop/php7.3)
-* `5.19.2-backdrop-php7.2` `5.19-backdrop-php7.2` `5-backdrop-php7.2` `5.19.2-backdrop` `5.19-backdrop` `5-backdrop` `backdrop-php7.2` `backdrop` [(5/backdrop/php7.2)](5/backdrop/php7.2)
-* `5.19.2-backdrop-php7.1` `5.19-backdrop-php7.1` `5-backdrop-php7.1` `backdrop-php7.1` [(5/backdrop/php7.1)](5/backdrop/php7.1)
-* `5.19.2-backdrop-php7.0` `5.19-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` [(5/backdrop/php7.0)](5/backdrop/php7.0)
-* `5.19.2-backdrop-php5.6` `5.19-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` [(5/backdrop/php5.6)](5/backdrop/php5.6)
+* `5.19.3-drupal-php7.3` `5.19-drupal-php7.3` `5-drupal-php7.3` `5.19.3-php7.3` `5.19-php7.3` `5-php7.3` `drupal-php7.3` `php7.3` [(5/drupal/php7.3)](5/drupal/php7.3)
+* `5.19.3-drupal-php7.2` `5.19-drupal-php7.2` `5-drupal-php7.2` `5.19.3-drupal` `5.19-drupal` `5-drupal` `5.19.3-php7.2` `5.19-php7.2` `5-php7.2` `5.19.3` `5.19` `5` `drupal-php7.2` `drupal` `php7.2` `latest` [(5/drupal/php7.2)](5/drupal/php7.2)
+* `5.19.3-drupal-php7.1` `5.19-drupal-php7.1` `5-drupal-php7.1` `5.19.3-php7.1` `5.19-php7.1` `5-php7.1` `drupal-php7.1` `php7.1` [(5/drupal/php7.1)](5/drupal/php7.1)
+* `5.19.3-drupal-php7.0` `5.19-drupal-php7.0` `5-drupal-php7.0` `5.19.3-php7.0` `5.19-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` [(5/drupal/php7.0)](5/drupal/php7.0)
+* `5.19.3-drupal-php5.6` `5.19-drupal-php5.6` `5-drupal-php5.6` `5.19.3-php5.6` `5.19-php5.6` `5-php5.6` `drupal-php5.6` `php5.6` [(5/drupal/php5.6)](5/drupal/php5.6)
+* `5.19.3-wordpress-php7.3` `5.19-wordpress-php7.3` `5-wordpress-php7.3` `wordpress-php7.3` [(5/wordpress/php7.3)](5/wordpress/php7.3)
+* `5.19.3-wordpress-php7.2` `5.19-wordpress-php7.2` `5-wordpress-php7.2` `5.19.3-wordpress` `5.19-wordpress` `5-wordpress` `wordpress-php7.2` `wordpress` [(5/wordpress/php7.2)](5/wordpress/php7.2)
+* `5.19.3-wordpress-php7.1` `5.19-wordpress-php7.1` `5-wordpress-php7.1` `wordpress-php7.1` [(5/wordpress/php7.1)](5/wordpress/php7.1)
+* `5.19.3-wordpress-php7.0` `5.19-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` [(5/wordpress/php7.0)](5/wordpress/php7.0)
+* `5.19.3-wordpress-php5.6` `5.19-wordpress-php5.6` `5-wordpress-php5.6` `wordpress-php5.6` [(5/wordpress/php5.6)](5/wordpress/php5.6)
+* `5.19.3-backdrop-php7.3` `5.19-backdrop-php7.3` `5-backdrop-php7.3` `backdrop-php7.3` [(5/backdrop/php7.3)](5/backdrop/php7.3)
+* `5.19.3-backdrop-php7.2` `5.19-backdrop-php7.2` `5-backdrop-php7.2` `5.19.3-backdrop` `5.19-backdrop` `5-backdrop` `backdrop-php7.2` `backdrop` [(5/backdrop/php7.2)](5/backdrop/php7.2)
+* `5.19.3-backdrop-php7.1` `5.19-backdrop-php7.1` `5-backdrop-php7.1` `backdrop-php7.1` [(5/backdrop/php7.1)](5/backdrop/php7.1)
+* `5.19.3-backdrop-php7.0` `5.19-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` [(5/backdrop/php7.0)](5/backdrop/php7.0)
+* `5.19.3-backdrop-php5.6` `5.19-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` [(5/backdrop/php5.6)](5/backdrop/php5.6)
 <!---END_TAGS-->
 
 ## 'Quick' start
