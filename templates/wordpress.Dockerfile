@@ -21,9 +21,6 @@ RUN cd /var/www/html/wp-content/plugins \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 
-# Help cv find the civicrm.settings.php file
-ENV CIVICRM_SETTINGS=civicrm.settings.php
-
 USER root
 
 COPY ./civicrm-docker-entrypoint ./civicrm-docker-init ./civicrm-docker-dump ./civicrm-docker-install /usr/local/bin/
