@@ -1,19 +1,17 @@
 #!/bin/bash
 
-pushd /var/www/html
+WORDPRESS_SETTINGS_SRC=/usr/local/etc/civicrm/wp-config.php
+WORDPRESS_SETTINGS_DEST=/var/www/html/wp-config.php
+CIVICRM_SETTINGS_SRC=/usr/local/etc/civicrm/civicrm.settings.php
+CIVICRM_SETTINGS_DEST=/var/www/html/wp-content/uploads/civicrm/civicrm.settings.php
 
-  chmod u+w .
-  for FILE in wp-config.php civicrm.settings.php .htaccess; do
-    if test -f "$FILE"; then
-      echo chmod u+w $FILE
-      chmod u+w $FILE
-    fi
-    cp /usr/local/etc/civicrm/$FILE .
-    echo cp /usr/local/etc/civicrm/$FILE .
-    chmod a-wx $FILE
-  done
-  rm -rf files
-  mkdir files
-  chmod u-w .
-
-popd
+chmod u+w /var/www/html
+for FILE in WORDPRESS CIVICRM ; do # removing .htaccess for now (we should also remove it from templates/wordpress..htaccess if it is not necessary any more)
+  if test -f "$DEST"; then
+    echo chmod u+w $DEST
+    chmod u+w $DEST
+  fi
+  cp $SRC $DEST
+  chmod a-wx $DEST
+done
+chmod -w /var/www/html
