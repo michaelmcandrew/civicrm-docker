@@ -45,7 +45,9 @@ $state = [
 ];
 $lines[] = json_encode($state, JSON_PRETTY_PRINT);
 $lines[] = "EOF";
-$lines[] = "tar -cz -C {$tempDir} . -f {$pwd}/state/{$projectName}.$(date +%Y%m%dT%H%M%S).tar.gz";
+$lines[] = "OUTFILE={$projectName}.$(date +%Y%m%dT%H%M%S).tar.gz";
+$lines[] = "tar -cz -C {$tempDir} . -f {$pwd}/state/\${OUTFILE}";
+$lines[] = "echo \$OUTFILE";
 $lines[] = "rm -rf {$tempDir}";
 
 // Abort if we have encountered any errors (e.g. due to missing variables in
@@ -55,5 +57,5 @@ if (error_get_last()) {
     exit;
 }
 file_put_contents($dumpScript, implode("\n", $lines) . "\n");
-shell_exec("bash -x $dumpScript");
+shell_exec("bash $dumpScript");
 unlink($dumpScript);
