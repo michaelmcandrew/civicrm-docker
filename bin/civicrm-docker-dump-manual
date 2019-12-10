@@ -35,7 +35,7 @@ foreach ($definition['directories'] as $dirKey => $directory) {
 }
 
 // Generate state.json
-$lines[] = "cat << EOF > {$tempDir}{$projectName}/state.json";
+$lines[] = "cat << EOF > {$tempDir}/state.json";
 $state = [
     'project' => $projectName,
     'databases' => array_keys($definition['databases']),
