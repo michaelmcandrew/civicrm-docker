@@ -8,14 +8,14 @@ CIVICRM_SETTINGS_DEST_DIR=/var/www/html/wp-content/uploads/civicrm
 
 # WordPress settings file
 chmod u+w /var/www/html
-[[ -f "$WORDPRESS_SETTINGS_DEST" ]] || chmod u+w $WORDPRESS_SETTINGS_DEST
+[[ -f "$WORDPRESS_SETTINGS_DEST" ]] && chmod u+w $WORDPRESS_SETTINGS_DEST
 cp $WORDPRESS_SETTINGS_SRC $WORDPRESS_SETTINGS_DEST
 chmod a-wx $WORDPRESS_SETTINGS_SRC
 chmod -w /var/www/html
 
 # CiviCRM settings file
-chmod u+w $CIVICRM_SETTINGS_DEST
 [[ -d "$CIVICRM_SETTINGS_DEST_DIR" ]] || mkdir -p $CIVICRM_SETTINGS_DEST_DIR
-[[ -f "$CIVICRM_SETTINGS_DEST" ]] || chmod u+w $CIVICRM_SETTINGS_DEST
-chmod a-wx $CIVICRM_SETTINGS_DEST
+chmod u+w $CIVICRM_SETTINGS_DEST
+[[ -f "$CIVICRM_SETTINGS_DEST" ]] && chmod u+w $CIVICRM_SETTINGS_DEST
 cp $CIVICRM_SETTINGS_SRC $CIVICRM_SETTINGS_DEST
+chmod a-wx $CIVICRM_SETTINGS_DEST
