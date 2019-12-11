@@ -24,7 +24,7 @@ RUN apt-get update \
   libxml2-dev \
   libzip-dev \
   msmtp-mta \
-  mysql-client \
+  mariadb-client \
   unzip \
   wget \
   && rm -r /var/lib/apt/lists/*
