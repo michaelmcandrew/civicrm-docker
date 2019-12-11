@@ -4,14 +4,18 @@ WORDPRESS_SETTINGS_SRC=/usr/local/etc/civicrm/wp-config.php
 WORDPRESS_SETTINGS_DEST=/var/www/html/wp-config.php
 CIVICRM_SETTINGS_SRC=/usr/local/etc/civicrm/civicrm.settings.php
 CIVICRM_SETTINGS_DEST=/var/www/html/wp-content/uploads/civicrm/civicrm.settings.php
+CIVICRM_SETTINGS_DEST_DIR=/var/www/html/wp-content/uploads/civicrm
 
+# WordPress settings file
 chmod u+w /var/www/html
-for FILE in WORDPRESS CIVICRM ; do # removing .htaccess for now (we should also remove it from templates/wordpress..htaccess if it is not necessary any more)
-  if test -f "$DEST"; then
-    echo chmod u+w $DEST
-    chmod u+w $DEST
-  fi
-  cp $SRC $DEST
-  chmod a-wx $DEST
-done
+[[ -f "$WORDPRESS_SETTINGS_DEST" ]] || chmod u+w $WORDPRESS_SETTINGS_DEST
+cp $WORDPRESS_SETTINGS_SRC $WORDPRESS_SETTINGS_DEST
+chmod a-wx $WORDPRESS_SETTINGS_SRC
 chmod -w /var/www/html
+
+# CiviCRM settings file
+chmod u+w $CIVICRM_SETTINGS_DEST
+[[ -d "$CIVICRM_SETTINGS_DEST_DIR" ]] || mkdir -p $CIVICRM_SETTINGS_DEST_DIR
+[[ -f "$CIVICRM_SETTINGS_DEST" ]] || chmod u+w $CIVICRM_SETTINGS_DEST
+chmod a-wx $CIVICRM_SETTINGS_DEST
+cp $CIVICRM_SETTINGS_SRC $CIVICRM_SETTINGS_DEST
