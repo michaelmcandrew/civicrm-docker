@@ -57,5 +57,5 @@ if (error_get_last()) {
     exit;
 }
 file_put_contents($dumpScript, implode("\n", $lines) . "\n");
-shell_exec("bash $dumpScript");
+passthru("bash $dumpScript");
 unlink($dumpScript);
