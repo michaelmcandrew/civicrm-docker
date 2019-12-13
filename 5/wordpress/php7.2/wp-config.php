@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configuration for WordPress
  *
@@ -63,7 +64,7 @@ define('NONCE_SALT',       getenv('WORDPRESS_NONCE_SALT'));
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix  = getenv('WORDPRESS_TABLE_PREFIX') !== false ? getenv('WORDPRESS_TABLE_PREFIX') : 'wp_';
 
 /**
  * For developers: WordPress debugging mode.
