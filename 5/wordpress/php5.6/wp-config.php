@@ -78,7 +78,11 @@ $table_prefix  = getenv('WORDPRESS_TABLE_PREFIX') !== false ? getenv('WORDPRESS_
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+if (getenv('DEBUG') == 'ON') {
+	define('WP_DEBUG', true);
+} else {
+	define('WP_DEBUG', false);
+}
 
 /**
  * Extra config added for CiviCRM Docker
@@ -87,7 +91,6 @@ define('WP_DEBUG', false);
 define('WP_HOME', getenv('BASE_URL'));
 define('WP_SITEURL', getenv('BASE_URL'));
 define('WP_AUTO_UPDATE_CORE', false);
-define('CIVICRM_SETTINGS_PATH', '/var/www/html/civicrm.settings.php');
 
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
 	$_SERVER['HTTPS'] = 'on';
