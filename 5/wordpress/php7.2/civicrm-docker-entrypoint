@@ -38,7 +38,7 @@ max_execution_time=600
 EOF
 fi
 
-civicrm-docker-init
+su civicrm -c /usr/local/bin/civicrm-docker-init
 
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then

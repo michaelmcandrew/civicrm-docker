@@ -1,5 +1,5 @@
 #!/bin/bash
-
+whoami
 pushd /var/www/html
 
     chmod u+w .
