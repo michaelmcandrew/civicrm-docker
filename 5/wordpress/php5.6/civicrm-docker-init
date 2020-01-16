@@ -1,21 +1,32 @@
 #!/bin/bash
 
-WORDPRESS_SETTINGS_SRC=/usr/local/etc/civicrm/wp-config.php
-WORDPRESS_SETTINGS_DEST=/var/www/html/wp-config.php
-CIVICRM_SETTINGS_SRC=/usr/local/etc/civicrm/civicrm.settings.php
-CIVICRM_SETTINGS_DEST=/var/www/html/wp-content/uploads/civicrm/civicrm.settings.php
-CIVICRM_SETTINGS_DEST_DIR=/var/www/html/wp-content/uploads/civicrm
+pushd /var/www/html
 
-# WordPress settings file
-chmod u+w /var/www/html
-[[ -f "$WORDPRESS_SETTINGS_DEST" ]] && chmod u+w $WORDPRESS_SETTINGS_DEST
-cp $WORDPRESS_SETTINGS_SRC $WORDPRESS_SETTINGS_DEST
-chmod a-wx $WORDPRESS_SETTINGS_SRC
-chmod a-w /var/www/html
+    chmod u+w .
+    
+    # WordPress settings
+    [[ -f wp-config.php ]] && chmod u+w wp-config.php
+    cp /usr/local/etc/civicrm/wp-config.php .
+    chmod a-wx wp-config.php
+    
+    # .htaccess
+    [[ -f .htaccess ]] && chmod u+w .htaccess
+    cp /usr/local/etc/civicrm/.htaccess .
+    chmod a-wx wp-config.php
 
-# CiviCRM settings file
-[[ -d "$CIVICRM_SETTINGS_DEST_DIR" ]] || mkdir -p $CIVICRM_SETTINGS_DEST_DIR
-chmod u+w $CIVICRM_SETTINGS_DEST
-[[ -f "$CIVICRM_SETTINGS_DEST" ]] && chmod u+w $CIVICRM_SETTINGS_DEST
-cp $CIVICRM_SETTINGS_SRC $CIVICRM_SETTINGS_DEST
-chmod a-wx $CIVICRM_SETTINGS_DEST
+    chmod u-w .
+
+popd
+
+[[ -d /var/www/html/wp-content/uploads/civicrm ]] || mkdir -p /var/www/html/wp-content/uploads/civicrm
+
+pushd /var/www/html/wp-content/uploads/civicrm
+
+    # CiviCRM settings
+    chmod u+w .
+
+    [[ -f civicrm.settings.php ]] && chmod u+w civicrm.settings.php
+    cp /usr/local/etc/civicrm/civicrm.settings.php .
+    chmod a-wx civicrm.settings.php
+
+popd

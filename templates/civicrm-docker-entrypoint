@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 
-
 # sendmail via smtp
 cat << EOF > /etc/msmtprc
 host $SMTP_HOST

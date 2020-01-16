@@ -143,12 +143,12 @@ for combo in combos.values():
 
 
 # Update tags section of the README.md
-tag_text = []
+tag_text = ["\n"]
 for combo in combos.values():
     tag_list = " ".join([f"`{tag}`" for tag in combo["tags"]])
     combo_dir = combo["dir"]
     tag_text.append(f"* {tag_list} [({combo_dir})]({combo_dir})\n")
-    # print("* " + combo["dir"] + str(combo["tags"]))
+tag_text.append("\n")
 
 readme = list(open("README.md", "r"))
 start = readme.index("<!---START_TAGS-->\n")
