@@ -147,7 +147,7 @@ tag_text = ["\n"]
 for combo in combos.values():
     tag_list = " ".join([f"`{tag}`" for tag in combo["tags"]])
     combo_dir = combo["dir"]
-    tag_text.append(f"* {tag_list} [({combo_dir})]({combo_dir})\n")
+    tag_text.append(f"- {tag_list} [({combo_dir})]({combo_dir})\n")
 tag_text.append("\n")
 
 readme = list(open("README.md", "r"))
