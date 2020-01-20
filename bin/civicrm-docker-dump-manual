@@ -23,9 +23,9 @@ $lines[] = "mkdir {$tempDir}";
 // Dump databases
 foreach ($definition['databases'] as $dbKey => $database) {
     if (isset($database['defaults_extra_file'])) {
-        $lines[] = "ssh {$projectName} mysqldump --defaults-extra-file={$database['defaults_extra_file']} --skip-triggers {$database['name']} > {$tempDir}/{$dbKey}.sql";
+        $lines[] = "ssh {$projectName} mysqldump --single-transaction --defaults-extra-file={$database['defaults_extra_file']} --skip-triggers {$database['name']} > {$tempDir}/{$dbKey}.sql";
     } else {
-        $lines[] = "ssh {$projectName} mysqldump --skip-triggers {$database['name']} > {$tempDir}/{$dbKey}.sql";
+        $lines[] = "ssh {$projectName} mysqldump --single-transaction --skip-triggers {$database['name']} > {$tempDir}/{$dbKey}.sql";
     }
 }
 
