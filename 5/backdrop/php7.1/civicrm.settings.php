@@ -6,6 +6,12 @@ define('CIVICRM_UF', 'Backdrop');
 $civicrm_root = '/var/www/html/modules/civicrm/';
 define('CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/html/files/civicrm/templates_c/');
 
+// Constants set by env variables
+define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIVICRM_DB_PASS') . '@' . getenv('CIVICRM_DB_HOST') . '/' . getenv('CIVICRM_DB_NAME') . '?new_link=true');
+define('CIVICRM_UF_DSN', 'mysql://' . getenv('BACKDROP_DB_USER') . ':' . getenv('BACKDROP_DB_PASS') . '@' . getenv('BACKDROP_DB_HOST') . '/' . getenv('BACKDROP_DB_NAME') . '?new_link=true');
+define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
+define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
+
 // Predefined constants
 define('CIVICRM_LOGGING_DSN', CIVICRM_DSN);
 define('CIVICRM_DOMAIN_ID', 1);
@@ -13,12 +19,6 @@ define('CIVICRM_MAIL_SMARTY', 0);
 define('CIVICRM_DB_CACHE_CLASS', 'ArrayCache');
 define('CIVICRM_PSR16_STRICT', FALSE);
 define('CIVICRM_DEADLOCK_RETRIES', 3);
-
-// Constants set by env variables
-define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIVICRM_DB_PASS') . '@' . getenv('CIVICRM_DB_HOST') . '/' . getenv('CIVICRM_DB_NAME') . '?new_link=true');
-define('CIVICRM_UF_DSN', 'mysql://' . getenv('BACKDROP_DB_USER') . ':' . getenv('BACKDROP_DB_PASS') . '@' . getenv('BACKDROP_DB_HOST') . '/' . getenv('BACKDROP_DB_NAME') . '?new_link=true');
-define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
-define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 
 // Include path
 $include_path = '.' . PATH_SEPARATOR .
