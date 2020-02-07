@@ -18,7 +18,7 @@ services:
       - DRUPAL_DB_PORT=3306
       - PHP_DATE_TIMEZONE="UTC"
     volumes:
-      - files:/var/www/html/sites/default/files
+      - ./files:/var/www/html/sites/default/files
       - ./state:/state
       - ./.bash_history:/home/civicrm/.bash_history
     restart: always
