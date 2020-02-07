@@ -17,6 +17,9 @@ max_execution_time=300
 max_input_time  = -1
 sendmail_path=/usr/sbin/sendmail -t -i
 date.timezone=$PHP_DATE_TIMEZONE
+log_errors = On
+error_log = /dev/stderr
+
 EOF
 
 if [ "$DEBUG" = "ON" ]; then
