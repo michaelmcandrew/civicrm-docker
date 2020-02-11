@@ -10,9 +10,7 @@ pushd /var/www/html
     chmod a-wx wp-config.php
     
     # .htaccess
-    [[ -f .htaccess ]] && chmod u+w .htaccess
-    cp /usr/local/etc/civicrm/.htaccess .
-    chmod a-wx wp-config.php
+    [[ -f .htaccess ]] || cp /usr/local/etc/civicrm/.htaccess .
 
     chmod u-w .
 
