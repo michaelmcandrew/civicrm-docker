@@ -14,8 +14,6 @@ pushd /var/www/html
     cp /usr/local/etc/civicrm/$FILE .
     chmod a-wx $FILE
   done
-  rm -rf files
-  mkdir files
   chmod u-w .
 
 popd

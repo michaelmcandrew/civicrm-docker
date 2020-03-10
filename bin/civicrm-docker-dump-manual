@@ -22,6 +22,7 @@ $lines[] = "mkdir {$tempDir}";
 
 // Dump databases
 foreach ($definition['databases'] as $dbKey => $database) {
+    // TODO: consider compressing these while in transit
     if (isset($database['defaults_extra_file'])) {
         $lines[] = "ssh {$projectName} mysqldump --defaults-extra-file={$database['defaults_extra_file']} --single-transaction --skip-triggers {$database['name']} > {$tempDir}/{$dbKey}.sql";
     } else {
@@ -56,6 +57,7 @@ if (error_get_last()) {
     echo "Some errors occured - aborting manual dump.\n";
     exit;
 }
+//TODO: add -d --dry-run option to print echo rather than execute commands
 file_put_contents($dumpScript, implode("\n", $lines) . "\n");
 passthru("bash $dumpScript");
 unlink($dumpScript);
