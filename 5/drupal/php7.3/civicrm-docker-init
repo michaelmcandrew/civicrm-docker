@@ -14,8 +14,5 @@ pushd /var/www/html/sites/default
     cp /usr/local/etc/civicrm/$FILE .
     chmod a-wx $FILE
   done
-  if test -d "files"; then
-    rm -rf files/*
-  fi
   chmod u-w .
 popd
