@@ -11,10 +11,21 @@ if (!strlen($projectName)) {
 $tempDir = "/tmp/civicrm-docker-dump.$projectName";
 $dumpScript = "/tmp/civicrm-docker-dump.$projectName.sync.sh";
 
-// Load definition from json
-$definitionFile = "$pwd/civicrm-docker-dump-manual.json";
-$definition = json_decode(file_get_contents($definitionFile), 1);
+// Choose the json to read configuration from
+if (isset($argv[1])) {
+    $environment = $argv[1];
+    $definitionFile = "$pwd/docker/$environment/civicrm-docker-dump-manual.json";
+} else {
+    $definitionFile = "$pwd/civicrm-docker-dump-manual.json";
+}
 
+// Check that the configuration file exists
+if (!file_exists($definitionFile)) {
+    throw new Exception("Can't find a civicrm-docker-dump-manual configuration file");
+}
+
+// Load definition from json
+$definition = json_decode(file_get_contents($definitionFile), 1);
 
 // Create temp directory
 $lines[] = "rm -rf {$tempDir}";
@@ -47,9 +58,15 @@ $state = [
 $lines[] = json_encode($state, JSON_PRETTY_PRINT);
 $lines[] = "EOF";
 $lines[] = "OUTFILE={$projectName}.$(date +%Y%m%dT%H%M%S).tar.gz";
-$lines[] = "tar -cz -C {$tempDir} . -f {$pwd}/state/\${OUTFILE}";
+
+if (isset($environment)) {
+    $lines[] = "tar -cz -C $tempDir . -f $pwd/state/$environment/\${OUTFILE}";
+} else {
+    $lines[] = "tar -cz -C {$tempDir} . -f {$pwd}/state/\${OUTFILE}";
+}
+
 $lines[] = "echo \$OUTFILE";
-$lines[] = "rm -rf {$tempDir}";
+$lines[] = "rm -rf $tempDir";
 
 // Abort if we have encountered any errors (e.g. due to missing variables in
 // the json definition, etc.)
