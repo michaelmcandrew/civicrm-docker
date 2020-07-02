@@ -23,7 +23,6 @@ services:
       - NNNN:80
     restart: always
     volumes:
-      - uploads:/var/www/html/wp-content/uploads
       - ./.bash_history:/home/civicrm/.bash_history
       - ./state:/state
       - ./src:/var/www/html
