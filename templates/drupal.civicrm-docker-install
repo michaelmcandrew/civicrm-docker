@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-# Fresh install of CiviCRM on Backdrop. Destroys any existing data and files (starts by running civicrm-docker-init)
+# Fresh install of CiviCRM on Drupal. Destroys any existing data and files (starts by running civicrm-docker-init)
 
 civicrm-docker-init
 
