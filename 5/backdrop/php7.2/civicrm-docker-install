@@ -1,0 +1,46 @@
+#!/bin/bash
+set -x
+# Fresh install of CiviCRM on Backdrop. Destroys any existing data and files (starts by running civicrm-docker-init)
+
+civicrm-docker-init
+
+pushd /var/www/html
+
+  chmod u+w .
+
+  # Prepare for Backdrop install
+  if test -f settings.php; then
+    chmod u+w settings.php
+    rm settings.php
+  fi
+  touch settings.php
+
+  # Run Backdrop install script
+  drush backdrop-site-install --db-url="mysql://$BACKDROP_DB_NAME:$BACKDROP_DB_PASS@$BACKDROP_DB_HOST/$BACKDROP_DB_NAME"
+
+  # Prepare for CiviCRM install
+  if test -f civicrm.settings.php; then
+    chmod u+w civicrm.settings.php
+    rm civicrm.settings.php
+  fi
+
+  # Run CiviCRM install script
+  cv core:install --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME --cms-base-url=$BASE_URL
+
+  # Overwrite generated settings files with ones from /usr/local/etc/
+  # TODO: check that this is actually needed.
+  for FILE in settings.php civicrm.settings.php; do
+    chmod u+w $FILE
+    cp /usr/local/etc/civicrm/$FILE .
+    chmod a-wx $FILE
+  done
+
+  # Copy config from html/config_* to config
+  for ENV in active staging; do
+    rm -rf ../config/$ENV/*
+    cp files/config_*/$ENV/* ../config/$ENV
+  done
+
+popd
+
+

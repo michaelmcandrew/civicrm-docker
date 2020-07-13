@@ -1,0 +1,49 @@
+#!/bin/sh
+set -e
+
+# sendmail via smtp
+cat << EOF > /etc/msmtprc
+host $SMTP_HOST
+auto_from on
+maildomain $SMTP_MAILDOMAIN
+EOF
+
+# civicrm php.ini settings
+cat << EOF > /usr/local/etc/php/conf.d/civicrm.ini
+memory_limit = 1024M
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time=300
+max_input_time  = -1
+sendmail_path=/usr/sbin/sendmail -t -i
+date.timezone=$PHP_DATE_TIMEZONE
+log_errors = On
+error_log = /dev/stderr
+EOF
+
+if [ "$DEBUG" = "ON" ]; then
+	cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+	CONTAINER_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
+	XDEBUG_REMOTE_HOST=$CONTAINER_IP
+    cat << EOF > /usr/local/etc/php/conf.d/debug.ini
+zend_extension=xdebug.so
+xdebug.show_error_trace=1
+xdebug.remote_enable=1
+xdebug.remote_autostart=1
+xdebug.profiler_enable_trigger=1
+xdebug.profiler_output_dir=/debug
+xdebug.var_display_max_depth = 8
+xdebug.var_display_max_children = 256
+xdebug.var_display_max_data = 1024 
+xdebug.remote_host=${CONTAINER_IP}
+max_execution_time=600
+EOF
+fi
+
+su civicrm -c /usr/local/bin/civicrm-docker-init
+
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+	set -- apache2-foreground "$@"
+fi
+exec "$@"
