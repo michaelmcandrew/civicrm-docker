@@ -1,9 +1,9 @@
 <?php
-$databases = array (
+$databases = array(
   'default' =>
-  array (
+  array(
     'default' =>
-    array (
+    array(
       'database' => getenv('DRUPAL_DB_NAME'),
       'username' => getenv('DRUPAL_DB_USER'),
       'password' => getenv('DRUPAL_DB_PASS'),
@@ -33,6 +33,6 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 $conf['reverse_proxy'] = TRUE;
 $conf['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
 
-if(file_exists('settings.extra.php')){
-    require_once 'settings.extra.php';
+if (file_exists('extra.settings.php')) {
+  require_once 'extra.settings.php';
 }
