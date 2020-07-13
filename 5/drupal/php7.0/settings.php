@@ -33,6 +33,6 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 $conf['reverse_proxy'] = TRUE;
 $conf['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
 
-if (file_exists('extra.settings.php')) {
-  require_once 'extra.settings.php';
+if (file_exists(__DIR__ . '/extra.settings.php')) {
+  require_once __DIR__ . '/extra.settings.php';
 }
