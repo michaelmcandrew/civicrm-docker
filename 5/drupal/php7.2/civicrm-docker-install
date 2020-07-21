@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
-# Fresh install of CiviCRM on Drupal. Destroys any existing data and files (starts by running civicrm-docker-init)
+# Fresh install of CiviCRM on Drupal
 
-civicrm-docker-init
+chmod +w /var/www/html/sites/default
 
 drush -r /var/www/html/ site-install -y
 drush dis overlay -y
