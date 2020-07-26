@@ -16,7 +16,7 @@ pushd /var/www/html
 
 popd
 
-[[ -d /var/www/html/wp-content/uploads/civicrm ]] || mkdir -p /var/www/html/wp-content/uploads/civicrm
+[[ -d /var/www/html/wp-content/uploads/civicrm ]] || su -c "mkdir -p /var/www/html/wp-content/uploads/civicrm"
 
 pushd /var/www/html/wp-content/uploads/civicrm
 
@@ -25,6 +25,8 @@ pushd /var/www/html/wp-content/uploads/civicrm
 
     [[ -f civicrm.settings.php ]] && chmod u+w civicrm.settings.php
     cp /usr/local/etc/civicrm/civicrm.settings.php .
-    chmod a-wx civicrm.settings.php
+    chmod a-x civicrm.settings.php
 
 popd
+
+chown -R civicrm:civicrm /var/www/html

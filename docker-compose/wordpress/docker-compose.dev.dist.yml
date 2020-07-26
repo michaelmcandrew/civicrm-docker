@@ -1,7 +1,48 @@
 version: "3.4"
 services:
+  volumes-provisioner:
+    image: hasnat/volumes-provisioner
+    environment:
+      PROVISION_DIRECTORIES: "UID:GID:0755:./.bash_history ./state ./src ./mysql/state"
+    volumes:
+      - ./.bash_history:/.bash_history
+      - ./state:/state
+      - ./src:/src
+      - ./mysql/state:/mysql/state
+    network_mode: none
+
+#  mysql:
+#    image: mysql:8.0
+#    environment:
+#      - MYSQL_ROOT_PASSWORD
+#      - CIVICRM_DB_NAME
+#      - CIVICRM_DB_USER
+#      - CIVICRM_DB_PASS
+#      - WORDPRESS_DB_NAME
+#      - WORDPRESS_DB_USER
+#      - WORDPRESS_DB_PASS
+#    restart: unless-stopped
+#    depends_on:
+#      - volumes-provisioner
+#    volumes:
+#      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+#      - ./mysql/001_db_init.sh:/docker-entrypoint-initdb.d/001_db_init.sh
+#      - ./mysql/state:/var/lib/mysql
+#
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin
+#    ports:
+##      - "8081:80"
+#      - "NNNN:80"
+#    links:
+#      - mysql
+#    environment:
+#      PMA_HOST: mysql
+#      PMA_PASSWORD: passwd
+#    restart: unless-stopped
+
   civicrm:
-    image: michaelmcandrew/civicrm-wordpress
+    image: michaelmcandrew/civicrm:wordpress
     hostname: civicrm
     environment:
       - PROJECT_NAME
@@ -20,16 +61,20 @@ services:
       - SMTP_MAILDOMAIN
       - DEBUG=ON
     ports:
+#      - 8080:80
       - NNNN:80
     restart: always
     volumes:
       - ./.bash_history:/home/civicrm/.bash_history
       - ./state:/state
       - ./src:/var/www/html
+
   maildev:
     image: djfarrelly/maildev
     restart: always
     ports:
+#      - 8082:80
       - NNNN:80
 volumes:
   uploads:
+  mysql:

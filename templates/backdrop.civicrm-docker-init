@@ -17,3 +17,5 @@ pushd /var/www/html
   chmod u-w .
 
 popd
+
+chown -R civicrm:civicrm /var/www/html

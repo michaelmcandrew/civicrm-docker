@@ -1,7 +1,17 @@
 version: "3.4"
 services:
+  volumes-provisioner:
+    image: hasnat/volumes-provisioner
+    environment:
+      PROVISION_DIRECTORIES: "UID:GID:0755:./.bash_history ./state uploads"
+    volumes:
+      - ./.bash_history:/.bash_history
+      - ./state:/state
+      - uploads:/uploads
+    network_mode: none
+
   civicrm:
-    image: michaelmcandrew/civicrm-wordpress
+    image: michaelmcandrew/civicrm:wordpress
     hostname: civicrm
     environment:
       - PROJECT_NAME
@@ -20,7 +30,9 @@ services:
       - SMTP_MAILDOMAIN
     ports:
       - NNNN:80
-    restart: always
+      restart: always
+      depends_on:
+        - volumes-provisioner
     volumes:
       - uploads:/var/www/html/wp-content/uploads
       - ./.bash_history:/home/civicrm/.bash_history

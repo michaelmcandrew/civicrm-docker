@@ -42,7 +42,7 @@ for tag in tags:
     if tag["php"]:
         tag_combos.append(["php" + tag["php"]])
 
-    # Subsitiute
+    # Substitute
     key_parts = []
     for tag_key, tag_value in tag.items():
         if tag_value:
@@ -61,6 +61,11 @@ for tag in tags:
 root_dir = os.path.dirname(os.path.abspath(__file__))
 run(["rm", "-r", root_dir + "/5"])
 templates = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+cms_settings_file_lookup = {
+    "backdrop": "settings.php",
+    "drupal": "settings.php",
+    "wordpress": "wp-config.php",
+}
 for combo in combos.values():
 
     cms = combo["variables"]["cms"]
@@ -82,11 +87,6 @@ for combo in combos.values():
     )
 
     # cms.settings.php
-    cms_settings_file_lookup = {
-        "backdrop": "settings.php",
-        "drupal": "settings.php",
-        "wordpress": "wp-config.php",
-    }
     cms_settings_file = cms_settings_file_lookup[cms]
     run(
         [

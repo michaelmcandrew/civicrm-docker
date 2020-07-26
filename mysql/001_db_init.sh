@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Init DB..."
+
+mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS ${WORDPRESS_DB_NAME};"
+mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "CREATE USER ${WORDPRESS_DB_USER}@localhost IDENTIFIED BY '${WORDPRESS_DB_PASS}';"
+mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "GRANT ALL PRIVILEGES ON ${WORDPRESS_DB_NAME}.* TO '${WORDPRESS_DB_USER}'@'localhost';"
+
+mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS ${CIVICRM_DB_NAME};"
+mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "CREATE USER ${CIVICRM_DB_USER}@localhost IDENTIFIED BY '${CIVICRM_DB_PASS}';"
+mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "GRANT ALL PRIVILEGES ON ${CIVICRM_DB_NAME}.* TO '${CIVICRM_DB_USER}'@'localhost';"
+
+echo "DB init complete!"

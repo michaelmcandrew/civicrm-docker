@@ -7,16 +7,16 @@ RUN curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 
 USER civicrm
 
-RUN wp core download
+RUN mkdir /home/civicrm/wp && wp core download --path=/home/civicrm/wp
 
-RUN mkdir /var/www/html/wp-content/uploads
+RUN mkdir /home/civicrm/wp/wp-content/uploads
 
-RUN cd /var/www/html/wp-content/plugins \
+RUN cd /home/civicrm/wp/wp-content/plugins \
     && curl -L https://download.civicrm.org/civicrm-{{ civi }}-wordpress.zip > civicrm-wordpress.zip \
     && unzip civicrm-wordpress.zip \
     && rm civicrm-wordpress.zip
 
-RUN cd /var/www/html/wp-content/plugins \
+RUN cd /home/civicrm/wp/wp-content/plugins \
     && curl -L https://download.civicrm.org/civicrm-{{ civi }}-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
@@ -30,3 +30,5 @@ COPY --chown=civicrm:civicrm ./wp-config.php /usr/local/etc/civicrm
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm
 
 COPY --chown=civicrm:civicrm ./.htaccess /usr/local/etc/civicrm
+
+RUN id civicrm

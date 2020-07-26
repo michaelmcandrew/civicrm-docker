@@ -20,21 +20,21 @@ The following tags are available:
 
 <!---START_TAGS-->
 
-- `5.27.1-drupal-php7.3` `5.27-drupal-php7.3` `5-drupal-php7.3` `5.27.1-php7.3` `5.27-php7.3` `5-php7.3` `drupal-php7.3` `php7.3` [(5/drupal/php7.3)](5/drupal/php7.3)
-- `5.27.1-drupal-php7.2` `5.27-drupal-php7.2` `5-drupal-php7.2` `5.27.1-drupal` `5.27-drupal` `5-drupal` `5.27.1-php7.2` `5.27-php7.2` `5-php7.2` `5.27.1` `5.27` `5` `drupal-php7.2` `drupal` `php7.2` `latest` [(5/drupal/php7.2)](5/drupal/php7.2)
-- `5.27.1-drupal-php7.1` `5.27-drupal-php7.1` `5-drupal-php7.1` `5.27.1-php7.1` `5.27-php7.1` `5-php7.1` `drupal-php7.1` `php7.1` [(5/drupal/php7.1)](5/drupal/php7.1)
-- `5.27.1-drupal-php7.0` `5.27-drupal-php7.0` `5-drupal-php7.0` `5.27.1-php7.0` `5.27-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` [(5/drupal/php7.0)](5/drupal/php7.0)
-- `5.27.1-drupal-php5.6` `5.27-drupal-php5.6` `5-drupal-php5.6` `5.27.1-php5.6` `5.27-php5.6` `5-php5.6` `drupal-php5.6` `php5.6` [(5/drupal/php5.6)](5/drupal/php5.6)
-- `5.27.1-wordpress-php7.3` `5.27-wordpress-php7.3` `5-wordpress-php7.3` `wordpress-php7.3` [(5/wordpress/php7.3)](5/wordpress/php7.3)
-- `5.27.1-wordpress-php7.2` `5.27-wordpress-php7.2` `5-wordpress-php7.2` `5.27.1-wordpress` `5.27-wordpress` `5-wordpress` `wordpress-php7.2` `wordpress` [(5/wordpress/php7.2)](5/wordpress/php7.2)
-- `5.27.1-wordpress-php7.1` `5.27-wordpress-php7.1` `5-wordpress-php7.1` `wordpress-php7.1` [(5/wordpress/php7.1)](5/wordpress/php7.1)
-- `5.27.1-wordpress-php7.0` `5.27-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` [(5/wordpress/php7.0)](5/wordpress/php7.0)
-- `5.27.1-wordpress-php5.6` `5.27-wordpress-php5.6` `5-wordpress-php5.6` `wordpress-php5.6` [(5/wordpress/php5.6)](5/wordpress/php5.6)
-- `5.27.1-backdrop-php7.3` `5.27-backdrop-php7.3` `5-backdrop-php7.3` `backdrop-php7.3` [(5/backdrop/php7.3)](5/backdrop/php7.3)
-- `5.27.1-backdrop-php7.2` `5.27-backdrop-php7.2` `5-backdrop-php7.2` `5.27.1-backdrop` `5.27-backdrop` `5-backdrop` `backdrop-php7.2` `backdrop` [(5/backdrop/php7.2)](5/backdrop/php7.2)
-- `5.27.1-backdrop-php7.1` `5.27-backdrop-php7.1` `5-backdrop-php7.1` `backdrop-php7.1` [(5/backdrop/php7.1)](5/backdrop/php7.1)
-- `5.27.1-backdrop-php7.0` `5.27-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` [(5/backdrop/php7.0)](5/backdrop/php7.0)
-- `5.27.1-backdrop-php5.6` `5.27-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` [(5/backdrop/php5.6)](5/backdrop/php5.6)
+- `5.27.1-drupal-php7.3` `5.27-drupal-php7.3` `5-drupal-php7.3` `5.27.1-php7.3` `5.27-php7.3` `5-php7.3` `drupal-php7.3` `php7.3` 5/drupal/php7.3
+- `5.27.1-drupal-php7.2` `5.27-drupal-php7.2` `5-drupal-php7.2` `5.27.1-drupal` `5.27-drupal` `5-drupal` `5.27.1-php7.2` `5.27-php7.2` `5-php7.2` `5.27.1` `5.27` `5` `drupal-php7.2` `drupal` `php7.2` `latest` 5/drupal/php7.2
+- `5.27.1-drupal-php7.1` `5.27-drupal-php7.1` `5-drupal-php7.1` `5.27.1-php7.1` `5.27-php7.1` `5-php7.1` `drupal-php7.1` `php7.1` 5/drupal/php7.1
+- `5.27.1-drupal-php7.0` `5.27-drupal-php7.0` `5-drupal-php7.0` `5.27.1-php7.0` `5.27-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` 5/drupal/php7.0
+- `5.27.1-drupal-php5.6` `5.27-drupal-php5.6` `5-drupal-php5.6` `5.27.1-php5.6` `5.27-php5.6` `5-php5.6` `drupal-php5.6` `php5.6` 5/drupal/php5.6
+- `5.27.1-wordpress-php7.3` `5.27-wordpress-php7.3` `5-wordpress-php7.3` `wordpress-php7.3` 5/wordpress/php7.3
+- `5.27.1-wordpress-php7.2` `5.27-wordpress-php7.2` `5-wordpress-php7.2` `5.27.1-wordpress` `5.27-wordpress` `5-wordpress` `wordpress-php7.2` `wordpress` 5/wordpress/php7.2
+- `5.27.1-wordpress-php7.1` `5.27-wordpress-php7.1` `5-wordpress-php7.1` `wordpress-php7.1` 5/wordpress/php7.1
+- `5.27.1-wordpress-php7.0` `5.27-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` 5/wordpress/php7.0
+- `5.27.1-wordpress-php5.6` `5.27-wordpress-php5.6` `5-wordpress-php5.6` `wordpress-php5.6` 5/wordpress/php5.6
+- `5.27.1-backdrop-php7.3` `5.27-backdrop-php7.3` `5-backdrop-php7.3` `backdrop-php7.3` 5/backdrop/php7.3
+- `5.27.1-backdrop-php7.2` `5.27-backdrop-php7.2` `5-backdrop-php7.2` `5.27.1-backdrop` `5.27-backdrop` `5-backdrop` `backdrop-php7.2` `backdrop` 5/backdrop/php7.2
+- `5.27.1-backdrop-php7.1` `5.27-backdrop-php7.1` `5-backdrop-php7.1` `backdrop-php7.1` 5/backdrop/php7.1
+- `5.27.1-backdrop-php7.0` `5.27-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` 5/backdrop/php7.0
+- `5.27.1-backdrop-php5.6` `5.27-backdrop-php5.6` `5-backdrop-php5.6` `backdrop-php5.6` 5/backdrop/php5.6
 
 <!---END_TAGS-->
 
@@ -46,14 +46,27 @@ If I plan on doing a fair amount of custom development as part of a project, I l
 
 If you aren't planning on doing much custom development (e.g. maybe you are just installing already existing modules and extensions) it might make more sense to take advantage of the CMS and CiviCRM already installed on the image (at `/var/www/html`).
 
-To get a local project up and running, choose your CMS flavour from the [docker-compose](docker-compose) and copy the entire directory to somewhere like `~/projects/backdrop-example-project`
+### Build
 
-1. Copy the `dev.dist.env` file to `.env`. and edit as appropriate (choose sensible passwords, set the base url and other required environment variables, e.g. the domain you want the site to be available at.
-2. Copy `docker-compose.dev.dist.yml` to `docker-compose.yml` and assign port numbers as appropriate (see _Reverse proxies_ for more details).
-3. _If you are mounting a mono repo from the host to the container_ (see above), place it in the `src` folder, and uncomment the `./src:/var/www/html` volume.
-4. _If you want development site to be available at a memorable address and/or you want to serve it via https_, configure it now.
-5. Run `docker-compose up -d`
-6. Install a new site with something like `docker-compose exec civicrm civicrm-docker-install` .
+This repo will allow you to locally create the images you need. The process works with a minimal Python3 environment.
+You may wish to create a virtual environment and install the dependencies in `requirements-dev.txt`.
+
+1. If you don't want to build all the possible image combinations yourself, tweak `variables.py` to contain only the environments you need.
+1. Run `./generate.py`, it will update the `combos.json` file with only the combinations setup at `variables.py`.
+1. Run `./build.py`, it will create and tag the images as specified by `combos.json`.\
+If working with Wordpress, make sure you note down the `civicrm` user UID and GID from the last step.
+
+### Run images
+
+To get a local project up and running, choose your CMS flavour from the [docker-compose folder](docker-compose) and copy the entire directory to somewhere like `~/projects/backdrop-example-project`.
+
+1. In the new folder, move `dev.dist.env` to `.env`. and edit as appropriate (choose sensible passwords, set the base url and other required environment variables, e.g. the domain you want the site to be available at).
+1. In the new folder, move `docker-compose.dev.dist.yml` to `docker-compose.yml` and assign NNNN port numbers as appropriate (see _Reverse proxies_ for further tweaks).\s
+If working with Wordpress, make sure to also update the user UID and GID.
+1. _If you want the development site to be available at a memorable address and/or you want to serve it via https_, configure it now.
+1. _If you want to have an out of the box development MySQL for Wordpress_, copy the `mysql` folder inside your project folder and uncomment the mysql section in the `docker-compose.yml`.
+1. Run `docker-compose up -d`
+1. Install a new site with something like `docker-compose exec civicrm civicrm-docker-install .`
 
 Note that if you already have a dump containing the database and file dump (in the format expected by civicrm-docker) you do not need to install the CMS and CiviCRM. You can just initialise it with `docker-compose exec civicrm civicrm-docker-install` and then follow the load instructions below.
 
@@ -109,8 +122,8 @@ For convenience, a zip of the original source code of CiviCRM and the selected C
 
 Steps up update this repository.
 
-`generate.py` automates the generation of Dockerfiles (updates combos.json).
-`build.py` builds images based on the dockerfiles (based on combos.json).
-`publish.py` publishes these images on dockerhub (based on combos.json).
+`generate.py` automates the generation of Dockerfiles (based on `variables.py` updates `combos.json`).
+`build.py` builds images based on the Dockerfiles (based on `combos.json` generates Docker images).
+`publish.py` publishes these images on DockerHub (based on `combos.json` pushes existing images to DockerHub).
 
 Note, at the moment, this is a manual process. It would be good to automate this, either nightly, or whenever a new release of CiviCRM or any of the CMSes, or an update of the base php image they are derived from comes out.

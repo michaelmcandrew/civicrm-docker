@@ -96,6 +96,10 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARD
 	$_SERVER['HTTPS'] = 'on';
 }
 
+if ( defined( 'WP_CLI' ) && WP_CLI && ! isset( $_SERVER['HTTP_HOST'] ) ) {
+    $_SERVER['HTTP_HOST'] = WP_HOME;
+}
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

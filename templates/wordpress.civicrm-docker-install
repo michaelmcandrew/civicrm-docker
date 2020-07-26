@@ -4,14 +4,19 @@ civicrm-docker-init
 
 pushd /var/www/html
 
-  wp core install --url=$BASE_URL --title=$PROJECT_NAME --admin_user=admin --admin_email=admin@example.org
+  chmod u+w .
+
+  su civicrm -c "cp -nr /home/civicrm/wp/* ."
+  su civicrm -c "wp core install --url=$BASE_URL --title=$PROJECT_NAME --admin_user=admin --admin_email=admin@example.org"
 
   # Prepare for CiviCRM install
   if test -f civicrm.settings.php; then
     chmod u+w civicrm.settings.php
   fi
 
-  cv core:install --settings-path=/var/www/html/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME
-  wp plugin activate civicrm
+  su civicrm -c "cv core:install --cms-base-url=$BASE_URL --settings-path=/var/www/html/wp-content/uploads/civicrm/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME"
+  su civicrm -c "wp plugin activate civicrm"
+
+  chmod u-w .
 
 popd

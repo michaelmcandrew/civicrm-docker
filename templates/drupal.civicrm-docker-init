@@ -15,4 +15,7 @@ pushd /var/www/html/sites/default
     chmod a-wx $FILE
   done
   chmod u-w .
+
 popd
+
+chown -R civicrm:civicrm /var/www/html
