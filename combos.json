@@ -1,4 +1,18 @@
 {
+    "5.27.3/backdrop/7.0": {
+        "dir": "5/backdrop/php7.0",
+        "tags": [
+            "5.27.3-backdrop-php7.0",
+            "5.27-backdrop-php7.0",
+            "5-backdrop-php7.0",
+            "backdrop-php7.0"
+        ],
+        "variables": {
+            "civi": "5.27.3",
+            "cms": "backdrop",
+            "php": "7.0"
+        }
+    },
     "5.27.3/backdrop/7.3": {
         "dir": "5/backdrop/php7.3",
         "tags": [
@@ -15,6 +29,24 @@
             "civi": "5.27.3",
             "cms": "backdrop",
             "php": "7.3"
+        }
+    },
+    "5.27.3/drupal/7.0": {
+        "dir": "5/drupal/php7.0",
+        "tags": [
+            "5.27.3-drupal-php7.0",
+            "5.27-drupal-php7.0",
+            "5-drupal-php7.0",
+            "5.27.3-php7.0",
+            "5.27-php7.0",
+            "5-php7.0",
+            "drupal-php7.0",
+            "php7.0"
+        ],
+        "variables": {
+            "civi": "5.27.3",
+            "cms": "drupal",
+            "php": "7.0"
         }
     },
     "5.27.3/drupal/7.3": {
@@ -41,6 +73,20 @@
             "civi": "5.27.3",
             "cms": "drupal",
             "php": "7.3"
+        }
+    },
+    "5.27.3/wordpress/7.0": {
+        "dir": "5/wordpress/php7.0",
+        "tags": [
+            "5.27.3-wordpress-php7.0",
+            "5.27-wordpress-php7.0",
+            "5-wordpress-php7.0",
+            "wordpress-php7.0"
+        ],
+        "variables": {
+            "civi": "5.27.3",
+            "cms": "wordpress",
+            "php": "7.0"
         }
     },
     "5.27.3/wordpress/7.3": {
