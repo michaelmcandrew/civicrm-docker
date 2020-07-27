@@ -6,5 +6,5 @@ latest_civicrm_release = os.popen(
 ).read()
 civi_releases = [latest_civicrm_release]
 cms_variants = ["drupal", "wordpress", "backdrop"]
-php_releases = ["7.3"]
+php_releases = ["7.0", "7.3"]
 defaults = {"civi": latest_civicrm_release, "cms": "drupal", "php": "7.3"}
