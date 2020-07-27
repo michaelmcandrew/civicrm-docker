@@ -3,7 +3,7 @@
 function civicrm_dump($state) {
 
   $state['start'] = date(DATE_ISO8601);
-  $tarName = "/state/{$state['project']}." . date('Ymd\THis') . ".tar.gz";
+  $tarName = "{$state['project']}." . date('Ymd\THis') . ".tar.gz";
 
   $dumpDir = tempnam('/tmp', 'civicrm_dump_');
   `mkdir $dumpDir`;
@@ -25,7 +25,7 @@ function civicrm_dump($state) {
   $state['end'] = date(DATE_ISO8601);
   file_put_contents("$dumpDir/state.json", json_encode($state, JSON_PRETTY_PRINT));
 
-  `tar -czf $tarName -C $dumpDir .`;
+  `tar -czf /state/$tarName -C $dumpDir .`;
 
   `rm -r $dumpDir`;
 
