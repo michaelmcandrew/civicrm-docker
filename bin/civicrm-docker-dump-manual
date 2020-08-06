@@ -8,8 +8,8 @@ $projectName = basename($pwd);
 if (!strlen($projectName)) {
     trigger_error("Could not detect project name", E_USER_WARNING);
 }
-$tempDir = "/tmp/civicrm-docker-dump.$projectName";
-$dumpScript = "/tmp/civicrm-docker-dump.$projectName.sync.sh";
+$tempDir = "~/.local/civicrm-docker/tmp/civicrm-docker-dump.$projectName";
+$dumpScript = "~/.local/civicrm-docker/tmp/civicrm-docker-dump.$projectName.sync.sh";
 
 // Load definition from json
 $definitionFile = "$pwd/civicrm-docker-dump-manual.json";
@@ -18,7 +18,7 @@ $definition = json_decode(file_get_contents($definitionFile), 1);
 
 // Create temp directory
 $lines[] = "rm -rf {$tempDir}";
-$lines[] = "mkdir {$tempDir}";
+$lines[] = "mkdir -p {$tempDir}";
 
 // Dump databases
 foreach ($definition['databases'] as $dbKey => $database) {
