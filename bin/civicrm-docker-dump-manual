@@ -8,8 +8,10 @@ $projectName = basename($pwd);
 if (!strlen($projectName)) {
     trigger_error("Could not detect project name", E_USER_WARNING);
 }
-$tempDir = "~/.local/civicrm-docker/tmp/civicrm-docker-dump.$projectName";
-$dumpScript = "~/.local/civicrm-docker/tmp/civicrm-docker-dump.$projectName.sync.sh";
+$home = getenv("HOME");
+`mkdir -p {$home}/.local/civicrm-docker/tmp`;
+$tempDir = "{$home}/.local/civicrm-docker/tmp/civicrm-docker-dump.$projectName";
+$dumpScript = "{$home}/.local/civicrm-docker/tmp/civicrm-docker-dump.$projectName.sync.sh";
 
 // Load definition from json
 $definitionFile = "$pwd/civicrm-docker-dump-manual.json";
