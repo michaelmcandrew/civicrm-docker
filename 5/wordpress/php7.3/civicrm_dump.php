@@ -6,6 +6,8 @@ function civicrm_dump($state) {
   $tarName = "{$state['project']}." . date('Ymd\THis') . ".tar.gz";
 
   $dumpDir = tempnam('/tmp', 'civicrm_dump_');
+  // tempnam creates this as a file, so we need to delete it first
+  `rm $dumpDir`;
   `mkdir $dumpDir`;
 
   foreach ($state['databases'] as $name) {
