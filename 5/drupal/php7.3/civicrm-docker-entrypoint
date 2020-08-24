@@ -4,8 +4,15 @@ set -e
 # sendmail via smtp
 cat << EOF > /etc/msmtprc
 host $SMTP_HOST
-auto_from on
-maildomain $SMTP_MAILDOMAIN
+port $SMTP_PORT
+
+auth on
+user $SMTP_USER
+password $SMTP_PASS
+
+tls on
+tls_starttls on
+
 EOF
 
 # civicrm php.ini settings
