@@ -92,6 +92,8 @@ RUN chown -R civicrm:civicrm /var/www
 
 ENV APACHE_RUN_USER=civicrm
 
+ENV APACHE_RUN_GROUP=civicrm
+
 USER civicrm
 
 RUN composer global require consolidation/cgr
