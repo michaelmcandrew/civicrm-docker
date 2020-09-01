@@ -5,15 +5,17 @@ set -e
 cat << EOF > /etc/msmtprc
 host $SMTP_HOST
 port $SMTP_PORT
+EOF
 
+if [ ! -z "$SMTP_USER" ]; then
+cat << EOF >> /etc/msmtprc
 auth on
 user $SMTP_USER
 password $SMTP_PASS
-
 tls on
 tls_starttls on
-
 EOF
+fi
 
 # civicrm php.ini settings
 cat << EOF > /usr/local/etc/php/conf.d/civicrm.ini
