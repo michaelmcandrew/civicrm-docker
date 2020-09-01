@@ -3,19 +3,26 @@ set -e
 
 # sendmail via smtp
 cat << EOF > /etc/msmtprc
+defaults
 host $SMTP_HOST
-port $SMTP_PORT
 EOF
 
-if [ ! -z "$SMTP_USER" ]; then
+if [ ! -z "$SMTP_PORT" ]; then
 cat << EOF >> /etc/msmtprc
-auth on
-user $SMTP_USER
-password $SMTP_PASS
-tls on
-tls_starttls on
+port $SMTP_PORT
 EOF
 fi
+
+if [ ! -z "$SMTP_USERNAME" ]; then
+cat << EOF >> /etc/msmtprc
+auth on
+tls on
+tls_starttls on
+user $SMTP_USERNAME
+password $SMTP_PASS
+EOF
+fi
+
 
 # civicrm php.ini settings
 cat << EOF > /usr/local/etc/php/conf.d/civicrm.ini
