@@ -13,13 +13,13 @@ port $SMTP_PORT
 EOF
 fi
 
-if [ ! -z "$SMTP_USERNAME" ]; then
+if [ ! -z "$SMTP_USER" ]; then
 cat << EOF >> /etc/msmtprc
 auth on
 tls on
 tls_starttls on
-user $SMTP_USERNAME
-password $SMTP_PASS
+user $SMTP_USER
+password $SMTP_PASSWORD
 EOF
 fi
 
