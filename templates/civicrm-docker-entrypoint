@@ -3,7 +3,6 @@ set -e
 
 # sendmail via smtp
 cat << EOF > /etc/msmtprc
-defaults
 host $SMTP_HOST
 EOF
 
