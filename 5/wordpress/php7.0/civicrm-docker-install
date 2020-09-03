@@ -11,7 +11,7 @@ pushd /var/www/html
     chmod u+w civicrm.settings.php
   fi
 
-  cv core:install --settings-path=/var/www/html/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME
+  cv core:install --settings-path=/var/www/html/wp-content/uploads/civicrm/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME
   wp plugin activate civicrm
 
 popd
