@@ -20,12 +20,12 @@ The following tags are available:
 
 <!---START_TAGS-->
 
-- `5.29.0-drupal-php7.0` `5.29-drupal-php7.0` `5-drupal-php7.0` `5.29.0-php7.0` `5.29-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` [(5/drupal/php7.0)](5/drupal/php7.0)
-- `5.29.0-drupal-php7.3` `5.29-drupal-php7.3` `5-drupal-php7.3` `5.29.0-drupal` `5.29-drupal` `5-drupal` `5.29.0-php7.3` `5.29-php7.3` `5-php7.3` `5.29.0` `5.29` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
-- `5.29.0-wordpress-php7.0` `5.29-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` [(5/wordpress/php7.0)](5/wordpress/php7.0)
-- `5.29.0-wordpress-php7.3` `5.29-wordpress-php7.3` `5-wordpress-php7.3` `5.29.0-wordpress` `5.29-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
-- `5.29.0-backdrop-php7.0` `5.29-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` [(5/backdrop/php7.0)](5/backdrop/php7.0)
-- `5.29.0-backdrop-php7.3` `5.29-backdrop-php7.3` `5-backdrop-php7.3` `5.29.0-backdrop` `5.29-backdrop` `5-backdrop` `backdrop-php7.3` `backdrop` [(5/backdrop/php7.3)](5/backdrop/php7.3)
+- `5.29.1-drupal-php7.0` `5.29-drupal-php7.0` `5-drupal-php7.0` `5.29.1-php7.0` `5.29-php7.0` `5-php7.0` `drupal-php7.0` `php7.0` [(5/drupal/php7.0)](5/drupal/php7.0)
+- `5.29.1-drupal-php7.3` `5.29-drupal-php7.3` `5-drupal-php7.3` `5.29.1-drupal` `5.29-drupal` `5-drupal` `5.29.1-php7.3` `5.29-php7.3` `5-php7.3` `5.29.1` `5.29` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
+- `5.29.1-wordpress-php7.0` `5.29-wordpress-php7.0` `5-wordpress-php7.0` `wordpress-php7.0` [(5/wordpress/php7.0)](5/wordpress/php7.0)
+- `5.29.1-wordpress-php7.3` `5.29-wordpress-php7.3` `5-wordpress-php7.3` `5.29.1-wordpress` `5.29-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
+- `5.29.1-backdrop-php7.0` `5.29-backdrop-php7.0` `5-backdrop-php7.0` `backdrop-php7.0` [(5/backdrop/php7.0)](5/backdrop/php7.0)
+- `5.29.1-backdrop-php7.3` `5.29-backdrop-php7.3` `5-backdrop-php7.3` `5.29.1-backdrop` `5.29-backdrop` `5-backdrop` `backdrop-php7.3` `backdrop` [(5/backdrop/php7.3)](5/backdrop/php7.3)
 
 <!---END_TAGS-->
 
