@@ -13,7 +13,7 @@ EOF
 fi
 
 # Note: we assume TlS when we have a username and password
- [ ! -z "$SMTP_USER" ] && [ ! -z "$SMTP_PASSWORD" ]; then
+if [ ! -z "$SMTP_USER" ] && [ ! -z "$SMTP_PASSWORD" ]; then
 cat << EOF >> /etc/msmtprc
 auth on
 tls on
