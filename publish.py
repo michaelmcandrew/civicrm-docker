@@ -10,3 +10,4 @@ for combo in combos.values():
     for tag in combo["tags"]:
         run(["docker", "push", f"{image}:{tag}"])
 
+run(["docker", "push", "michaelmcandrew/civicrm-mysql:5.7"])

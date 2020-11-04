@@ -17,3 +17,5 @@ for key, combo in combos.items():
         command.extend(["--tag", f"{image}:{tag}"])
     run(command)
 
+run(["docker", "pull", "mysql:5.7"])
+run(["docker", "build", "mysql", "--tag", "michaelmcandrew/civicrm-mysql:5.7"])
