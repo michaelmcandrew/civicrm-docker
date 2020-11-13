@@ -18,4 +18,4 @@ for key, combo in combos.items():
     run(command)
 
 run(["docker", "pull", "mysql:5.7"])
-run(["docker", "build", "mysql", "--tag", "michaelmcandrew/civicrm-mysql:5.7"])
+run(["docker", "build", "mysql", "--tag", "michaelmcandrew/civicrm-mysql:5.7", "--tag", "michaelmcandrew/civicrm-mysql:latest"])
