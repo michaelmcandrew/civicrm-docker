@@ -1,18 +1,4 @@
 {
-    "5.31.1/backdrop/7,4": {
-        "dir": "5/backdrop/php7,4",
-        "tags": [
-            "5.31.1-backdrop-php7,4",
-            "5.31-backdrop-php7,4",
-            "5-backdrop-php7,4",
-            "backdrop-php7,4"
-        ],
-        "variables": {
-            "civi": "5.31.1",
-            "cms": "backdrop",
-            "php": "7,4"
-        }
-    },
     "5.31.1/backdrop/7.3": {
         "dir": "5/backdrop/php7.3",
         "tags": [
@@ -31,22 +17,18 @@
             "php": "7.3"
         }
     },
-    "5.31.1/drupal/7,4": {
-        "dir": "5/drupal/php7,4",
+    "5.31.1/backdrop/7.4": {
+        "dir": "5/backdrop/php7.4",
         "tags": [
-            "5.31.1-drupal-php7,4",
-            "5.31-drupal-php7,4",
-            "5-drupal-php7,4",
-            "5.31.1-php7,4",
-            "5.31-php7,4",
-            "5-php7,4",
-            "drupal-php7,4",
-            "php7,4"
+            "5.31.1-backdrop-php7.4",
+            "5.31-backdrop-php7.4",
+            "5-backdrop-php7.4",
+            "backdrop-php7.4"
         ],
         "variables": {
             "civi": "5.31.1",
-            "cms": "drupal",
-            "php": "7,4"
+            "cms": "backdrop",
+            "php": "7.4"
         }
     },
     "5.31.1/drupal/7.3": {
@@ -75,18 +57,22 @@
             "php": "7.3"
         }
     },
-    "5.31.1/wordpress/7,4": {
-        "dir": "5/wordpress/php7,4",
+    "5.31.1/drupal/7.4": {
+        "dir": "5/drupal/php7.4",
         "tags": [
-            "5.31.1-wordpress-php7,4",
-            "5.31-wordpress-php7,4",
-            "5-wordpress-php7,4",
-            "wordpress-php7,4"
+            "5.31.1-drupal-php7.4",
+            "5.31-drupal-php7.4",
+            "5-drupal-php7.4",
+            "5.31.1-php7.4",
+            "5.31-php7.4",
+            "5-php7.4",
+            "drupal-php7.4",
+            "php7.4"
         ],
         "variables": {
             "civi": "5.31.1",
-            "cms": "wordpress",
-            "php": "7,4"
+            "cms": "drupal",
+            "php": "7.4"
         }
     },
     "5.31.1/wordpress/7.3": {
@@ -105,6 +91,20 @@
             "civi": "5.31.1",
             "cms": "wordpress",
             "php": "7.3"
+        }
+    },
+    "5.31.1/wordpress/7.4": {
+        "dir": "5/wordpress/php7.4",
+        "tags": [
+            "5.31.1-wordpress-php7.4",
+            "5.31-wordpress-php7.4",
+            "5-wordpress-php7.4",
+            "wordpress-php7.4"
+        ],
+        "variables": {
+            "civi": "5.31.1",
+            "cms": "wordpress",
+            "php": "7.4"
         }
     }
 }

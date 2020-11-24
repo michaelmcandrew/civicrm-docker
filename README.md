@@ -21,11 +21,11 @@ The following tags are available:
 <!---START_TAGS-->
 
 - `5.31.1-drupal-php7.3` `5.31-drupal-php7.3` `5-drupal-php7.3` `5.31.1-drupal` `5.31-drupal` `5-drupal` `5.31.1-php7.3` `5.31-php7.3` `5-php7.3` `5.31.1` `5.31` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
-- `5.31.1-drupal-php7,4` `5.31-drupal-php7,4` `5-drupal-php7,4` `5.31.1-php7,4` `5.31-php7,4` `5-php7,4` `drupal-php7,4` `php7,4` [(5/drupal/php7,4)](5/drupal/php7,4)
+- `5.31.1-drupal-php7.4` `5.31-drupal-php7.4` `5-drupal-php7.4` `5.31.1-php7.4` `5.31-php7.4` `5-php7.4` `drupal-php7.4` `php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
 - `5.31.1-wordpress-php7.3` `5.31-wordpress-php7.3` `5-wordpress-php7.3` `5.31.1-wordpress` `5.31-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
-- `5.31.1-wordpress-php7,4` `5.31-wordpress-php7,4` `5-wordpress-php7,4` `wordpress-php7,4` [(5/wordpress/php7,4)](5/wordpress/php7,4)
+- `5.31.1-wordpress-php7.4` `5.31-wordpress-php7.4` `5-wordpress-php7.4` `wordpress-php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
 - `5.31.1-backdrop-php7.3` `5.31-backdrop-php7.3` `5-backdrop-php7.3` `5.31.1-backdrop` `5.31-backdrop` `5-backdrop` `backdrop-php7.3` `backdrop` [(5/backdrop/php7.3)](5/backdrop/php7.3)
-- `5.31.1-backdrop-php7,4` `5.31-backdrop-php7,4` `5-backdrop-php7,4` `backdrop-php7,4` [(5/backdrop/php7,4)](5/backdrop/php7,4)
+- `5.31.1-backdrop-php7.4` `5.31-backdrop-php7.4` `5-backdrop-php7.4` `backdrop-php7.4` [(5/backdrop/php7.4)](5/backdrop/php7.4)
 
 <!---END_TAGS-->
 
@@ -88,7 +88,7 @@ server {
 
 The images are designed to be used with whatever MySQL backend you like: one in a container, one on bare metal, or maybe a DB appliance from a cloud provider.
 
-A simple mysql image based on the official `mysql:5.6` and suitable for CiviCRM can be found at `michaelmcandrew/mysql-civicrm`. See the `docker-compose.dev.dist.yml` files in the docker-compose directory for an example of this image in use.
+A simple mysql image based on the official `mysql:5.7` and suitable for CiviCRM can be found at `michaelmcandrew/mysql-civicrm`. See the `docker-compose.dev.dist.yml` files in the docker-compose directory for an example of this image in use.
 
 ## Source code
 

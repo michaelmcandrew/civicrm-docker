@@ -5,8 +5,7 @@ FROM php:{{ php }}-apache
 # libc-client-dev and libkrb5-dev required for the imap php extension
 # libicu-dev required for the intl php extension
 # libmagickwand-dev required for the imagick php extension
-{% if php not in ['7.2', '7.3'] %}# libmcrypt-dev required for the mcrypt php extension
-{% endif %}# libjpeg62-turbo-dev and libpng-dev required for the gd php extension
+# libjpeg62-turbo-dev and libpng-dev required for the gd php extension
 # libxml2-dev required for the soap php extension
 # iproute2 is required to get the host ip at runtime for XDEBUG_REMOTE_HOST environment variable
 # msmtp-mta allows us to globally redirect email via SMTP
@@ -22,8 +21,7 @@ RUN apt-get update \
   libjpeg62-turbo-dev \
   libkrb5-dev \
   libmagickwand-dev \
-  {% if php not in ['7.2', '7.3'] %}libmcrypt-dev \
-  {% endif %}libpng-dev \
+  libpng-dev \
   libxml2-dev \
   libzip-dev \
   msmtp-mta \
@@ -42,8 +40,7 @@ RUN apt-get update \
 # * intl
 # * json (already enabled)
 # * mbstring (already enabled)
-{% if php not in ['7.2', '7.3'] %}# * mcrypt
-{% endif %}# * mysqli
+# * mysqli
 # * openssl (already enabled)
 # * pdo_mysql
 # * phar (already enabled)
@@ -54,15 +51,14 @@ RUN apt-get update \
 # Configure and install php extensions (not configuration comes before installation)
 
 RUN docker-php-ext-install bcmath \
-  && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
-  && docker-php-ext-install gd \
+  {% if php in ['7.3'] %}&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+  {% else  %}&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+  {% endif %}&& docker-php-ext-install gd \
   && docker-php-ext-install gettext \
   && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
   && docker-php-ext-install imap \
   && docker-php-ext-install intl \
-  {% if php not in ['7.2', '7.3'] %}&& docker-php-ext-install mcrypt \
-  {% endif %}{% if php == '5.6' %}&& docker-php-ext-install mysql \
-  {% endif %}&& docker-php-ext-install mysqli \
+  && docker-php-ext-install mysqli \
   && docker-php-ext-install opcache \
   && docker-php-ext-install pdo_mysql \
   && docker-php-ext-install soap \
@@ -74,9 +70,8 @@ RUN pecl install imagick \
   && docker-php-ext-enable imagick
 
 # Install xdebug PECL extension
-{% if php == '5.6' %}RUN pecl install xdebug-2.5.5
-{% else %}RUN pecl install xdebug
-{% endif %}
+RUN pecl install xdebug
+
 # Install composer using the method described at https://getcomposer.org/download/ (TODO consider whether this is really necessary - we could remove from this image)
 RUN EXPECTED_SIGNATURE="$(curl https://composer.github.io/installer.sig)" \
   && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \

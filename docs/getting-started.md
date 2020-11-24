@@ -37,7 +37,7 @@ CiviCRM (including the l10n files) is installed at `/var/www/html/sites/all/modu
 
 ### The `civicrm-base` image
 
-The CMS specific images are built from a `civicrm-base` image, which satisfies CiviCRM's dependecies and is built from the offical docker `php:7.1-strech` image.
+The CMS specific images are built from a `civicrm-base` image, which satisfies CiviCRM's dependecies and is built from the offical docker `php:strech` image.
 
 `cv` is installed at `/usr/local/bin`.
 
