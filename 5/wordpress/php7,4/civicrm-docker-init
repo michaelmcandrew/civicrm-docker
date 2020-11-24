@@ -12,19 +12,18 @@ pushd /var/www/html
     # .htaccess
     [[ -f .htaccess ]] || cp /usr/local/etc/civicrm/.htaccess .
 
-    chmod u-w .
+    [[ -d /var/www/html/wp-content/uploads/civicrm ]] || mkdir -p /var/www/html/wp-content/uploads/civicrm
+
+    pushd /var/www/html/wp-content/uploads/civicrm
+
+        # CiviCRM settings
+        chmod u+w .
+
+        [[ -f civicrm.settings.php ]] && chmod u+w civicrm.settings.php
+        cp /usr/local/etc/civicrm/civicrm.settings.php .
+        chmod a-wx civicrm.settings.php
+
+    popd
 
 popd
 
-[[ -d /var/www/html/wp-content/uploads/civicrm ]] || mkdir -p /var/www/html/wp-content/uploads/civicrm
-
-pushd /var/www/html/wp-content/uploads/civicrm
-
-    # CiviCRM settings
-    chmod u+w .
-
-    [[ -f civicrm.settings.php ]] && chmod u+w civicrm.settings.php
-    cp /usr/local/etc/civicrm/civicrm.settings.php .
-    chmod a-wx civicrm.settings.php
-
-popd
