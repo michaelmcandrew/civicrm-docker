@@ -52,7 +52,7 @@ RUN apt-get update \
 
 RUN docker-php-ext-install bcmath \
   {% if php in ['7.3'] %}&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
-  {% else  %}&& docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+  {% else  %}&& docker-php-ext-configure gd --with-jpeg \
   {% endif %}&& docker-php-ext-install gd \
   && docker-php-ext-install gettext \
   && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \

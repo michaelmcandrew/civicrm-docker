@@ -51,7 +51,7 @@ RUN apt-get update \
 # Configure and install php extensions (not configuration comes before installation)
 
 RUN docker-php-ext-install bcmath \
-  && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+  && docker-php-ext-configure gd --with-jpeg \
   && docker-php-ext-install gd \
   && docker-php-ext-install gettext \
   && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
