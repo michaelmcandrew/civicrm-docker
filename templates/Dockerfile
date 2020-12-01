@@ -129,3 +129,10 @@ ENTRYPOINT [ "civicrm-docker-entrypoint" ]
 CMD ["apache2-foreground"]
 
 {% include cms + '.Dockerfile' %}
+
+# Configure mysqldump
+
+COPY ./.my.cnf /home/civicrm/.my.cnf
+
+[mysqldump]
+max_allowed_packet=1024M
