@@ -130,6 +130,7 @@ for combo in combos.values():
     run(
         [
             "cp",
+            "templates/.my.cnf",
             "templates/apache.conf",
             "templates/civicrm_dump.php",
             "templates/civicrm-docker-entrypoint",
