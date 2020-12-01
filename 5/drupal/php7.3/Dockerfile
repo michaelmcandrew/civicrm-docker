@@ -156,3 +156,11 @@ COPY ./civicrm-docker-entrypoint ./civicrm-docker-init ./civicrm-docker-dump ./c
 COPY --chown=civicrm:civicrm ./settings.php /usr/local/etc/civicrm
 
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm
+
+
+# Configure mysqldump
+
+COPY ./.my.cnf /home/civicrm/.my.cnf
+
+[mysqldump]
+max_allowed_packet=1024M
