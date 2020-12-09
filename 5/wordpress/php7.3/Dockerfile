@@ -48,7 +48,7 @@ RUN apt-get update \
 # * soap
 # * zip
 
-# Configure and install php extensions (not configuration comes before installation)
+# Configure and install php extensions (note configuration comes before installation)
 
 RUN docker-php-ext-install bcmath \
   && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
