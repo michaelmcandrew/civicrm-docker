@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Check that you have the environment variable necessary to create the dump
+ */
+
+$requiredEnvVars = [
+    'PROJECT_NAME',
+    'CIVICRM_DB_NAME',
+    'WORDPRESS_DB_NAME'
+];
+
+foreach ($requiredEnvVars as $var) {
+    if (getenv($var) === false) {
+        die("Error: environment variable '$var' was not found.\n");
+    }
+}
+
+$state = [
+    'project' => getenv('PROJECT_NAME'),
+    'databases' => [
+        'civicrm',
+        'wordpress' 
+    ],
+    'directories' => [
+        'files' => '/var/www/html/wp-content/uploads'
+    ]
+];
+
+require_once('/usr/local/src/civicrm_dump.php');
+civicrm_dump($state);
+
+
