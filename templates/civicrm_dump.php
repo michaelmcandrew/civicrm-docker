@@ -18,7 +18,7 @@ function civicrm_dump($state) {
       }
       $$var = getenv(strtoupper($name) . '_DB_' . $var);
     }
-    `mysqldump -u $USER -p$PASS -h $HOST -P $PORT $NAME --single-transaction --skip-triggers | sed -E "/^\/\*\![[:digit:]]+ DEFINER/d" > {$dumpDir}/{$name}.sql`;
+    `mysqldump -u $USER -p$PASS -h $HOST -P $PORT $NAME --no-tablespaces --single-transaction --skip-triggers | sed -E "/^\/\*\![[:digit:]]+ DEFINER/d" > {$dumpDir}/{$name}.sql`;
   }
   foreach ($state['directories'] as $name => $path) {
     `tar -czf {$dumpDir}/{$name}.tar.gz -C $path .`;
