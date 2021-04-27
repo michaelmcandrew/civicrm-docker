@@ -1,0 +1,18 @@
+#!/bin/bash
+set -x
+
+# Initialise CiviCRM and Drupal ready for loading an existing state dump or a fresh installation. Destroys any existing data and files.
+# Called automatically by civicrm-docker-install.
+
+pushd /var/www/html/sites/default
+
+  chmod u+w .
+  for FILE in settings.php civicrm.settings.php; do
+    if test -f "$FILE"; then
+      chmod u+w $FILE
+    fi
+    cp /usr/local/etc/civicrm/$FILE .
+    chmod a-wx $FILE
+  done
+  chmod u-w .
+popd
