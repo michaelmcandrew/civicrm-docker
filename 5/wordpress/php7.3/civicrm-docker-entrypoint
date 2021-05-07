@@ -45,7 +45,7 @@ if [ "$DEBUG" = "ON" ]; then
     cat << EOF > /usr/local/etc/php/conf.d/debug.ini
 zend_extension=xdebug.so
 
-xdebug.mode=develop,trace,debug
+xdebug.mode=develop,debug
 
 xdebug.client_host=${CONTAINER_IP}
 xdebug.start_with_request=yes
