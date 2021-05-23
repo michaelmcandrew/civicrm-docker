@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+require_once('/usr/local/src/civicrm_dump.php');
+
+if(getenv('STATE_JSON_TEMPLATE')){
+    $state = json_decode(file_get_contents(getenv('STATE_JSON_TEMPLATE')), true);
+} else { 
+    $state = [
+        'project' => getenv('PROJECT_NAME'),
+        'databases' => [
+            'civicrm',
+            'drupal' 
+        ],
+        'directories' => [
+            'files' => '/var/www/html/sites/default/files'
+            ]
+    ];
+}
+
+civicrm_dump($state);
+
+
