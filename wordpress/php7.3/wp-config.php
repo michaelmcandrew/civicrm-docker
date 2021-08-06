@@ -91,6 +91,7 @@ if (getenv('DEBUG') == 'ON') {
 define('WP_HOME', getenv('BASE_URL'));
 define('WP_SITEURL', getenv('BASE_URL'));
 define('WP_AUTO_UPDATE_CORE', false);
+define( 'AUTOMATIC_UPDATER_DISABLED', true);
 
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
 	$_SERVER['HTTPS'] = 'on';

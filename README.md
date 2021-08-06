@@ -20,12 +20,12 @@ The following tags are available:
 
 <!---START_TAGS-->
 
-- `5.39.0-drupal-php7.3` `5.39-drupal-php7.3` `5-drupal-php7.3` `5.39.0-drupal` `5.39-drupal` `5-drupal` `5.39.0-php7.3` `5.39-php7.3` `5-php7.3` `5.39.0` `5.39` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
-- `5.39.0-drupal-php7.4` `5.39-drupal-php7.4` `5-drupal-php7.4` `5.39.0-php7.4` `5.39-php7.4` `5-php7.4` `drupal-php7.4` `php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
-- `5.39.0-wordpress-php7.3` `5.39-wordpress-php7.3` `5-wordpress-php7.3` `5.39.0-wordpress` `5.39-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
-- `5.39.0-wordpress-php7.4` `5.39-wordpress-php7.4` `5-wordpress-php7.4` `wordpress-php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
-- `5.39.0-backdrop-php7.3` `5.39-backdrop-php7.3` `5-backdrop-php7.3` `5.39.0-backdrop` `5.39-backdrop` `5-backdrop` `backdrop-php7.3` `backdrop` [(5/backdrop/php7.3)](5/backdrop/php7.3)
-- `5.39.0-backdrop-php7.4` `5.39-backdrop-php7.4` `5-backdrop-php7.4` `backdrop-php7.4` [(5/backdrop/php7.4)](5/backdrop/php7.4)
+- `drupal-php7.3` `drupal` `php7.3` `latest` `drupal-php7.3` `drupal` `php7.3` `latest` [(/drupal/php7.3)](/drupal/php7.3)
+- `drupal-php7.4` `php7.4` `drupal-php7.4` `php7.4` [(/drupal/php7.4)](/drupal/php7.4)
+- `wordpress-php7.3` `wordpress` `wordpress-php7.3` `wordpress` [(/wordpress/php7.3)](/wordpress/php7.3)
+- `wordpress-php7.4` `wordpress-php7.4` [(/wordpress/php7.4)](/wordpress/php7.4)
+- `backdrop-php7.3` `backdrop` `backdrop-php7.3` `backdrop` [(/backdrop/php7.3)](/backdrop/php7.3)
+- `backdrop-php7.4` `backdrop-php7.4` [(/backdrop/php7.4)](/backdrop/php7.4)
 
 <!---END_TAGS-->
 
