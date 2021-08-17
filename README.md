@@ -56,34 +56,6 @@ Running `docker-compose exec civicrm civicrm-docker-dump` will place a database 
 
 Running `docker-compose exec civicrm civicrm-docker-load` will load an existing database dump from the `/state` folder of the container (which is mapped to the `./state` sub-folder in your docker-compose root on the host.
 
-# Reverse proxy
-
-You may wish to reverse proxy your site so that it is available at a nice looking domain like https://example.com, rather than, e.g. http://localhost:8888. Here is a suitable snippet for nginx to get you started
-
-```
-server {
-    listen 80;
-    server_name example.com;
-    return 301 https://$host$request_uri;
-}
-server {
-    listen 443 ssl;
-    server_name example.com;
-
-    include snippets/snakeoil.conf;
-
-    location / {
-        proxy_pass http://localhost:8888;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header X-Real-IP $remote_addr;
-	    proxy_read_timeout 300s;
-	    proxy_send_timeout 300s;
-    }
-}
-```
-
 # MySQL
 
 The images are designed to be used with whatever MySQL backend you like: one in a container, one on bare metal, or maybe a DB appliance from a cloud provider.
