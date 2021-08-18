@@ -107,11 +107,13 @@ RUN curl -LsS https://download.civicrm.org/civix/civix.phar -o /usr/local/bin/ci
 
 # Configure apache
 
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers remoteip
 
 COPY ./apache.conf /etc/apache2/conf-available/civicrm.conf
 
 RUN a2enconf civicrm
+
+COPY ./apache-sites-available-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Configure php
 
@@ -140,12 +142,12 @@ RUN drush dl drupal-7 --destination=/var/www --drupal-project-rename=html -y
 RUN mkdir /var/www/html/sites/default/files
 
 RUN cd /var/www/html/sites/all/modules \
-    && curl -L https://download.civicrm.org/civicrm-5.40.1-drupal.tar.gz > civicrm-drupal.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.40.2-drupal.tar.gz > civicrm-drupal.tar.gz \
     && tar xzf civicrm-drupal.tar.gz \
     && rm civicrm-drupal.tar.gz
 
 RUN cd /var/www/html/sites/all/modules \
-    && curl -L https://download.civicrm.org/civicrm-5.40.1-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.40.2-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 

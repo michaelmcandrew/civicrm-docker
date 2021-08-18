@@ -107,11 +107,13 @@ RUN curl -LsS https://download.civicrm.org/civix/civix.phar -o /usr/local/bin/ci
 
 # Configure apache
 
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers remoteip
 
 COPY ./apache.conf /etc/apache2/conf-available/civicrm.conf
 
 RUN a2enconf civicrm
+
+COPY ./apache-sites-available-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Configure php
 
@@ -146,12 +148,12 @@ RUN cd /var/www \
     && drush dlb backdrop --path="html"
 
 RUN cd /var/www/html/modules \
-    && curl -L https://download.civicrm.org/civicrm-5.40.1-backdrop.tar.gz > civicrm-backdrop.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.40.2-backdrop.tar.gz > civicrm-backdrop.tar.gz \
     && tar xzf civicrm-backdrop.tar.gz \
     && rm civicrm-backdrop.tar.gz
 
 RUN cd /var/www/html/modules \
-    && curl -L https://download.civicrm.org/civicrm-5.40.1-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.40.2-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 

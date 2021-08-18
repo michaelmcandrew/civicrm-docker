@@ -132,6 +132,7 @@ for combo in combos.values():
             "cp",
             "templates/.my.cnf",
             "templates/apache.conf",
+            "templates/apache-sites-available-default.conf",
             "templates/civicrm_dump.php",
             "templates/civicrm-docker-entrypoint",
             combo_dir,
