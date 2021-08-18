@@ -108,11 +108,13 @@ RUN curl -LsS https://download.civicrm.org/civix/civix.phar -o /usr/local/bin/ci
 
 # Configure apache
 
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers remoteip
 
 COPY ./apache.conf /etc/apache2/conf-available/civicrm.conf
 
 RUN a2enconf civicrm
+
+COPY ./apache-sites-available-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Configure php
 
