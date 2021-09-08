@@ -8,6 +8,7 @@ $projectName = basename($pwd);
 if (!strlen($projectName)) {
     trigger_error("Could not detect project name", E_USER_WARNING);
 }
+
 $home = getenv("HOME");
 `mkdir -p {$home}/.local/civicrm-docker/tmp`;
 $tempDir = "{$home}/.local/civicrm-docker/tmp/civicrm-docker-dump.$projectName";
@@ -59,7 +60,13 @@ if (error_get_last()) {
     echo "Some errors occured - aborting manual dump.\n";
     exit;
 }
-//TODO: add -d --dry-run option to print echo rather than execute commands
-file_put_contents($dumpScript, implode("\n", $lines) . "\n");
-passthru("bash $dumpScript");
-unlink($dumpScript);
+$commands = implode("\n", $lines);
+
+$options = getopt('d');
+if(!isset($options['d'])){
+    file_put_contents($dumpScript, $commands . "\n");
+    passthru("bash $dumpScript");
+    unlink($dumpScript);
+}else{
+    echo $commands;
+}
