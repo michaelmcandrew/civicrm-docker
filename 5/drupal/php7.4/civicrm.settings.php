@@ -11,6 +11,8 @@ define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIV
 define('CIVICRM_UF_DSN', 'mysql://' . getenv('DRUPAL_DB_USER') . ':' . getenv('DRUPAL_DB_PASS') . '@' . getenv('DRUPAL_DB_HOST') . '/' . getenv('DRUPAL_DB_NAME') . '?new_link=true');
 define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
 define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
+define('CIVICRM_CRED_KEYS', getenv('CIVICRM_CRED_KEYS'));
+define('CIVICRM_SIGN_KEYS', getenv('CIVICRM_SIGN_KEYS'));
 
 // Predefined constants
 define('CIVICRM_LOGGING_DSN', CIVICRM_DSN);
@@ -19,13 +21,15 @@ define('CIVICRM_MAIL_SMARTY', 0);
 define('CIVICRM_DB_CACHE_CLASS', 'ArrayCache');
 define('CIVICRM_PSR16_STRICT', FALSE);
 define('CIVICRM_DEADLOCK_RETRIES', 3);
+define('CIVICRM_EXCLUDE_DIRS_PATTERN', '@/(\.|node_modules|js/|css/|bower_components|packages/|sites/default/files/private)@');
+
 
 // Include path
 $include_path = '.' . PATH_SEPARATOR .
   $civicrm_root . PATH_SEPARATOR .
   $civicrm_root . DIRECTORY_SEPARATOR . 'packages' . PATH_SEPARATOR .
   get_include_path();
-if (set_include_path($include_path) === false) {
+if (set_include_path($include_path) === FALSE) {
   echo "Could not set the include path<p>";
   exit();
 }
@@ -34,11 +38,14 @@ if (set_include_path($include_path) === false) {
 if (!defined('CIVICRM_CLEANURL')) {
   if (function_exists('variable_get') && variable_get('clean_url', '0') != '0') {
     define('CIVICRM_CLEANURL', 1);
-  } elseif (function_exists('config_get') && config_get('system.core', 'clean_url') != 0) {
+  }
+  elseif (function_exists('config_get') && config_get('system.core', 'clean_url') != 0) {
     define('CIVICRM_CLEANURL', 1);
-  } elseif (function_exists('get_option') && get_option('permalink_structure') != '') {
+  }
+  elseif (function_exists('get_option') && get_option('permalink_structure') != '') {
     define('CIVICRM_CLEANURL', 1);
-  } else {
+  }
+  else {
     define('CIVICRM_CLEANURL', 0);
   }
 }
