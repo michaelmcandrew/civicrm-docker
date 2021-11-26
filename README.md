@@ -70,10 +70,10 @@ For convenience, a zip of the original source code of CiviCRM and the selected C
 
 ## Administration
 
-Steps up update this repository.
+Steps to update this repository.
 
 `generate.py` automates the generation of Dockerfiles (updates combos.json).
 `build.py` builds images based on the dockerfiles (based on combos.json).
 `publish.py` publishes these images on dockerhub (based on combos.json).
 
-Note, at the moment, this is a manual process. It would be good to automate this, either nightly, or whenever a new release of CiviCRM or any of the CMSes, or an update of the base php image they are derived from comes out.
+`bin/update.sh` runs these three processes in order and then pushes any changes to the repository. It relies on being able to find the installation directory
