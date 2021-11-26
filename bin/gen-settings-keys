@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+$vars = [
+  [
+    'name' => 'CIVICRM_SITE_KEY',
+    'command' => 'pwgen -snc 32 1',
+    'prefix' => 'CIVICRM_SITE_KEY='
+  ], [
+    'name' => 'CIVICRM_CRED_KEYS',
+    'command' => 'head -c32 /dev/urandom | base64',
+    'prefix' => 'CIVICRM_CRED_KEYS=aes-cbc::'
+  ], [
+    'name' => 'CIVICRM_SIGN_KEYS',
+    'command' => 'head -c32 /dev/urandom | base64',
+    'prefix' => 'CIVICRM_SIGN_KEYS=jwt-hs256::'
+  ]
+];
+
+foreach ($vars as $k => $var) {
+  exec($var['command'], $result, $result_code);
+  if ($result_code) {
+    echo "Error generating CIVICRM_SITE_KEY using command: {$var['command']}\n";
+    exit(1);
+  }else{
+    $vars[$k]['result']=$result[0];
+  }
+}
+
+foreach ($vars as $var) {
+  echo "{$var['prefix']}{$var['result']}\n";
+}
