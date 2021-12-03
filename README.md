@@ -20,12 +20,12 @@ The following tags are available:
 
 <!---START_TAGS-->
 
-- `5.43.2-drupal-php7.3` `5.43-drupal-php7.3` `5-drupal-php7.3` `5.43.2-drupal` `5.43-drupal` `5-drupal` `5.43.2-php7.3` `5.43-php7.3` `5-php7.3` `5.43.2` `5.43` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
-- `5.43.2-drupal-php7.4` `5.43-drupal-php7.4` `5-drupal-php7.4` `5.43.2-php7.4` `5.43-php7.4` `5-php7.4` `drupal-php7.4` `php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
-- `5.43.2-wordpress-php7.3` `5.43-wordpress-php7.3` `5-wordpress-php7.3` `5.43.2-wordpress` `5.43-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
-- `5.43.2-wordpress-php7.4` `5.43-wordpress-php7.4` `5-wordpress-php7.4` `wordpress-php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
-- `5.43.2-backdrop-php7.3` `5.43-backdrop-php7.3` `5-backdrop-php7.3` `5.43.2-backdrop` `5.43-backdrop` `5-backdrop` `backdrop-php7.3` `backdrop` [(5/backdrop/php7.3)](5/backdrop/php7.3)
-- `5.43.2-backdrop-php7.4` `5.43-backdrop-php7.4` `5-backdrop-php7.4` `backdrop-php7.4` [(5/backdrop/php7.4)](5/backdrop/php7.4)
+- `5.44.0-drupal-php7.3` `5.44-drupal-php7.3` `5-drupal-php7.3` `5.44.0-drupal` `5.44-drupal` `5-drupal` `5.44.0-php7.3` `5.44-php7.3` `5-php7.3` `5.44.0` `5.44` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
+- `5.44.0-drupal-php7.4` `5.44-drupal-php7.4` `5-drupal-php7.4` `5.44.0-php7.4` `5.44-php7.4` `5-php7.4` `drupal-php7.4` `php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
+- `5.44.0-wordpress-php7.3` `5.44-wordpress-php7.3` `5-wordpress-php7.3` `5.44.0-wordpress` `5.44-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
+- `5.44.0-wordpress-php7.4` `5.44-wordpress-php7.4` `5-wordpress-php7.4` `wordpress-php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
+- `5.44.0-backdrop-php7.3` `5.44-backdrop-php7.3` `5-backdrop-php7.3` `5.44.0-backdrop` `5.44-backdrop` `5-backdrop` `backdrop-php7.3` `backdrop` [(5/backdrop/php7.3)](5/backdrop/php7.3)
+- `5.44.0-backdrop-php7.4` `5.44-backdrop-php7.4` `5-backdrop-php7.4` `backdrop-php7.4` [(5/backdrop/php7.4)](5/backdrop/php7.4)
 
 <!---END_TAGS-->
 
