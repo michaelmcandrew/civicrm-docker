@@ -125,6 +125,10 @@ COPY ./civicrm_dump.php /usr/local/src/civicrm_dump.php
 
 RUN mkdir /usr/local/etc/civicrm
 
+# Install msmtp wrapper
+
+COPY ./msmtp-wrapper /usr/local/bin/msmtp-wrapper
+
 ENTRYPOINT [ "civicrm-docker-entrypoint" ]
 
 CMD ["apache2-foreground"]
