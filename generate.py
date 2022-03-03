@@ -135,6 +135,7 @@ for combo in combos.values():
             "templates/apache-sites-available-default.conf",
             "templates/civicrm_dump.php",
             "templates/civicrm-docker-entrypoint",
+            "templates/msmtp-wrapper",
             combo_dir,
         ]
     )
