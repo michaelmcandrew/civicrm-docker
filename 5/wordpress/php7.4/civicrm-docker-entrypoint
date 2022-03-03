@@ -2,19 +2,19 @@
 set -e
 
 # sendmail via smtp
-cat << EOF > /etc/msmtprc
+cat <<EOF >/etc/msmtprc
 host $SMTP_HOST
 EOF
 
 if [ ! -z "$SMTP_PORT" ]; then
-cat << EOF >> /etc/msmtprc
+  cat <<EOF >>/etc/msmtprc
 port $SMTP_PORT
 EOF
 fi
 
 # Note: we assume TlS when we have a username and password
 if [ ! -z "$SMTP_USER" ] && [ ! -z "$SMTP_PASSWORD" ]; then
-cat << EOF >> /etc/msmtprc
+  cat <<EOF >>/etc/msmtprc
 auth on
 tls on
 tls_starttls on
@@ -23,9 +23,8 @@ password $SMTP_PASSWORD
 EOF
 fi
 
-
 # civicrm php.ini settings
-cat << EOF > /usr/local/etc/php/conf.d/civicrm.ini
+cat <<EOF >/usr/local/etc/php/conf.d/civicrm.ini
 memory_limit = 1024M
 upload_max_filesize = 64M
 post_max_size = 64M
@@ -39,10 +38,10 @@ error_log = /dev/stderr
 EOF
 
 if [ "$DEBUG" = "ON" ]; then
-	cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
-	CONTAINER_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
-	XDEBUG_REMOTE_HOST=$CONTAINER_IP
-    cat << EOF > /usr/local/etc/php/conf.d/debug.ini
+  cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+  CONTAINER_IP=$(/sbin/ip route | awk '/default/ { print $3 }')
+  XDEBUG_REMOTE_HOST=$CONTAINER_IP
+  cat <<EOF >/usr/local/etc/php/conf.d/debug.ini
 zend_extension=xdebug.so
 
 xdebug.mode=develop,debug
@@ -62,6 +61,6 @@ su civicrm -c /usr/local/bin/civicrm-docker-init
 
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
-	set -- apache2-foreground "$@"
+  set -- apache2-foreground "$@"
 fi
 exec "$@"
