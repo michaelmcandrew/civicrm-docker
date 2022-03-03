@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+# check that we have a src/wordpress directory
+# check that 3sd is in the mu plugins list and is at least v ?
+
+
+# if we are in WordPress, check that we are git ignoring the src/wordpress/wp-content/uploads directory v czc
+import yaml
+
+with open("docker-compose.dev.yml", "r") as stream:
+    try:
+        print(yaml.safe_load(stream)["version"])
+    except yaml.YAMLError as exc:
+        print(exc)
