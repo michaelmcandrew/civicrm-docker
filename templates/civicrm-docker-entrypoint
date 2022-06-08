@@ -50,8 +50,8 @@ xdebug.client_host=${CONTAINER_IP}
 xdebug.start_with_request=yes
 
 xdebug.var_display_max_depth = 8
-xdebug.var_display_max_children = 256
-xdebug.var_display_max_data = 1024 
+xdebug.var_display_max_children = 128
+xdebug.var_display_max_data = 128
 
 max_execution_time=600
 EOF
