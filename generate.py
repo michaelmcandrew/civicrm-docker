@@ -156,6 +156,8 @@ for combo in combos.values():
     combo_dir = combo["dir"]
     tag_text.append(f"- {tag_list} [({combo_dir})]({combo_dir})\n")
 tag_text.append("\n")
+print(root_dir + "/README.md")
+exit()
 
 readme = list(open(root_dir + "/README.md", "r"))
 start = readme.index("<!---START_TAGS-->\n")
