@@ -4,6 +4,9 @@ import json
 from subprocess import run
 from variables import php_releases
 
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
 # better to 'cache' here than via `docker build --no-cache`
 for php_release in php_releases:
     command = ["docker", "pull", php_release]
@@ -12,7 +15,7 @@ image = "michaelmcandrew/civicrm"
 combos = json.load(open("combos.json"))
 
 for key, combo in combos.items():
-    command = ["docker", "build", combo["dir"]]
+    command = ["docker", "build", PROJECT_DIR + combo["dir"]]
     for tag in combo["tags"]:
         command.extend(["--tag", f"{image}:{tag}"])
     run(command)
