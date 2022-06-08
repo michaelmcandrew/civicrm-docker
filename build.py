@@ -26,7 +26,7 @@ run(
     [
         "docker",
         "build",
-        "mysql",
+        PROJECT_DIR + "/" + "mysql",
         "--tag",
         "michaelmcandrew/civicrm-mysql:5.7",
         "--tag",
