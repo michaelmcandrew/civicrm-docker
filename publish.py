@@ -2,9 +2,12 @@
 
 import json
 from subprocess import run
+from os import path
+
+PROJECT_DIR = path.dirname(path.abspath(__file__))
 
 image = "michaelmcandrew/civicrm"
-combos = json.load(open("combos.json"))
+combos = json.load(open(PROJECT_DIR + "/combos.json"))
 
 for combo in combos.values():
     for tag in combo["tags"]:

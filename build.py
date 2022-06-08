@@ -13,7 +13,7 @@ for php_release in php_releases:
     command = ["docker", "pull", php_release]
 
 image = "michaelmcandrew/civicrm"
-combos = json.load(open("combos.json"))
+combos = json.load(open(PROJECT_DIR + "/combos.json"))
 
 for key, combo in combos.items():
     command = ["docker", "build", PROJECT_DIR + "/" + combo["dir"]]
