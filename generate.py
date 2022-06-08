@@ -65,9 +65,7 @@ for combo in combos.values():
 
     cms = combo["variables"]["cms"]
     combo_dir = root_dir + "/" + combo["dir"]
-
     run(["mkdir", "-p", combo_dir])
-
     # Dockerfile
     docker_file = templates.get_template("Dockerfile")
     docker_file.stream(**combo["variables"]).dump(f"{combo_dir}/Dockerfile")
@@ -76,7 +74,7 @@ for combo in combos.values():
     run(
         [
             "cp",
-            f"templates/{cms}.civicrm.settings.php",
+            f"{root_dir}/templates/{cms}.civicrm.settings.php",
             f"{combo_dir}/civicrm.settings.php",
         ]
     )
@@ -91,7 +89,7 @@ for combo in combos.values():
     run(
         [
             "cp",
-            f"templates/{cms}.{cms_settings_file}",
+            f"{root_dir}/templates/{cms}.{cms_settings_file}",
             f"{combo_dir}/{cms_settings_file}",
         ]
     )
@@ -100,7 +98,7 @@ for combo in combos.values():
     run(
         [
             "cp",
-            f"templates/{cms}.civicrm-docker-init",
+            f"{root_dir}/templates/{cms}.civicrm-docker-init",
             f"{combo_dir}/civicrm-docker-init",
         ]
     )
@@ -109,19 +107,19 @@ for combo in combos.values():
     run(
         [
             "cp",
-            f"templates/{cms}.civicrm-docker-dump",
+            f"{root_dir}/templates/{cms}.civicrm-docker-dump",
             f"{combo_dir}/civicrm-docker-dump",
         ]
     )
 
     # load
-    run(["cp", "templates/civicrm-docker-load", combo_dir])
+    run(["cp", f"{root_dir}/templates/civicrm-docker-load", combo_dir])
 
     # install (todo: split from init)
     run(
         [
             "cp",
-            f"templates/{cms}.civicrm-docker-install",
+            f"{root_dir}/templates/{cms}.civicrm-docker-install",
             f"{combo_dir}/civicrm-docker-install",
         ]
     )
@@ -130,19 +128,25 @@ for combo in combos.values():
     run(
         [
             "cp",
-            "templates/.my.cnf",
-            "templates/apache.conf",
-            "templates/apache-sites-available-default.conf",
-            "templates/civicrm_dump.php",
-            "templates/civicrm-docker-entrypoint",
-            "templates/msmtp-wrapper",
+            f"{root_dir}/templates/.my.cnf",
+            f"{root_dir}/templates/apache.conf",
+            f"{root_dir}/templates/apache-sites-available-default.conf",
+            f"{root_dir}/templates/civicrm_dump.php",
+            f"{root_dir}/templates/civicrm-docker-entrypoint",
+            f"{root_dir}/templates/msmtp-wrapper",
             combo_dir,
         ]
     )
 
     # CMS specific
     if cms == "wordpress":
-        run(["cp", "templates/wordpress..htaccess", f"{combo_dir}/.htaccess"])
+        run(
+            [
+                "cp",
+                f"{root_dir}/templates/wordpress..htaccess",
+                f"{combo_dir}/.htaccess",
+            ]
+        )
 
 
 # Update tags section of the README.md
@@ -153,7 +157,7 @@ for combo in combos.values():
     tag_text.append(f"- {tag_list} [({combo_dir})]({combo_dir})\n")
 tag_text.append("\n")
 
-readme = list(open("README.md", "r"))
+readme = list(open(root_dir + "/README.md", "r"))
 start = readme.index("<!---START_TAGS-->\n")
 end = readme.index("<!---END_TAGS-->\n")
 readme = readme[: start + 1] + tag_text + readme[end:]

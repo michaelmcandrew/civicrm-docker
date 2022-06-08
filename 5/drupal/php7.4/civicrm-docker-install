@@ -1,0 +1,15 @@
+#!/bin/bash
+set -x
+# Fresh install of CiviCRM on Drupal
+
+chmod +w /var/www/html/sites/default
+
+drush -r /var/www/html/ site-install -y
+drush dis overlay -y
+chmod u+w /var/www/html/sites/default/civicrm.settings.php
+cv core:install --settings-path=/var/www/html/sites/default/civicrm.settings.php --keep --db=mysql://$CIVICRM_DB_USER:$CIVICRM_DB_PASS@$CIVICRM_DB_HOST:$CIVICRM_DB_PORT/$CIVICRM_DB_NAME
+chmod u-w /var/www/html/sites/default/civicrm.settings.php
+
+if test -x "/home/civicrm/postInstall"; then
+  /home/civicrm/postInstall
+fi
