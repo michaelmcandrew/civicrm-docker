@@ -3,8 +3,9 @@
 import json
 from subprocess import run
 from variables import php_releases
+from os import path
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = path.dirname(path.abspath(__file__))
 
 
 # better to 'cache' here than via `docker build --no-cache`
