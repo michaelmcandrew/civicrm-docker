@@ -1,36 +1,4 @@
 {
-    "5.50.1/backdrop/7.3": {
-        "dir": "5/backdrop/php7.3",
-        "tags": [
-            "5.50.1-backdrop-php7.3",
-            "5.50-backdrop-php7.3",
-            "5-backdrop-php7.3",
-            "5.50.1-backdrop",
-            "5.50-backdrop",
-            "5-backdrop",
-            "backdrop-php7.3",
-            "backdrop"
-        ],
-        "variables": {
-            "civi": "5.50.1",
-            "cms": "backdrop",
-            "php": "7.3"
-        }
-    },
-    "5.50.1/backdrop/7.4": {
-        "dir": "5/backdrop/php7.4",
-        "tags": [
-            "5.50.1-backdrop-php7.4",
-            "5.50-backdrop-php7.4",
-            "5-backdrop-php7.4",
-            "backdrop-php7.4"
-        ],
-        "variables": {
-            "civi": "5.50.1",
-            "cms": "backdrop",
-            "php": "7.4"
-        }
-    },
     "5.50.1/drupal/7.3": {
         "dir": "5/drupal/php7.3",
         "tags": [

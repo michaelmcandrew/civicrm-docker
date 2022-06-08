@@ -157,15 +157,14 @@ for combo in combos.values():
     tag_text.append(f"- {tag_list} [({combo_dir})]({combo_dir})\n")
 tag_text.append("\n")
 print(root_dir + "/README.md")
-exit()
 
 readme = list(open(root_dir + "/README.md", "r"))
 start = readme.index("<!---START_TAGS-->\n")
 end = readme.index("<!---END_TAGS-->\n")
 readme = readme[: start + 1] + tag_text + readme[end:]
-writeme = open("README.md", "w")
+writeme = open(root_dir + "/README.md", "w")
 writeme.write("".join(readme))
 
 # Dump combos to a json file for other scripts
-with open("combos.json", "w") as combos_file:
+with open(root_dir + "/combos.json", "w") as combos_file:
     json.dump(combos, combos_file, sort_keys=True, indent=4)
