@@ -16,8 +16,7 @@ image = "michaelmcandrew/civicrm"
 combos = json.load(open("combos.json"))
 
 for key, combo in combos.items():
-    command = ["docker", "build", PROJECT_DIR + combo["dir"]]
-    print(command)
+    command = ["docker", "build", PROJECT_DIR + "/" + combo["dir"]]
     for tag in combo["tags"]:
         command.extend(["--tag", f"{image}:{tag}"])
     run(command)
