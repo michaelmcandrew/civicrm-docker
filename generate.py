@@ -60,7 +60,7 @@ for tag in tags:
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
 run(["rm", "-r", root_dir + "/5"])
-templates = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+templates = jinja2.Environment(loader=jinja2.FileSystemLoader(root_dir + "/templates"))
 for combo in combos.values():
 
     cms = combo["variables"]["cms"]
