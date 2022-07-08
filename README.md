@@ -20,10 +20,10 @@ The following tags are available:
 
 <!---START_TAGS-->
 
-- `5.50.4-drupal-php7.3` `5.50-drupal-php7.3` `5-drupal-php7.3` `5.50.4-drupal` `5.50-drupal` `5-drupal` `5.50.4-php7.3` `5.50-php7.3` `5-php7.3` `5.50.4` `5.50` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
-- `5.50.4-drupal-php7.4` `5.50-drupal-php7.4` `5-drupal-php7.4` `5.50.4-php7.4` `5.50-php7.4` `5-php7.4` `drupal-php7.4` `php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
-- `5.50.4-wordpress-php7.3` `5.50-wordpress-php7.3` `5-wordpress-php7.3` `5.50.4-wordpress` `5.50-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
-- `5.50.4-wordpress-php7.4` `5.50-wordpress-php7.4` `5-wordpress-php7.4` `wordpress-php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
+- `5.51.0-drupal-php7.3` `5.51-drupal-php7.3` `5-drupal-php7.3` `5.51.0-drupal` `5.51-drupal` `5-drupal` `5.51.0-php7.3` `5.51-php7.3` `5-php7.3` `5.51.0` `5.51` `5` `drupal-php7.3` `drupal` `php7.3` `latest` [(5/drupal/php7.3)](5/drupal/php7.3)
+- `5.51.0-drupal-php7.4` `5.51-drupal-php7.4` `5-drupal-php7.4` `5.51.0-php7.4` `5.51-php7.4` `5-php7.4` `drupal-php7.4` `php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
+- `5.51.0-wordpress-php7.3` `5.51-wordpress-php7.3` `5-wordpress-php7.3` `5.51.0-wordpress` `5.51-wordpress` `5-wordpress` `wordpress-php7.3` `wordpress` [(5/wordpress/php7.3)](5/wordpress/php7.3)
+- `5.51.0-wordpress-php7.4` `5.51-wordpress-php7.4` `5-wordpress-php7.4` `wordpress-php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
 
 <!---END_TAGS-->
 
