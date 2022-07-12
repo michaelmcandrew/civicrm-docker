@@ -80,8 +80,10 @@ $table_prefix  = getenv('WORDPRESS_TABLE_PREFIX') !== false ? getenv('WORDPRESS_
  */
 if (getenv('DEBUG') == 'ON') {
 	define('WP_DEBUG', true);
+	define('SCRIPT_DEBUG', true);
 } else {
 	define('WP_DEBUG', false);
+	define('SCRIPT_DEBUG', false);
 }
 
 /**
