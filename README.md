@@ -31,7 +31,7 @@ The following tags are available:
 
 There are a couple of options for getting started. Here are a couple of common workflows that I use.
 
-If I plan on doing a fair amount of custom development as part of a project, I like to start with a 'mono repo' on the host machine containing everything from the CMS root downwards (excluding files with credentials in and folders that include uploads via the webserver). This makes working with IDEs, debugging, etc. more simple.
+If I plan on doing a fair amount of custom development as part of a project, I like to start with a 'mono repo' on the host machine containing everything from the CMS root downwards (excluding files with credentials in and folders that include uploads via the web server). This makes working with IDEs, debugging, etc. easier.
 
 If you aren't planning on doing much custom development (e.g. maybe you are just installing already existing modules and extensions) it might make more sense to take advantage of the CMS and CiviCRM already installed on the image (at `/var/www/html`).
 
