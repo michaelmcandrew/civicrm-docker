@@ -91,7 +91,8 @@ ENV APACHE_RUN_GROUP=civicrm
 
 USER civicrm
 
-RUN composer global require consolidation/cgr
+# TODO: We should install composer a better way.
+RUN composer global require --ignore-platform-req consolidation/cgr
 
 USER root
 
