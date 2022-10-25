@@ -9,5 +9,5 @@ cms_variants = [
     "drupal",
     "wordpress",
 ]  # Skip backdrop for now since Dockerfile is broken
-php_releases = ["7.3", "7.4"]
-defaults = {"civi": latest_civicrm_release, "cms": "drupal", "php": "7.3"}
+php_releases = ["7.4", "8.0"]
+defaults = {"civi": latest_civicrm_release, "cms": "wordpress", "php": "8.0"}
