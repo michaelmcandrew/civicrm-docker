@@ -92,8 +92,8 @@ ENV APACHE_RUN_GROUP=civicrm
 
 USER civicrm
 
-# TODO: We should install composer a better way.
-RUN composer global require --ignore-platform-req consolidation/cgr
+# TODO: I think we only use cgr for drush. If we can find another way to install drush, then we can remove this dependency.
+RUN composer global require --ignore-platform-req php consolidation/cgr
 
 USER root
 
