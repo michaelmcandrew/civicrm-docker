@@ -20,12 +20,12 @@ The following tags are available:
 
 <!---START_TAGS-->
 
-- `5.58.0-drupal-php7.4` `5.58-drupal-php7.4` `5-drupal-php7.4` `drupal-php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
-- `5.58.0-drupal-php8.0` `5.58-drupal-php8.0` `5-drupal-php8.0` `5.58.0-drupal` `5.58-drupal` `5-drupal` `drupal-php8.0` `drupal` [(5/drupal/php8.0)](5/drupal/php8.0)
-- `5.58.0-drupal-php8.1` `5.58-drupal-php8.1` `5-drupal-php8.1` `drupal-php8.1` [(5/drupal/php8.1)](5/drupal/php8.1)
-- `5.58.0-wordpress-php7.4` `5.58-wordpress-php7.4` `5-wordpress-php7.4` `5.58.0-php7.4` `5.58-php7.4` `5-php7.4` `wordpress-php7.4` `php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
-- `5.58.0-wordpress-php8.0` `5.58-wordpress-php8.0` `5-wordpress-php8.0` `5.58.0-wordpress` `5.58-wordpress` `5-wordpress` `5.58.0-php8.0` `5.58-php8.0` `5-php8.0` `5.58.0` `5.58` `5` `wordpress-php8.0` `wordpress` `php8.0` `latest` [(5/wordpress/php8.0)](5/wordpress/php8.0)
-- `5.58.0-wordpress-php8.1` `5.58-wordpress-php8.1` `5-wordpress-php8.1` `5.58.0-php8.1` `5.58-php8.1` `5-php8.1` `wordpress-php8.1` `php8.1` [(5/wordpress/php8.1)](5/wordpress/php8.1)
+- `5.58.1-drupal-php7.4` `5.58-drupal-php7.4` `5-drupal-php7.4` `drupal-php7.4` [(5/drupal/php7.4)](5/drupal/php7.4)
+- `5.58.1-drupal-php8.0` `5.58-drupal-php8.0` `5-drupal-php8.0` `5.58.1-drupal` `5.58-drupal` `5-drupal` `drupal-php8.0` `drupal` [(5/drupal/php8.0)](5/drupal/php8.0)
+- `5.58.1-drupal-php8.1` `5.58-drupal-php8.1` `5-drupal-php8.1` `drupal-php8.1` [(5/drupal/php8.1)](5/drupal/php8.1)
+- `5.58.1-wordpress-php7.4` `5.58-wordpress-php7.4` `5-wordpress-php7.4` `5.58.1-php7.4` `5.58-php7.4` `5-php7.4` `wordpress-php7.4` `php7.4` [(5/wordpress/php7.4)](5/wordpress/php7.4)
+- `5.58.1-wordpress-php8.0` `5.58-wordpress-php8.0` `5-wordpress-php8.0` `5.58.1-wordpress` `5.58-wordpress` `5-wordpress` `5.58.1-php8.0` `5.58-php8.0` `5-php8.0` `5.58.1` `5.58` `5` `wordpress-php8.0` `wordpress` `php8.0` `latest` [(5/wordpress/php8.0)](5/wordpress/php8.0)
+- `5.58.1-wordpress-php8.1` `5.58-wordpress-php8.1` `5-wordpress-php8.1` `5.58.1-php8.1` `5.58-php8.1` `5-php8.1` `wordpress-php8.1` `php8.1` [(5/wordpress/php8.1)](5/wordpress/php8.1)
 
 <!---END_TAGS-->
 
