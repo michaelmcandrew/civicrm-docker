@@ -1,81 +1,81 @@
 {
-    "5.61.1/drupal/7.4": {
+    "5.61.2/drupal/7.4": {
         "dir": "5/drupal/php7.4",
         "tags": [
-            "5.61.1-drupal-php7.4",
+            "5.61.2-drupal-php7.4",
             "5.61-drupal-php7.4",
             "5-drupal-php7.4",
             "drupal-php7.4"
         ],
         "variables": {
-            "civi": "5.61.1",
+            "civi": "5.61.2",
             "cms": "drupal",
             "php": "7.4"
         }
     },
-    "5.61.1/drupal/8.0": {
+    "5.61.2/drupal/8.0": {
         "dir": "5/drupal/php8.0",
         "tags": [
-            "5.61.1-drupal-php8.0",
+            "5.61.2-drupal-php8.0",
             "5.61-drupal-php8.0",
             "5-drupal-php8.0",
-            "5.61.1-drupal",
+            "5.61.2-drupal",
             "5.61-drupal",
             "5-drupal",
             "drupal-php8.0",
             "drupal"
         ],
         "variables": {
-            "civi": "5.61.1",
+            "civi": "5.61.2",
             "cms": "drupal",
             "php": "8.0"
         }
     },
-    "5.61.1/drupal/8.1": {
+    "5.61.2/drupal/8.1": {
         "dir": "5/drupal/php8.1",
         "tags": [
-            "5.61.1-drupal-php8.1",
+            "5.61.2-drupal-php8.1",
             "5.61-drupal-php8.1",
             "5-drupal-php8.1",
             "drupal-php8.1"
         ],
         "variables": {
-            "civi": "5.61.1",
+            "civi": "5.61.2",
             "cms": "drupal",
             "php": "8.1"
         }
     },
-    "5.61.1/wordpress/7.4": {
+    "5.61.2/wordpress/7.4": {
         "dir": "5/wordpress/php7.4",
         "tags": [
-            "5.61.1-wordpress-php7.4",
+            "5.61.2-wordpress-php7.4",
             "5.61-wordpress-php7.4",
             "5-wordpress-php7.4",
-            "5.61.1-php7.4",
+            "5.61.2-php7.4",
             "5.61-php7.4",
             "5-php7.4",
             "wordpress-php7.4",
             "php7.4"
         ],
         "variables": {
-            "civi": "5.61.1",
+            "civi": "5.61.2",
             "cms": "wordpress",
             "php": "7.4"
         }
     },
-    "5.61.1/wordpress/8.0": {
+    "5.61.2/wordpress/8.0": {
         "dir": "5/wordpress/php8.0",
         "tags": [
-            "5.61.1-wordpress-php8.0",
+            "5.61.2-wordpress-php8.0",
             "5.61-wordpress-php8.0",
             "5-wordpress-php8.0",
-            "5.61.1-wordpress",
+            "5.61.2-wordpress",
             "5.61-wordpress",
             "5-wordpress",
-            "5.61.1-php8.0",
+            "5.61.2-php8.0",
             "5.61-php8.0",
             "5-php8.0",
-            "5.61.1",
+            "5.61.2",
             "5.61",
             "5",
             "wordpress-php8.0",
@@ -84,25 +84,25 @@
             "latest"
         ],
         "variables": {
-            "civi": "5.61.1",
+            "civi": "5.61.2",
             "cms": "wordpress",
             "php": "8.0"
         }
     },
-    "5.61.1/wordpress/8.1": {
+    "5.61.2/wordpress/8.1": {
         "dir": "5/wordpress/php8.1",
         "tags": [
-            "5.61.1-wordpress-php8.1",
+            "5.61.2-wordpress-php8.1",
             "5.61-wordpress-php8.1",
             "5-wordpress-php8.1",
-            "5.61.1-php8.1",
+            "5.61.2-php8.1",
             "5.61-php8.1",
             "5-php8.1",
             "wordpress-php8.1",
             "php8.1"
         ],
         "variables": {
-            "civi": "5.61.1",
+            "civi": "5.61.2",
             "cms": "wordpress",
             "php": "8.1"
         }
