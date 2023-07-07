@@ -50,7 +50,6 @@ if (!defined('CIVICRM_CLEANURL')) {
 }
 
 // More stuff that probably shouldn't be in a settings file
-ini_set('auto_detect_line_endings', '1');
 $memLimitString = trim(ini_get('memory_limit'));
 $memLimitUnit   = strtolower(substr($memLimitString, -1));
 $memLimit       = (int) $memLimitString;
