@@ -2,13 +2,13 @@
 global $civicrm_root, $civicrm_setting, $civicrm_paths;
 
 // CMS specific stuff
-define('CIVICRM_UF', 'Drupal');
-$civicrm_root = '/var/www/html/sites/all/modules/civicrm/';
-define('CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/html/sites/default/files/civicrm/templates_c/');
+define('CIVICRM_UF', 'WordPress');
+$civicrm_root = '/var/www/html/wp-content/plugins/civicrm/civicrm/';
+define('CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/html/wp-content/uploads/civicrm/templates_c/');
 
 // Constants set by env variables
 define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIVICRM_DB_PASS') . '@' . getenv('CIVICRM_DB_HOST') . '/' . getenv('CIVICRM_DB_NAME') . '?new_link=true');
-define('CIVICRM_UF_DSN', 'mysql://' . getenv('DRUPAL_DB_USER') . ':' . getenv('DRUPAL_DB_PASS') . '@' . getenv('DRUPAL_DB_HOST') . '/' . getenv('DRUPAL_DB_NAME') . '?new_link=true');
+define('CIVICRM_UF_DSN', 'mysql://' . getenv('WORDPRESS_DB_USER') . ':' . getenv('WORDPRESS_DB_PASS') . '@' . getenv('WORDPRESS_DB_HOST') . '/' . getenv('WORDPRESS_DB_NAME') . '?new_link=true');
 define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
 define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 define('CIVICRM_CRED_KEYS', getenv('CIVICRM_CRED_KEYS'));
@@ -22,7 +22,6 @@ define('CIVICRM_DB_CACHE_CLASS', 'ArrayCache');
 define('CIVICRM_PSR16_STRICT', FALSE);
 define('CIVICRM_DEADLOCK_RETRIES', 3);
 define('CIVICRM_EXCLUDE_DIRS_PATTERN', '@/(\.|node_modules|js/|css/|bower_components|packages/|sites/default/files/private)@');
-
 
 // Include path
 $include_path = '.' . PATH_SEPARATOR .
@@ -51,7 +50,6 @@ if (!defined('CIVICRM_CLEANURL')) {
 }
 
 // More stuff that probably shouldn't be in a settings file
-ini_set('auto_detect_line_endings', '1');
 $memLimitString = trim(ini_get('memory_limit'));
 $memLimitUnit   = strtolower(substr($memLimitString, -1));
 $memLimit       = (int) $memLimitString;
