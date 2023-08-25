@@ -72,10 +72,15 @@ For convenience, a zip of the original source code of CiviCRM and the selected C
 
 ## Administration
 
-Steps to update this repository.
+To update the images on Docker Hub that are defined in this repository, run the following script:
 
-`generate.py` automates the generation of Dockerfiles (updates combos.json).
-`build.py` builds images based on the dockerfiles (based on combos.json).
-`publish.py` publishes these images on dockerhub (based on combos.json).
+```sh
+./update.py
+```
 
-`bin/update.sh` runs these three processes in order and then pushes any changes to the repository. It relies on being able to find the installation directory
+This calls the following processes in order:
+
+- `generate.py` automates the generation of Dockerfiles (updates combos.json).
+- `build.py` builds images based on the dockerfiles (based on combos.json).
+- `publish.py` publishes these images on dockerhub (based on combos.json).
+
