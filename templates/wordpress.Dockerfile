@@ -34,5 +34,3 @@ COPY --chown=civicrm:civicrm \
 COPY --chown=civicrm:civicrm ./wp-config.php /usr/local/etc/civicrm
 
 COPY --chown=civicrm:civicrm ./civicrm.settings.php /usr/local/etc/civicrm
-
-COPY --chown=civicrm:civicrm ./.htaccess /usr/local/etc/civicrm
