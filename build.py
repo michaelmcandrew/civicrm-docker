@@ -21,14 +21,14 @@ for key, combo in combos.items():
         command.extend(["--tag", f"{image}:{tag}"])
     run(command)
 
-run(["docker", "pull", "mysql:5.7"])
+run(["docker", "pull", "mysql:8.0"])
 run(
     [
         "docker",
         "build",
         PROJECT_DIR + "/" + "mysql",
         "--tag",
-        "michaelmcandrew/civicrm-mysql:5.7",
+        "michaelmcandrew/civicrm-mysql:8.0",
         "--tag",
         "michaelmcandrew/civicrm-mysql:latest",
     ]

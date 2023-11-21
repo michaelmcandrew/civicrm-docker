@@ -62,7 +62,7 @@ Running `docker-compose exec civicrm civicrm-docker-load` will load an existing 
 
 The images are designed to be used with whatever MySQL backend you like: one in a container, one on bare metal, or maybe a DB appliance from a cloud provider.
 
-A simple mysql image based on the official `mysql:5.7` and suitable for CiviCRM can be found at `michaelmcandrew/mysql-civicrm`. See the `docker-compose.dev.dist.yml` files in the docker-compose directory for an example of this image in use.
+A simple mysql image based on the official `mysql:8.0` and suitable for CiviCRM can be found at `michaelmcandrew/mysql-civicrm`. See the `docker-compose.dev.dist.yml` files in the docker-compose directory for an example of this image in use.
 
 ## Source code
 
