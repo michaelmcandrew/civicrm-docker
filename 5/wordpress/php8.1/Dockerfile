@@ -148,18 +148,24 @@ RUN wp core download
 RUN mkdir /var/www/html/wp-content/uploads
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.67.1-wordpress.zip > civicrm-wordpress.zip \
+    && curl -L https://download.civicrm.org/civicrm-5.67.3-wordpress.zip > civicrm-wordpress.zip \
     && unzip civicrm-wordpress.zip \
     && rm civicrm-wordpress.zip
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.67.1-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.67.3-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 
 USER root
 
-COPY ./civicrm-docker-entrypoint ./civicrm-docker-init ./civicrm-docker-dump ./civicrm-docker-install /usr/local/bin/
+COPY --chown=civicrm:civicrm \
+    ./civicrm-docker-entrypoint \
+    ./civicrm-docker-init \
+    ./civicrm-docker-dump \
+    ./civicrm-docker-install \
+    ./wordpress-update-domain \
+    /usr/local/bin/
 
 COPY --chown=civicrm:civicrm ./wp-config.php /usr/local/etc/civicrm
 
