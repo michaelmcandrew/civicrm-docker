@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 if (count($argv) != 3) {
-    die('Need exactly two arguments: search and replace URL');
+    die("Please pass exactly two arguments: a search and a replace URL\n");
 }
 
 $prodUrl = $argv[1];
