@@ -150,7 +150,7 @@ for combo in combos.values():
         run(
             [
                 "cp",
-                f"{root_dir}/templates/wordpress.wordpress-update-domain.php",
+                f"{root_dir}/templates/wordpress.wordpress-update-domain",
                 f"{combo_dir}/wordpress-update-domain",
             ]
         )
