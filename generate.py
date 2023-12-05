@@ -147,6 +147,13 @@ for combo in combos.values():
                 f"{combo_dir}/.htaccess",
             ]
         )
+        run(
+            [
+                "cp",
+                f"{root_dir}/templates/wordpress.wordpress-update-domain.php",
+                f"{combo_dir}/wordpress-update-domain",
+            ]
+        )
 
 
 # Update tags section of the README.md

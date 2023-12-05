@@ -23,7 +23,13 @@ RUN cd /var/www/html/wp-content/plugins \
 
 USER root
 
-COPY ./civicrm-docker-entrypoint ./civicrm-docker-init ./civicrm-docker-dump ./civicrm-docker-install /usr/local/bin/
+COPY --chown=civicrm:civicrm \
+    ./civicrm-docker-entrypoint \
+    ./civicrm-docker-init \
+    ./civicrm-docker-dump \
+    ./civicrm-docker-install \
+    ./wordpress-update-domain \
+    /usr/local/bin/
 
 COPY --chown=civicrm:civicrm ./wp-config.php /usr/local/etc/civicrm
 
