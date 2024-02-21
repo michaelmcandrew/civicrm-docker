@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Modified version of https://developer.wordpress.org/reference/functions/wp_generate_password/
+ */
+function wp_generate_password( $length = 12, $special_chars = true, $extra_special_chars = false ) {
+	$chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	if ( $special_chars ) {
+		$chars .= '!@#$%^&*()';
+	}
+	if ( $extra_special_chars ) {
+		$chars .= '-_ []{}<>~`+=,.;:/?|';
+	}
+
+	$password = '';
+	for ( $i = 0; $i < $length; $i++ ) {
+		$password .= substr( $chars, random_int( 0, strlen( $chars ) - 1 ), 1 );
+	}
+
+    return $password;
+}
+
+$prefix = 'WORDPRESS';
+$name = ['AUTH', 'SECURE_AUTH', 'LOGGED_IN', 'NONCE', 'SECRET'];
+$type = ['KEY', 'SALT'];
+foreach ( $name as $first ) {
+    foreach ( $type as $second ) {
+        $key = wp_generate_password( 64, true, true );
+        echo "{$prefix}_{$first}_{$second}='{$key}'\n";
+    }
+}
