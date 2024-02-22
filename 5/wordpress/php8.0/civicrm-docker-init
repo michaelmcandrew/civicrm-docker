@@ -8,9 +8,6 @@ pushd /var/www/html
     [[ -f wp-config.php ]] && chmod u+w wp-config.php
     cp /usr/local/etc/civicrm/wp-config.php .
     chmod a-wx wp-config.php
-    
-    # .htaccess
-    [[ -f .htaccess ]] || cp /usr/local/etc/civicrm/.htaccess .
 
     [[ -d /var/www/html/wp-content/uploads/civicrm ]] || mkdir -p /var/www/html/wp-content/uploads/civicrm
 
