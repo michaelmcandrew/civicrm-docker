@@ -20,14 +20,14 @@ The following tags are available:
 
 <!---START_TAGS-->
 
-- `5.74.5-drupal-php8.0` `5.74-drupal-php8.0` `5-drupal-php8.0` `drupal-php8.0` [(5/drupal/php8.0)](5/drupal/php8.0)
-- `5.74.5-drupal-php8.1` `5.74-drupal-php8.1` `5-drupal-php8.1` `5.74.5-drupal` `5.74-drupal` `5-drupal` `drupal-php8.1` `drupal` [(5/drupal/php8.1)](5/drupal/php8.1)
-- `5.74.5-drupal-php8.2` `5.74-drupal-php8.2` `5-drupal-php8.2` `drupal-php8.2` [(5/drupal/php8.2)](5/drupal/php8.2)
-- `5.74.5-drupal-php8.3` `5.74-drupal-php8.3` `5-drupal-php8.3` `drupal-php8.3` [(5/drupal/php8.3)](5/drupal/php8.3)
-- `5.74.5-wordpress-php8.0` `5.74-wordpress-php8.0` `5-wordpress-php8.0` `5.74.5-php8.0` `5.74-php8.0` `5-php8.0` `wordpress-php8.0` `php8.0` [(5/wordpress/php8.0)](5/wordpress/php8.0)
-- `5.74.5-wordpress-php8.1` `5.74-wordpress-php8.1` `5-wordpress-php8.1` `5.74.5-wordpress` `5.74-wordpress` `5-wordpress` `5.74.5-php8.1` `5.74-php8.1` `5-php8.1` `5.74.5` `5.74` `5` `wordpress-php8.1` `wordpress` `php8.1` `latest` [(5/wordpress/php8.1)](5/wordpress/php8.1)
-- `5.74.5-wordpress-php8.2` `5.74-wordpress-php8.2` `5-wordpress-php8.2` `5.74.5-php8.2` `5.74-php8.2` `5-php8.2` `wordpress-php8.2` `php8.2` [(5/wordpress/php8.2)](5/wordpress/php8.2)
-- `5.74.5-wordpress-php8.3` `5.74-wordpress-php8.3` `5-wordpress-php8.3` `5.74.5-php8.3` `5.74-php8.3` `5-php8.3` `wordpress-php8.3` `php8.3` [(5/wordpress/php8.3)](5/wordpress/php8.3)
+- `5.75.0-drupal-php8.0` `5.75-drupal-php8.0` `5-drupal-php8.0` `drupal-php8.0` [(5/drupal/php8.0)](5/drupal/php8.0)
+- `5.75.0-drupal-php8.1` `5.75-drupal-php8.1` `5-drupal-php8.1` `5.75.0-drupal` `5.75-drupal` `5-drupal` `drupal-php8.1` `drupal` [(5/drupal/php8.1)](5/drupal/php8.1)
+- `5.75.0-drupal-php8.2` `5.75-drupal-php8.2` `5-drupal-php8.2` `drupal-php8.2` [(5/drupal/php8.2)](5/drupal/php8.2)
+- `5.75.0-drupal-php8.3` `5.75-drupal-php8.3` `5-drupal-php8.3` `drupal-php8.3` [(5/drupal/php8.3)](5/drupal/php8.3)
+- `5.75.0-wordpress-php8.0` `5.75-wordpress-php8.0` `5-wordpress-php8.0` `5.75.0-php8.0` `5.75-php8.0` `5-php8.0` `wordpress-php8.0` `php8.0` [(5/wordpress/php8.0)](5/wordpress/php8.0)
+- `5.75.0-wordpress-php8.1` `5.75-wordpress-php8.1` `5-wordpress-php8.1` `5.75.0-wordpress` `5.75-wordpress` `5-wordpress` `5.75.0-php8.1` `5.75-php8.1` `5-php8.1` `5.75.0` `5.75` `5` `wordpress-php8.1` `wordpress` `php8.1` `latest` [(5/wordpress/php8.1)](5/wordpress/php8.1)
+- `5.75.0-wordpress-php8.2` `5.75-wordpress-php8.2` `5-wordpress-php8.2` `5.75.0-php8.2` `5.75-php8.2` `5-php8.2` `wordpress-php8.2` `php8.2` [(5/wordpress/php8.2)](5/wordpress/php8.2)
+- `5.75.0-wordpress-php8.3` `5.75-wordpress-php8.3` `5-wordpress-php8.3` `5.75.0-php8.3` `5.75-php8.3` `5-php8.3` `wordpress-php8.3` `php8.3` [(5/wordpress/php8.3)](5/wordpress/php8.3)
 
 <!---END_TAGS-->
 
