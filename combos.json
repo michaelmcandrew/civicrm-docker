@@ -1,18 +1,4 @@
 {
-    "5.76.2/drupal/8.0": {
-        "dir": "5/drupal/php8.0",
-        "tags": [
-            "5.76.2-drupal-php8.0",
-            "5.76-drupal-php8.0",
-            "5-drupal-php8.0",
-            "drupal-php8.0"
-        ],
-        "variables": {
-            "civi": "5.76.2",
-            "cms": "drupal",
-            "php": "8.0"
-        }
-    },
     "5.76.2/drupal/8.1": {
         "dir": "5/drupal/php8.1",
         "tags": [
@@ -57,24 +43,6 @@
             "civi": "5.76.2",
             "cms": "drupal",
             "php": "8.3"
-        }
-    },
-    "5.76.2/wordpress/8.0": {
-        "dir": "5/wordpress/php8.0",
-        "tags": [
-            "5.76.2-wordpress-php8.0",
-            "5.76-wordpress-php8.0",
-            "5-wordpress-php8.0",
-            "5.76.2-php8.0",
-            "5.76-php8.0",
-            "5-php8.0",
-            "wordpress-php8.0",
-            "php8.0"
-        ],
-        "variables": {
-            "civi": "5.76.2",
-            "cms": "wordpress",
-            "php": "8.0"
         }
     },
     "5.76.2/wordpress/8.1": {
