@@ -3,8 +3,8 @@
 $latestCiviVer = file_get_contents('https://latest.civicrm.org/stable.php');
 
 $cmses = [
-  'drupal',
   'wordpress',
+  'drupal',
 ];
 $phpVers = [
   '8.1',
