@@ -16,7 +16,7 @@ image = "michaelmcandrew/civicrm"
 combos = json.load(open(PROJECT_DIR + "/combos.json"))
 
 for key, combo in combos.items():
-    command = ["docker", "build", PROJECT_DIR + "/" + combo["dir"]]
+    command = ["docker", "build", "--platform", "linux/amd64,linux/arm64", PROJECT_DIR + "/" + combo["dir"]]
     for tag in combo["tags"]:
         command.extend(["--tag", f"{image}:{tag}"])
     run(command)
@@ -26,6 +26,8 @@ run(
     [
         "docker",
         "build",
+        "--platform",
+        "linux/amd64,linux/arm64",
         PROJECT_DIR + "/" + "mysql",
         "--tag",
         "michaelmcandrew/civicrm-mysql:8.0",
