@@ -90,4 +90,23 @@ There are various options when it comes to creating multiplatform builds, includ
 
 ### Configuring multiple native nodes
 
+1. Choose a primary Docker instance that will run the build (and not the platform architecture)
+2. Create other Docker instances that can build natively on the other architectures that you want. For example if you want to build for `amd` and `arm`, and your primary Docker instance is on `arm`, then create a docker instance on an `amd` machine.
+3. Create a *Context* on the primary machine that allows you to access the other Docker service with `docker context create <name> --docker "host=ssh://<ssh_connection_details>l"`. You can test that this worked by listing docker images using the other services' context, e.g. `docker --context=<name> image ls` should show images on the other service. It should also have created a builder on the primary machine which you can see with `docker builder ls`.
+4. Create a builder that can build for both architectures with the following commands (assuming you are on `arm` and the other context is on `amd`)
+5. `docker buildx create --platform arm64 --name amd_and_arm` creates a new context
+6. `docker buildx create --platform amd64 --append --name amd_and_arm <context_name>` appends the amd builder.
+7. Test all is as it should be with `docker builder ls`. It should output something like the following:
 
+```
+NAME/NODE          DRIVER/ENDPOINT                   STATUS    BUILDKIT   PLATFORMS
+amd_and_arm        docker-container                                       
+ \_ amd_and_arm0    \_ unix:///var/run/docker.sock   running   v0.15.2    linux/arm64*, linux/arm/v7, linux/arm/v6
+ \_ amd_and_arm1    \_ almond                        running   v0.15.2    linux/amd64*, linux/amd64/v2, linux/amd64/v3, linux/amd64/v4, linux/386
+```
+
+### Building for multiple architectures
+
+The `buildAndPublish.php` script published multi-architecture images to docker hub using commands that look like this: 
+
+`docker build --builder amd_and_arm --platform linux/amd64,linux/arm64 <Dockerfile> --tag image:1 --tag image:1.0 --push`
