@@ -19,8 +19,6 @@ for key, combo in combos.items():
     command = [
         "docker",
         "build",
-        "--platform",
-        "linux/arm64",
         PROJECT_DIR + "/" + combo["dir"],
     ]
     for tag in combo["tags"]:
@@ -32,8 +30,6 @@ run(
     [
         "docker",
         "build",
-        "--platform",
-        "linux/arm64",
         PROJECT_DIR + "/" + "mysql",
         "--tag",
         "michaelmcandrew/civicrm-mysql:8.0",
