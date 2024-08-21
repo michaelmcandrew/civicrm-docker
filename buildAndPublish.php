@@ -8,7 +8,7 @@ $imageName = "michaelmcandrew/civicrm";
 $commands = [];
 
 foreach ($images as $image) {
-  $tags = implode(array_map(fn($t)=> ' --tag ' . $imageName . $t, $image->tags));
+  $tags = implode(' ', array_map(fn($t)=> "--tag $imageName:$t", $image->tags));
   // TODO: save the planet - do more caching.
   $commands[] = "docker build --pull --no-cache --builder $builder --platform $platforms $image->dir $tags --push";
 }
