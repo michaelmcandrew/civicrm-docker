@@ -98,7 +98,12 @@ if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && strpos( $_SERVER['HTTP_X_FOR
 	$_SERVER['HTTPS'] = 'on';
 }
 
-/* That's all, stop editing! Happy blogging. */
+/**
+ * Load additional site specific config settings if present
+ */
+if ( file_exists( __DIR__ . '/wp-config-extra.php' ) ) {
+	include_once __DIR__ . '/wp-config-extra.php';
+}
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
