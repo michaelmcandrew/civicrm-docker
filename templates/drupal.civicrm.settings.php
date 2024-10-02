@@ -10,6 +10,8 @@ define('CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/html/sites/default/files/civicrm
 define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIVICRM_DB_PASS') . '@' . getenv('CIVICRM_DB_HOST') . '/' . getenv('CIVICRM_DB_NAME') . '?new_link=true');
 define('CIVICRM_UF_DSN', 'mysql://' . getenv('DRUPAL_DB_USER') . ':' . getenv('DRUPAL_DB_PASS') . '@' . getenv('DRUPAL_DB_HOST') . '/' . getenv('DRUPAL_DB_NAME') . '?new_link=true');
 define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
+define('CIVICRM_TEMPLATE_COMPILE_CHECK', getenv('CIVICRM_TEMPLATE_COMPILE_CHECK'));
+define('CIVICRM_SMARTY_AUTOLOAD_PATH', getenv('CIVICRM_SMARTY_AUTOLOAD_PATH'));
 define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 define('CIVICRM_CRED_KEYS', getenv('CIVICRM_CRED_KEYS'));
 define('CIVICRM_SIGN_KEYS', getenv('CIVICRM_SIGN_KEYS'));
@@ -22,7 +24,6 @@ define('CIVICRM_DB_CACHE_CLASS', 'ArrayCache');
 define('CIVICRM_PSR16_STRICT', FALSE);
 define('CIVICRM_DEADLOCK_RETRIES', 3);
 define('CIVICRM_EXCLUDE_DIRS_PATTERN', '@/(\.|node_modules|js/|css/|bower_components|packages/|sites/default/files/private)@');
-
 
 // Include path
 $include_path = '.' . PATH_SEPARATOR .
