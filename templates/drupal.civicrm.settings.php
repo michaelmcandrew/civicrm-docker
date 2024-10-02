@@ -16,6 +16,14 @@ define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 define('CIVICRM_CRED_KEYS', getenv('CIVICRM_CRED_KEYS'));
 define('CIVICRM_SIGN_KEYS', getenv('CIVICRM_SIGN_KEYS'));
 
+// Set the environment e.g. 'Production', 'Staging', 'Development'
+if (getenv('CIVICRM_ENVIRONMENT')) {
+  $civicrm_setting['domain']['environment'] = getenv('CIVICRM_ENVIRONMENT');
+}
+else {
+  $civicrm_setting['domain']['environment'] = 'Production';
+}
+
 // Predefined constants
 define('CIVICRM_LOGGING_DSN', CIVICRM_DSN);
 define('CIVICRM_DOMAIN_ID', 1);
