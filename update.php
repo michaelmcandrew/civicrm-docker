@@ -12,6 +12,6 @@ foreach ($repos as $repo) {
   $commands[] = "git -C $projectDir push $repo master";
 }
 
-foreach ($commands as $command){
-    `$command`;
+foreach ($commands as $command) {
+  `$command`;
 }

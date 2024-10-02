@@ -71,14 +71,13 @@ For convenience, a zip of the original source code of CiviCRM and the selected C
 To update the images on Docker Hub that are defined in this repository, run the following script:
 
 ```sh
-./update.py
+./update.php
 ```
 
 This calls the following processes in order:
 
-- `generate.py` automates the generation of Dockerfiles (updates combos.json).
-- `build.py` builds images based on the dockerfiles (based on combos.json).
-- `publish.py` publishes these images on dockerhub (based on combos.json).
+- `generate.php` automates the generation of Dockerfiles (updates combos.json).
+- `buildAndPublish.php` builds images based on the dockerfiles (based on combos.json) and publishes them.
 
 ## Multi-platform builds
 
