@@ -11,10 +11,14 @@ define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIV
 define('CIVICRM_UF_DSN', 'mysql://' . getenv('WORDPRESS_DB_USER') . ':' . getenv('WORDPRESS_DB_PASS') . '@' . getenv('WORDPRESS_DB_HOST') . '/' . getenv('WORDPRESS_DB_NAME') . '?new_link=true');
 define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
 define('CIVICRM_TEMPLATE_COMPILE_CHECK', getenv('CIVICRM_TEMPLATE_COMPILE_CHECK'));
-define('CIVICRM_SMARTY_AUTOLOAD_PATH', getenv('CIVICRM_SMARTY_AUTOLOAD_PATH'));
 define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 define('CIVICRM_CRED_KEYS', getenv('CIVICRM_CRED_KEYS'));
 define('CIVICRM_SIGN_KEYS', getenv('CIVICRM_SIGN_KEYS'));
+
+// Smarty version
+if (getenv('CIVICRM_SMARTY_VERSION') == '5') {
+  define('CIVICRM_SMARTY_AUTOLOAD_PATH', $civicrm_root . '/packages/smarty5/Smarty.php');
+}
 
 // Set the environment e.g. 'Production', 'Staging', 'Development'
 if (getenv('CIVICRM_ENVIRONMENT')) {
