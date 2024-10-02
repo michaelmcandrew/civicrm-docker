@@ -15,7 +15,8 @@ define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 define('CIVICRM_CRED_KEYS', getenv('CIVICRM_CRED_KEYS'));
 define('CIVICRM_SIGN_KEYS', getenv('CIVICRM_SIGN_KEYS'));
 
-// Smarty version
+// Smarty version - this is a temporary measure that we can remove when Smarty 5 becomes the default
+// See https://lab.civicrm.org/dev/core/-/issues/4146
 if (getenv('CIVICRM_SMARTY_VERSION') == '5') {
   define('CIVICRM_SMARTY_AUTOLOAD_PATH', $civicrm_root . '/packages/smarty5/Smarty.php');
 }
