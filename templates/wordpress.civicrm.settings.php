@@ -24,9 +24,6 @@ if (getenv('CIVICRM_SMARTY_VERSION') == '5') {
 if (getenv('CIVICRM_ENVIRONMENT')) {
   $civicrm_setting['domain']['environment'] = getenv('CIVICRM_ENVIRONMENT');
 }
-else {
-  $civicrm_setting['domain']['environment'] = 'Production';
-}
 
 // Predefined constants
 define('CIVICRM_LOGGING_DSN', CIVICRM_DSN);
