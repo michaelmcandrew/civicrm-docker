@@ -20,7 +20,7 @@ RUN apt-get update \
   libicu-dev \
   libjpeg62-turbo-dev \
   libkrb5-dev \
-  libmagick-dev \
+  libmagickwand-dev \
   libpng-dev \
   libxml2-dev \
   libzip-dev \
@@ -31,11 +31,12 @@ RUN apt-get update \
   && rm -r /var/lib/apt/lists/*
 
 # CiviCRM requires the following PHP extensions (some of which are already
-# enabled in the Docker image:
+# enabled in the Docker image):
 #
 # * curl (already enabled)
 # * gd
 # * gettext
+# * imagick
 # * imap
 # * intl
 # * json (already enabled)
@@ -47,6 +48,18 @@ RUN apt-get update \
 # * posix (already enabled)
 # * soap
 # * zip
+
+# WordPress recommends the following PHP extensions in addition to 
+# the ones listed above:
+#
+# * dom (already enabled)
+# * exif
+# * fileinfo (already enabled)
+# * hash (already enabled)
+# * igbinary
+# * imagick 
+# * pcre (already enabled)
+# * xml (already enabled)
 
 # Configure and install php extensions (note configuration comes before installation)
 
@@ -76,6 +89,10 @@ RUN curl -fL -o imagick.tgz 'https://pecl.php.net/get/imagick-3.7.0.tgz'; \
   grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php && exit 1 || :; \
   docker-php-ext-install /tmp/imagick-3.7.0; \
   rm -rf imagick.tgz /tmp/imagick-3.7.0;
+
+# Install igbinary PECL extension
+RUN pecl install igbinary \
+  && docker-php-ext-enable igbinary 
 
 # Install xdebug PECL extension
 RUN pecl install xdebug
