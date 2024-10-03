@@ -77,6 +77,8 @@ RUN docker-php-ext-install bcmath \
   && docker-php-ext-install soap \
   && docker-php-ext-install zip
 
+# Install and enable imagick PECL extensions
+
 # Copy pasta from https://github.com/docker-library/wordpress/blob/3f1a0cab9f2f938bbc57f5f92ec11eeea4511636/latest/php8.3/fpm-alpine/Dockerfile#L47-L51
 # Based on suggestion here: https://github.com/docker-library/php/issues/1532#issuecomment-2258777719
 RUN curl -fL -o imagick.tgz 'https://pecl.php.net/get/imagick-3.7.0.tgz'; \
