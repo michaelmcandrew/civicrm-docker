@@ -20,7 +20,7 @@ RUN apt-get update \
   libicu-dev \
   libjpeg62-turbo-dev \
   libkrb5-dev \
-  libmagickwand-dev \
+  libmagick-dev \
   libpng-dev \
   libxml2-dev \
   libzip-dev \
