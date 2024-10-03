@@ -64,6 +64,7 @@ RUN apt-get update \
 # Configure and install php extensions (note configuration comes before installation)
 
 RUN docker-php-ext-install bcmath \
+  && docker-php-ext-install exif \  
   && docker-php-ext-configure gd --with-jpeg \
   && docker-php-ext-install gd \
   && docker-php-ext-install gettext \
