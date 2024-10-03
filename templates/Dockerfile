@@ -64,6 +64,7 @@ RUN apt-get update \
 # Configure and install php extensions (note configuration comes before installation)
 
 RUN docker-php-ext-install bcmath \
+  && docker-php-ext-install exif \  
   && docker-php-ext-configure gd --with-jpeg \
   && docker-php-ext-install gd \
   && docker-php-ext-install gettext \
@@ -75,8 +76,6 @@ RUN docker-php-ext-install bcmath \
   && docker-php-ext-install pdo_mysql \
   && docker-php-ext-install soap \
   && docker-php-ext-install zip
-
-# Install and enable imagick PECL extensions
 
 # Copy pasta from https://github.com/docker-library/wordpress/blob/3f1a0cab9f2f938bbc57f5f92ec11eeea4511636/latest/php8.3/fpm-alpine/Dockerfile#L47-L51
 # Based on suggestion here: https://github.com/docker-library/php/issues/1532#issuecomment-2258777719
