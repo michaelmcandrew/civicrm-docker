@@ -65,8 +65,22 @@ RUN docker-php-ext-install bcmath \
 
 # Install and enable imagick PECL extensions
 
+<?php if($vars['php']=='8.3'): ?>
+# Copy pasta from https://github.com/docker-library/wordpress/blob/3f1a0cab9f2f938bbc57f5f92ec11eeea4511636/latest/php8.3/fpm-alpine/Dockerfile#L47-L51
+# Based on suggestion here: https://github.com/docker-library/php/issues/1532#issuecomment-2258777719
+RUN curl -fL -o imagick.tgz 'https://pecl.php.net/get/imagick-3.7.0.tgz'; \
+  echo '5a364354109029d224bcbb2e82e15b248be9b641227f45e63425c06531792d3e *imagick.tgz' | sha256sum -c -; \
+  tar --extract --directory /tmp --file imagick.tgz imagick-3.7.0; \
+  grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php; \
+  test "$(grep -c '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php)" = '1'; \
+  sed -i -e 's!^//#endif$!#endif!' /tmp/imagick-3.7.0/Imagick.stub.php; \
+  grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php && exit 1 || :; \
+  docker-php-ext-install /tmp/imagick-3.7.0; \
+  rm -rf imagick.tgz /tmp/imagick-3.7.0;
+<?php else: ?>
 RUN pecl install imagick \
   && docker-php-ext-enable imagick
+<?php endif; ?>
 
 # Install xdebug PECL extension
 RUN pecl install xdebug

@@ -108,7 +108,7 @@ RUN curl -LsS https://download.civicrm.org/civix/civix.phar -o /usr/local/bin/ci
 
 # Configure apache
 
-RUN a2enmod rewrite headers remoteip
+RUN a2enmod expires headers remoteip rewrite
 
 COPY ./apache.conf /etc/apache2/conf-available/civicrm.conf
 
@@ -148,12 +148,12 @@ RUN wp core download
 RUN mkdir /var/www/html/wp-content/uploads
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.76.2-wordpress.zip > civicrm-wordpress.zip \
+    && curl -L https://download.civicrm.org/civicrm-5.78.0-wordpress.zip > civicrm-wordpress.zip \
     && unzip civicrm-wordpress.zip \
     && rm civicrm-wordpress.zip
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.76.2-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.78.0-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 

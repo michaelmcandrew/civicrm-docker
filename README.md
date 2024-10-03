@@ -19,12 +19,12 @@ Implementation may well be behind the documentation for some CMS. If you are hav
 The following tags are available:
 
 <!--START_TAGS-->
-- 5, 5-php8.1, 5-wordpress, 5-wordpress-php8.1, 5.76, 5.76-php8.1, 5.76-wordpress, 5.76-wordpress-php8.1, 5.76.2, 5.76.2-php8.1, 5.76.2-wordpress, 5.76.2-wordpress-php8.1, latest, php8.1, wordpress, wordpress-php8.1 [5/wordpress/php8.1](5/wordpress/php8.1)
-- 5-php8.2, 5-wordpress-php8.2, 5.76-php8.2, 5.76-wordpress-php8.2, 5.76.2-php8.2, 5.76.2-wordpress-php8.2, php8.2, wordpress-php8.2 [5/wordpress/php8.2](5/wordpress/php8.2)
-- 5-php8.3, 5-wordpress-php8.3, 5.76-php8.3, 5.76-wordpress-php8.3, 5.76.2-php8.3, 5.76.2-wordpress-php8.3, php8.3, wordpress-php8.3 [5/wordpress/php8.3](5/wordpress/php8.3)
-- 5-drupal, 5-drupal-php8.1, 5.76-drupal, 5.76-drupal-php8.1, 5.76.2-drupal, 5.76.2-drupal-php8.1, drupal, drupal-php8.1 [5/drupal/php8.1](5/drupal/php8.1)
-- 5-drupal-php8.2, 5.76-drupal-php8.2, 5.76.2-drupal-php8.2, drupal-php8.2 [5/drupal/php8.2](5/drupal/php8.2)
-- 5-drupal-php8.3, 5.76-drupal-php8.3, 5.76.2-drupal-php8.3, drupal-php8.3 [5/drupal/php8.3](5/drupal/php8.3)
+- 5, 5-php8.1, 5-wordpress, 5-wordpress-php8.1, 5.78, 5.78-php8.1, 5.78-wordpress, 5.78-wordpress-php8.1, 5.78.0, 5.78.0-php8.1, 5.78.0-wordpress, 5.78.0-wordpress-php8.1, latest, php8.1, wordpress, wordpress-php8.1 [5/wordpress/php8.1](5/wordpress/php8.1)
+- 5-php8.2, 5-wordpress-php8.2, 5.78-php8.2, 5.78-wordpress-php8.2, 5.78.0-php8.2, 5.78.0-wordpress-php8.2, php8.2, wordpress-php8.2 [5/wordpress/php8.2](5/wordpress/php8.2)
+- 5-php8.3, 5-wordpress-php8.3, 5.78-php8.3, 5.78-wordpress-php8.3, 5.78.0-php8.3, 5.78.0-wordpress-php8.3, php8.3, wordpress-php8.3 [5/wordpress/php8.3](5/wordpress/php8.3)
+- 5-drupal, 5-drupal-php8.1, 5.78-drupal, 5.78-drupal-php8.1, 5.78.0-drupal, 5.78.0-drupal-php8.1, drupal, drupal-php8.1 [5/drupal/php8.1](5/drupal/php8.1)
+- 5-drupal-php8.2, 5.78-drupal-php8.2, 5.78.0-drupal-php8.2, drupal-php8.2 [5/drupal/php8.2](5/drupal/php8.2)
+- 5-drupal-php8.3, 5.78-drupal-php8.3, 5.78.0-drupal-php8.3, drupal-php8.3 [5/drupal/php8.3](5/drupal/php8.3)
 <!--END_TAGS-->
 
 ## 'Quick' start
@@ -91,7 +91,7 @@ There are various options when it comes to creating multiplatform builds, includ
 
 1. Choose a primary Docker instance that will run the build (and not the platform architecture)
 2. Create other Docker instances that can build natively on the other architectures that you want. For example if you want to build for `amd` and `arm`, and your primary Docker instance is on `arm`, then create a docker instance on an `amd` machine.
-3. Create a *Context* on the primary machine that allows you to access the other Docker service with `docker context create <name> --docker "host=ssh://<ssh_connection_details>l"`. You can test that this worked by listing docker images using the other services' context, e.g. `docker --context=<name> image ls` should show images on the other service. It should also have created a builder on the primary machine which you can see with `docker builder ls`.
+3. Create a *Context* on the primary machine that allows you to access the other Docker service with `docker context create <name> --docker "host=ssh://<ssh_connection_details>"`. You can test that this worked by listing docker images using the other services' context, e.g. `docker --context=<name> image ls` should show images on the other service. It should also have created a builder on the primary machine which you can see with `docker builder ls`.
 4. Create a builder that can build for both architectures with the following commands (assuming you are on `arm` and the other context is on `amd`)
 5. `docker buildx create --platform arm64 --name amd_and_arm` creates a new context
 6. `docker buildx create --platform amd64 --append --name amd_and_arm <context_name>` appends the amd builder.

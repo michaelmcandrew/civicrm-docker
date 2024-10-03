@@ -65,8 +65,17 @@ RUN docker-php-ext-install bcmath \
 
 # Install and enable imagick PECL extensions
 
-RUN pecl install imagick \
-  && docker-php-ext-enable imagick
+# Copy pasta from https://github.com/docker-library/wordpress/blob/3f1a0cab9f2f938bbc57f5f92ec11eeea4511636/latest/php8.3/fpm-alpine/Dockerfile#L47-L51
+# Based on suggestion here: https://github.com/docker-library/php/issues/1532#issuecomment-2258777719
+RUN curl -fL -o imagick.tgz 'https://pecl.php.net/get/imagick-3.7.0.tgz'; \
+  echo '5a364354109029d224bcbb2e82e15b248be9b641227f45e63425c06531792d3e *imagick.tgz' | sha256sum -c -; \
+  tar --extract --directory /tmp --file imagick.tgz imagick-3.7.0; \
+  grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php; \
+  test "$(grep -c '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php)" = '1'; \
+  sed -i -e 's!^//#endif$!#endif!' /tmp/imagick-3.7.0/Imagick.stub.php; \
+  grep '^//#endif$' /tmp/imagick-3.7.0/Imagick.stub.php && exit 1 || :; \
+  docker-php-ext-install /tmp/imagick-3.7.0; \
+  rm -rf imagick.tgz /tmp/imagick-3.7.0;
 
 # Install xdebug PECL extension
 RUN pecl install xdebug
@@ -108,7 +117,7 @@ RUN curl -LsS https://download.civicrm.org/civix/civix.phar -o /usr/local/bin/ci
 
 # Configure apache
 
-RUN a2enmod rewrite headers remoteip
+RUN a2enmod expires headers remoteip rewrite
 
 COPY ./apache.conf /etc/apache2/conf-available/civicrm.conf
 
@@ -148,12 +157,12 @@ RUN wp core download
 RUN mkdir /var/www/html/wp-content/uploads
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.76.2-wordpress.zip > civicrm-wordpress.zip \
+    && curl -L https://download.civicrm.org/civicrm-5.78.0-wordpress.zip > civicrm-wordpress.zip \
     && unzip civicrm-wordpress.zip \
     && rm civicrm-wordpress.zip
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.76.2-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.78.0-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 
