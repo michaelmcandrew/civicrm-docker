@@ -64,6 +64,7 @@ RUN apt-get update \
 # Configure and install php extensions (note configuration comes before installation)
 
 RUN docker-php-ext-install bcmath \
+  && docker-php-ext-install exif \  
   && docker-php-ext-configure gd --with-jpeg \
   && docker-php-ext-install gd \
   && docker-php-ext-install gettext \
@@ -174,12 +175,12 @@ RUN wp core download
 RUN mkdir /var/www/html/wp-content/uploads
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.78.0-wordpress.zip > civicrm-wordpress.zip \
+    && curl -L https://download.civicrm.org/civicrm-5.78.3-wordpress.zip > civicrm-wordpress.zip \
     && unzip civicrm-wordpress.zip \
     && rm civicrm-wordpress.zip
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-5.78.0-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-5.78.3-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 

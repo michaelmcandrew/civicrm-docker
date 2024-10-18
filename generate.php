@@ -66,8 +66,7 @@ foreach ($combos as $k => $combo) {
   $combos[$k]['tags'] = $implodedTags;
   sort($combos[$k]['tags']);
 }
-
-file_put_contents('combos.json', json_encode($combos, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+file_put_contents(__DIR__ . '/' . 'combos.json', json_encode($combos, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
 $projectDir = __DIR__;
 `rm -r $projectDir/5`;
@@ -75,10 +74,10 @@ $projectDir = __DIR__;
 
 foreach ($combos as $combo) {
   $cms = $combo['variables']['cms'];
-  $comboDir = $combo['dir'];
-  `mkdir -p $projectDir/$comboDir`;
+  $comboDir = __DIR__ . '/' . $combo['dir'];
+  `mkdir -p $comboDir`;
   $dockerFile = inc("$projectDir/templates/Dockerfile", $combo['variables']);
-  file_put_contents("$projectDir/$comboDir/Dockerfile", $dockerFile);
+  file_put_contents("$comboDir/Dockerfile", $dockerFile);
   `cp $projectDir/templates/$cms.civicrm.settings.php $comboDir/civicrm.settings.php`;
   $cmsSettingsFile = $cmsSettingsFiles[$cms];
   `cp $projectDir/templates/$cms.$cmsSettingsFile $comboDir/$cmsSettingsFile`;
@@ -92,10 +91,6 @@ foreach ($combos as $combo) {
   `cp $projectDir/templates/civicrm_dump.php $comboDir`;
   `cp $projectDir/templates/civicrm-docker-entrypoint $comboDir`;
   `cp $projectDir/templates/msmtp-wrapper $comboDir`;
-
-  if ($cms == 'wordpress') {
-    `cp $projectDir/templates/wordpress.wordpress-update-domain $comboDir/wordpress-update-domain`;
-  }
 }
 
 $readme = file_get_contents($projectDir . '/README.md');
