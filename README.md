@@ -19,12 +19,12 @@ Implementation may well be behind the documentation for some CMS. If you are hav
 The following tags are available:
 
 <!--START_TAGS-->
-- 5, 5-php8.1, 5-wordpress, 5-wordpress-php8.1, 5.78, 5.78-php8.1, 5.78-wordpress, 5.78-wordpress-php8.1, 5.78.3, 5.78.3-php8.1, 5.78.3-wordpress, 5.78.3-wordpress-php8.1, latest, php8.1, wordpress, wordpress-php8.1 [5/wordpress/php8.1](5/wordpress/php8.1)
-- 5-php8.2, 5-wordpress-php8.2, 5.78-php8.2, 5.78-wordpress-php8.2, 5.78.3-php8.2, 5.78.3-wordpress-php8.2, php8.2, wordpress-php8.2 [5/wordpress/php8.2](5/wordpress/php8.2)
 - 5-php8.3, 5-wordpress-php8.3, 5.78-php8.3, 5.78-wordpress-php8.3, 5.78.3-php8.3, 5.78.3-wordpress-php8.3, php8.3, wordpress-php8.3 [5/wordpress/php8.3](5/wordpress/php8.3)
-- 5-drupal, 5-drupal-php8.1, 5.78-drupal, 5.78-drupal-php8.1, 5.78.3-drupal, 5.78.3-drupal-php8.1, drupal, drupal-php8.1 [5/drupal/php8.1](5/drupal/php8.1)
-- 5-drupal-php8.2, 5.78-drupal-php8.2, 5.78.3-drupal-php8.2, drupal-php8.2 [5/drupal/php8.2](5/drupal/php8.2)
+- 5-php8.2, 5-wordpress-php8.2, 5.78-php8.2, 5.78-wordpress-php8.2, 5.78.3-php8.2, 5.78.3-wordpress-php8.2, php8.2, wordpress-php8.2 [5/wordpress/php8.2](5/wordpress/php8.2)
+- 5, 5-php8.1, 5-wordpress, 5-wordpress-php8.1, 5.78, 5.78-php8.1, 5.78-wordpress, 5.78-wordpress-php8.1, 5.78.3, 5.78.3-php8.1, 5.78.3-wordpress, 5.78.3-wordpress-php8.1, latest, php8.1, wordpress, wordpress-php8.1 [5/wordpress/php8.1](5/wordpress/php8.1)
 - 5-drupal-php8.3, 5.78-drupal-php8.3, 5.78.3-drupal-php8.3, drupal-php8.3 [5/drupal/php8.3](5/drupal/php8.3)
+- 5-drupal-php8.2, 5.78-drupal-php8.2, 5.78.3-drupal-php8.2, drupal-php8.2 [5/drupal/php8.2](5/drupal/php8.2)
+- 5-drupal, 5-drupal-php8.1, 5.78-drupal, 5.78-drupal-php8.1, 5.78.3-drupal, 5.78.3-drupal-php8.1, drupal, drupal-php8.1 [5/drupal/php8.1](5/drupal/php8.1)
 <!--END_TAGS-->
 
 ## 'Quick' start
