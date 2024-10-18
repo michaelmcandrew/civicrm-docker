@@ -2,12 +2,11 @@
 $repos = ['civi', 'hub', '3sd'];
 $projectDir = __DIR__;
 
+$commands = [];
+
 foreach ($repos as $repo) {
   $commands[] = "git -C $projectDir pull $repo";
 }
-
-$commands = [];
-$commands[] = "git -C $projectDir pull";
 $commands[] = "php $projectDir/generate.php";
 $commands[] = "php $projectDir/buildAndPublish.php";
 $commands[] = "git -C $projectDir add .";
