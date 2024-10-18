@@ -17,6 +17,6 @@ foreach ($repos as $repo) {
 }
 
 foreach ($commands as $command) {
-  echo "+{$command}";
+  echo "+{$command}\n";
   echo `$command`;
 }
