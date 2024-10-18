@@ -6,13 +6,7 @@ All images are based php-apache.
 
 In most cases, just choose the CMS that you would like to use, e.g. `civicrm:wordpress`. Everything else (php version, etc.) will be set to sensible defaults. You can get more specific with one of the tags below.
 
-## Health warning
-
-**WORK IN PROGRESS - USE AT YOUR OWN RISK**.
-
-These images are largely untested in production. Questions about how to use these images are very welcome in the issue queue. Answers will likely come in the form of updates to this README.md and other bits of documentation. Please share your experiences using these images so we can improve them as we go.
-
-Implementation may well be behind the documentation for some CMS. If you are having difficulty getting going, please ping michaelmcandrew in the CiviCRM docker chat channel here: https://chat.civicrm.org/civicrm/channels/docker and I will try and help, else feel free to create and issue.
+Please share your experiences using these images so we can improve them as we go. Questions about how to use these images are very welcome in the issue queue. 
 
 ## Tags
 
@@ -56,15 +50,7 @@ Running `docker-compose exec civicrm civicrm-docker-load` will load an existing 
 
 # MySQL
 
-The images are designed to be used with whatever MySQL backend you like: one in a container, one on bare metal, or maybe a DB appliance from a cloud provider.
-
-A simple mysql image based on the official `mysql:8.0` and suitable for CiviCRM can be found at `michaelmcandrew/mysql-civicrm`. See the `docker-compose.dev.dist.yml` files in the docker-compose directory for an example of this image in use.
-
-## Source code
-
-For convenience, a zip of the original source code of CiviCRM and the selected CMS can\* be found at `/usr/local/src`.
-
-\*Not quite ready yet!
+The images are MySQL flavour agnostic.
 
 ## Administration
 
@@ -79,13 +65,11 @@ This calls the following processes in order:
 - `generate.php` automates the generation of Dockerfiles (updates combos.json).
 - `buildAndPublish.php` builds images based on the dockerfiles (based on combos.json) and publishes them.
 
-## Multi-platform builds
+The `buildAndPublish.php` script published multi-architecture images to docker hub using commands that look like this: 
 
-There are various options when it comes to creating multiplatform builds, including:
+`docker build --builder amd_and_arm --platform linux/amd64,linux/arm64 <Dockerfile> --tag image:1 --tag image:1.0 --push`
 
-- Emulation of platform architectures on a single docker host (slow and buggy when we tried it)
-- Using an external service such as Docker Build Cloud
-- Using 'multiple native nodes' (the route we went down).
+That is to say, you'll need to run this on a host that can build `linux/arm64` and `linux/amd64` images. You'll also need to set up a builder called `amd_and_arm`.
 
 ### Configuring multiple native nodes
 
@@ -106,6 +90,3 @@ amd_and_arm        docker-container
 
 ### Building for multiple architectures
 
-The `buildAndPublish.php` script published multi-architecture images to docker hub using commands that look like this: 
-
-`docker build --builder amd_and_arm --platform linux/amd64,linux/arm64 <Dockerfile> --tag image:1 --tag image:1.0 --push`
