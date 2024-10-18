@@ -18,6 +18,7 @@ Implementation may well be behind the documentation for some CMS. If you are hav
 
 The following tags are available:
 
+<<<<<<< HEAD
 <!--START_TAGS-->
 - 5, 5-php8.1, 5-wordpress, 5-wordpress-php8.1, 5.78, 5.78-php8.1, 5.78-wordpress, 5.78-wordpress-php8.1, 5.78.3, 5.78.3-php8.1, 5.78.3-wordpress, 5.78.3-wordpress-php8.1, latest, php8.1, wordpress, wordpress-php8.1 [5/wordpress/php8.1](5/wordpress/php8.1)
 - 5-php8.2, 5-wordpress-php8.2, 5.78-php8.2, 5.78-wordpress-php8.2, 5.78.3-php8.2, 5.78.3-wordpress-php8.2, php8.2, wordpress-php8.2 [5/wordpress/php8.2](5/wordpress/php8.2)
@@ -26,6 +27,18 @@ The following tags are available:
 - 5-drupal-php8.2, 5.78-drupal-php8.2, 5.78.3-drupal-php8.2, drupal-php8.2 [5/drupal/php8.2](5/drupal/php8.2)
 - 5-drupal-php8.3, 5.78-drupal-php8.3, 5.78.3-drupal-php8.3, drupal-php8.3 [5/drupal/php8.3](5/drupal/php8.3)
 <!--END_TAGS-->
+=======
+<!---START_TAGS-->
+
+- `5.76.2-drupal-php8.1` `5.76-drupal-php8.1` `5-drupal-php8.1` `5.76.2-drupal` `5.76-drupal` `5-drupal` `drupal-php8.1` `drupal` [(5/drupal/php8.1)](5/drupal/php8.1)
+- `5.76.2-drupal-php8.2` `5.76-drupal-php8.2` `5-drupal-php8.2` `drupal-php8.2` [(5/drupal/php8.2)](5/drupal/php8.2)
+- `5.76.2-drupal-php8.3` `5.76-drupal-php8.3` `5-drupal-php8.3` `drupal-php8.3` [(5/drupal/php8.3)](5/drupal/php8.3)
+- `5.76.2-wordpress-php8.1` `5.76-wordpress-php8.1` `5-wordpress-php8.1` `5.76.2-wordpress` `5.76-wordpress` `5-wordpress` `5.76.2-php8.1` `5.76-php8.1` `5-php8.1` `5.76.2` `5.76` `5` `wordpress-php8.1` `wordpress` `php8.1` `latest` [(5/wordpress/php8.1)](5/wordpress/php8.1)
+- `5.76.2-wordpress-php8.2` `5.76-wordpress-php8.2` `5-wordpress-php8.2` `5.76.2-php8.2` `5.76-php8.2` `5-php8.2` `wordpress-php8.2` `php8.2` [(5/wordpress/php8.2)](5/wordpress/php8.2)
+- `5.76.2-wordpress-php8.3` `5.76-wordpress-php8.3` `5-wordpress-php8.3` `5.76.2-php8.3` `5.76-php8.3` `5-php8.3` `wordpress-php8.3` `php8.3` [(5/wordpress/php8.3)](5/wordpress/php8.3)
+
+<!---END_TAGS-->
+>>>>>>> df39eab79fc9139ee6387dcddd378a1b270012bf
 
 ## 'Quick' start
 
