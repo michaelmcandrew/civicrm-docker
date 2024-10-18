@@ -27,7 +27,6 @@ The following tags are available:
 - 5-drupal-php8.3, 5.78-drupal-php8.3, 5.78.3-drupal-php8.3, drupal-php8.3 [5/drupal/php8.3](5/drupal/php8.3)
 <!--END_TAGS-->
 
-
 ## 'Quick' start
 
 There are a couple of options for getting started. Here are a couple of common workflows that I use.
