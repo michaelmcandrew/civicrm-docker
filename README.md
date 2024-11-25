@@ -54,22 +54,20 @@ The images are MySQL flavour agnostic.
 
 ## Administration
 
-To update the images on Docker Hub that are defined in this repository, run the following script:
-
-```sh
-./update.php
-```
+To update the images on Docker Hub that are defined in this repository, run the `update.php` script. 
 
 This calls the following processes in order:
 
 - `generate.php` automates the generation of Dockerfiles (updates combos.json).
 - `buildAndPublish.php` builds images based on the dockerfiles (based on combos.json) and publishes them.
 
-The `buildAndPublish.php` script published multi-architecture images to docker hub using commands that look like this: 
+Note: The `buildAndPublish.php` script publishes multi-architecture images to docker hub using commands that look like this: 
 
 `docker build --builder amd_and_arm --platform linux/amd64,linux/arm64 <Dockerfile> --tag image:1 --tag image:1.0 --push`
 
-That is to say, you'll need to run this on a host that can build `linux/arm64` and `linux/amd64` images. You'll also need to set up a builder called `amd_and_arm`.
+Hence, you'll need to run this on a host that can build `linux/arm64` and `linux/amd64` images. You'll also need to set up a builder called `amd_and_arm`.
+
+Note:`update.php` also pulls from and pushes to the various repositories for this code (3SD's Gitlab, CiviCRM's Gitlab, and Github).
 
 ### Configuring multiple native nodes
 
