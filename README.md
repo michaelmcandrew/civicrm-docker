@@ -78,6 +78,7 @@ Note:`update.php` also pulls from and pushes to the various repositories for thi
 5. `docker buildx create --platform arm64 --name amd_and_arm` creates a new context
 6. `docker buildx create --platform amd64 --append --name amd_and_arm <context_name>` appends the amd builder.
 7. Test all is as it should be with `docker builder ls`. It should output something like the following:
+Buildkit 
 
 ```
 NAME/NODE          DRIVER/ENDPOINT                   STATUS    BUILDKIT   PLATFORMS
