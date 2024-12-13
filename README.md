@@ -13,12 +13,12 @@ Please share your experiences using these images so we can improve them as we go
 The following tags are available:
 
 <!--START_TAGS-->
-- 5-php8.3, 5-wordpress-php8.3, 5.80-php8.3, 5.80-wordpress-php8.3, 5.80.0-php8.3, 5.80.0-wordpress-php8.3, php8.3, wordpress-php8.3 [5/wordpress/php8.3](5/wordpress/php8.3)
-- 5-php8.2, 5-wordpress-php8.2, 5.80-php8.2, 5.80-wordpress-php8.2, 5.80.0-php8.2, 5.80.0-wordpress-php8.2, php8.2, wordpress-php8.2 [5/wordpress/php8.2](5/wordpress/php8.2)
-- 5, 5-php8.1, 5-wordpress, 5-wordpress-php8.1, 5.80, 5.80-php8.1, 5.80-wordpress, 5.80-wordpress-php8.1, 5.80.0, 5.80.0-php8.1, 5.80.0-wordpress, 5.80.0-wordpress-php8.1, latest, php8.1, wordpress, wordpress-php8.1 [5/wordpress/php8.1](5/wordpress/php8.1)
-- 5-drupal-php8.3, 5.80-drupal-php8.3, 5.80.0-drupal-php8.3, drupal-php8.3 [5/drupal/php8.3](5/drupal/php8.3)
-- 5-drupal-php8.2, 5.80-drupal-php8.2, 5.80.0-drupal-php8.2, drupal-php8.2 [5/drupal/php8.2](5/drupal/php8.2)
-- 5-drupal, 5-drupal-php8.1, 5.80-drupal, 5.80-drupal-php8.1, 5.80.0-drupal, 5.80.0-drupal-php8.1, drupal, drupal-php8.1 [5/drupal/php8.1](5/drupal/php8.1)
+- 5-php8.3, 5-wordpress-php8.3, 5.80-php8.3, 5.80-wordpress-php8.3, 5.80.1-php8.3, 5.80.1-wordpress-php8.3, php8.3, wordpress-php8.3 [5/wordpress/php8.3](5/wordpress/php8.3)
+- 5-php8.2, 5-wordpress-php8.2, 5.80-php8.2, 5.80-wordpress-php8.2, 5.80.1-php8.2, 5.80.1-wordpress-php8.2, php8.2, wordpress-php8.2 [5/wordpress/php8.2](5/wordpress/php8.2)
+- 5, 5-php8.1, 5-wordpress, 5-wordpress-php8.1, 5.80, 5.80-php8.1, 5.80-wordpress, 5.80-wordpress-php8.1, 5.80.1, 5.80.1-php8.1, 5.80.1-wordpress, 5.80.1-wordpress-php8.1, latest, php8.1, wordpress, wordpress-php8.1 [5/wordpress/php8.1](5/wordpress/php8.1)
+- 5-drupal-php8.3, 5.80-drupal-php8.3, 5.80.1-drupal-php8.3, drupal-php8.3 [5/drupal/php8.3](5/drupal/php8.3)
+- 5-drupal-php8.2, 5.80-drupal-php8.2, 5.80.1-drupal-php8.2, drupal-php8.2 [5/drupal/php8.2](5/drupal/php8.2)
+- 5-drupal, 5-drupal-php8.1, 5.80-drupal, 5.80-drupal-php8.1, 5.80.1-drupal, 5.80.1-drupal-php8.1, drupal, drupal-php8.1 [5/drupal/php8.1](5/drupal/php8.1)
 <!--END_TAGS-->
 
 ## 'Quick' start
