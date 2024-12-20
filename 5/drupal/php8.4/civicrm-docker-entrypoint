@@ -1,0 +1,65 @@
+#!/bin/sh
+set -e
+
+# sendmail via smtp
+cat <<EOF >/etc/msmtprc
+host $SMTP_HOST
+EOF
+
+if [ ! -z "$SMTP_PORT" ]; then
+  cat <<EOF >>/etc/msmtprc
+port $SMTP_PORT
+EOF
+fi
+
+# Note: we assume TlS when we have a username and password
+if [ ! -z "$SMTP_USER" ] && [ ! -z "$SMTP_PASSWORD" ]; then
+  cat <<EOF >>/etc/msmtprc
+auth on
+tls on
+tls_starttls on
+user $SMTP_USER
+password $SMTP_PASSWORD
+EOF
+fi
+
+# civicrm php.ini settings
+cat <<EOF >/usr/local/etc/php/conf.d/civicrm.ini
+memory_limit = 1024M
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time=300
+max_input_time  = -1
+max_input_vars = 10000
+sendmail_path=/usr/local/bin/msmtp-wrapper
+date.timezone=$PHP_DATE_TIMEZONE
+log_errors = On
+error_log = /dev/stderr
+EOF
+
+if [ "$DEBUG" = "ON" ]; then
+  cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+  CONTAINER_IP=$(/sbin/ip route | awk '/default/ { print $3 }')
+  XDEBUG_REMOTE_HOST=$CONTAINER_IP
+  cat <<EOF >/usr/local/etc/php/conf.d/debug.ini
+zend_extension=xdebug.so
+
+xdebug.mode=develop,debug
+xdebug.client_host=${CONTAINER_IP}
+xdebug.start_with_request=yes
+xdebug.log_level=0
+xdebug.cli_color=1
+xdebug.var_display_max_depth=2
+xdebug.var_display_max_children=128
+xdebug.var_display_max_data=128
+max_execution_time=600
+EOF
+fi
+
+su civicrm -c /usr/local/bin/civicrm-docker-init
+
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+  set -- apache2-foreground "$@"
+fi
+exec "$@"
