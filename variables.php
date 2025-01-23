@@ -7,7 +7,7 @@ $cmses = [
   'drupal',
 ];
 $phpVers = [
-  '8.4',
+  // '8.4', //
   '8.3',
   '8.2',
   '8.1',
@@ -16,5 +16,5 @@ $phpVers = [
 $defaults = [
   "civi" => $latestCiviVer,
   "cms" => "wordpress",
-  "php" => "8.1",
+  "php" => "8.3",
 ];
