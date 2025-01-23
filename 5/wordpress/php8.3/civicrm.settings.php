@@ -10,7 +10,7 @@ define('CIVICRM_TEMPLATE_COMPILEDIR', '/var/www/html/wp-content/uploads/civicrm/
 define('CIVICRM_DSN', 'mysql://' . getenv('CIVICRM_DB_USER') . ':' . getenv('CIVICRM_DB_PASS') . '@' . getenv('CIVICRM_DB_HOST') . '/' . getenv('CIVICRM_DB_NAME') . '?new_link=true');
 define('CIVICRM_UF_DSN', 'mysql://' . getenv('WORDPRESS_DB_USER') . ':' . getenv('WORDPRESS_DB_PASS') . '@' . getenv('WORDPRESS_DB_HOST') . '/' . getenv('WORDPRESS_DB_NAME') . '?new_link=true');
 define('CIVICRM_UF_BASEURL', getenv('BASE_URL'));
-define('CIVICRM_TEMPLATE_COMPILE_CHECK', getenv('CIVICRM_TEMPLATE_COMPILE_CHECK'));
+define('CIVICRM_TEMPLATE_COMPILE_CHECK', filter_var(getenv('CIVICRM_TEMPLATE_COMPILE_CHECK'), FILTER_VALIDATE_BOOLEAN));
 define('CIVICRM_SITE_KEY', getenv('CIVICRM_SITE_KEY'));
 define('CIVICRM_CRED_KEYS', getenv('CIVICRM_CRED_KEYS'));
 define('CIVICRM_SIGN_KEYS', getenv('CIVICRM_SIGN_KEYS'));
