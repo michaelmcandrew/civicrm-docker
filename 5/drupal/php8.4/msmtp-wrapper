@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+"""
+Wraps `msmtp` so that it can cope with receiving both -f and --read-envelope-from
+
+This script calls `msmt`. It will add --read-envelope-from to the arguments ONLY IF
+an argument starting with '-f' cannot be found.
+"""
+import sys
+import subprocess
+
+command = sys.argv.copy()
+command[0] = "msmtp"
+command.append("--read-recipients")
+
+if not [i for i in command if i.startswith("-f")]:
+    command.append("--read-envelope-from")
+
+subprocess.run(command, stdin=sys.stdin)
