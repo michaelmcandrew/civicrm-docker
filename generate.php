@@ -69,7 +69,8 @@ foreach ($combos as $k => $combo) {
 file_put_contents(__DIR__ . '/' . 'combos.json', json_encode($combos, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
 $projectDir = __DIR__;
-`rm -r $projectDir/5`;
+// TODO: this number should not be hardcoded
+`rm -r $projectDir/6`;
 
 
 foreach ($combos as $combo) {
