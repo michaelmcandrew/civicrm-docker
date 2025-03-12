@@ -7,7 +7,7 @@ RUN curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 
 USER civicrm
 
-RUN wp core download
+RUN php -d memory_limit=1G /usr/local/bin/wp core download
 
 RUN mkdir /var/www/html/wp-content/uploads
 
