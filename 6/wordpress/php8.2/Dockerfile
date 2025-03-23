@@ -175,12 +175,12 @@ RUN php -d memory_limit=1G /usr/local/bin/wp core download
 RUN mkdir /var/www/html/wp-content/uploads
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-6.0.2-wordpress.zip > civicrm-wordpress.zip \
+    && curl -L https://download.civicrm.org/civicrm-6.0.3-wordpress.zip > civicrm-wordpress.zip \
     && unzip civicrm-wordpress.zip \
     && rm civicrm-wordpress.zip
 
 RUN cd /var/www/html/wp-content/plugins \
-    && curl -L https://download.civicrm.org/civicrm-6.0.2-l10n.tar.gz > civicrm-l10n.tar.gz \
+    && curl -L https://download.civicrm.org/civicrm-6.0.3-l10n.tar.gz > civicrm-l10n.tar.gz \
     && tar xzf civicrm-l10n.tar.gz \
     && rm civicrm-l10n.tar.gz
 
