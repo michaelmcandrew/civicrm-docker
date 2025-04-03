@@ -12,7 +12,7 @@ if(getenv('STATE_JSON_TEMPLATE')){
             'wordpress' 
         ],
         'directories' => [
-            'files' => '/var/www/html/wp-content/uploads'
+            'uploads' => '/var/www/html/wp-content/uploads'
         ]
     ];
 }
