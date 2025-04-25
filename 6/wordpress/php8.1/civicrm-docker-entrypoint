@@ -37,6 +37,9 @@ log_errors = On
 error_log = /dev/stderr
 EOF
 
+: "${DEBUG_MODE:=develop,debug}"
+
+
 if [ "$DEBUG" = "ON" ]; then
   cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
   CONTAINER_IP=$(/sbin/ip route | awk '/default/ { print $3 }')
@@ -44,7 +47,7 @@ if [ "$DEBUG" = "ON" ]; then
   cat <<EOF >/usr/local/etc/php/conf.d/debug.ini
 zend_extension=xdebug.so
 
-xdebug.mode=develop,debug
+xdebug.mode=${DEBUG_MODE}
 xdebug.client_host=${CONTAINER_IP}
 xdebug.start_with_request=yes
 xdebug.log_level=0
