@@ -45,8 +45,8 @@ foreach ($state['directories'] as $name => $path) {
     if (str_starts_with($path, '/var/www/')) {
         echo "Unpacking $name tar into $path\n";
         // Remove contents of directory but not directory itself
-        echo `rm -rf $path/* $path/.[!.] $path/.??*`;
-        echo `tar -xf {$loadDir}/{$name}.tar.gz -C $path`;
+        echo `rm -rf "$path"/* "$path"/.[!.] "$path"/.??*`;
+        echo `tar -xf "{$loadDir}/{$name}.tar.gz" -C "$path"`;
     } else {
         echo "Invalid path for $name: $path\n";
     }
