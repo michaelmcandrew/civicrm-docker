@@ -42,8 +42,14 @@ foreach ($state['databases'] as $name) {
 }
 
 foreach ($state['directories'] as $name => $path) {
-    echo "Unpacking $name tar into $path\n";
-    `tar -xf {$loadDir}/{$name}.tar.gz -C $path`;
+    if (str_starts_with($path, '/var/www/')) {
+        echo "Unpacking $name tar into $path\n";
+        // Remove contents of directory but not directory itself or dotfiles
+        echo `rm -rf "$path"/*`;
+        echo `tar -xf "{$loadDir}/{$name}.tar.gz" -C "$path"`;
+    } else {
+        echo "Invalid path for $name: $path\n";
+    }
 }
 
 `rm -r $loadDir`;
