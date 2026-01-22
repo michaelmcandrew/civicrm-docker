@@ -6,19 +6,19 @@ ENV PATH="/home/civicrm/.composer/vendor/bin:${PATH}"
 
 RUN cgr drush/drush:~8
 
-RUN drush dl drupal-7 --destination=/var/www --drupal-project-rename=html -y
+# RUN drush dl drupal-7 --destination=/var/www --drupal-project-rename=html -y
 
-RUN mkdir /var/www/html/sites/default/files
+# RUN mkdir /var/www/html/sites/default/files
 
-RUN cd /var/www/html/sites/all/modules \
-    && curl -L https://download.civicrm.org/civicrm-<?php echo $vars['civi'];?>-drupal.tar.gz > civicrm-drupal.tar.gz \
-    && tar xzf civicrm-drupal.tar.gz \
-    && rm civicrm-drupal.tar.gz
+# RUN cd /var/www/html/sites/all/modules \
+#     && curl -L https://download.civicrm.org/civicrm-<?php echo $vars['civi'];?>-drupal.tar.gz > civicrm-drupal.tar.gz \
+#     && tar xzf civicrm-drupal.tar.gz \
+#     && rm civicrm-drupal.tar.gz
 
-RUN cd /var/www/html/sites/all/modules \
-    && curl -L https://download.civicrm.org/civicrm-<?php echo $vars['civi'];?>-l10n.tar.gz > civicrm-l10n.tar.gz \
-    && tar xzf civicrm-l10n.tar.gz \
-    && rm civicrm-l10n.tar.gz
+# RUN cd /var/www/html/sites/all/modules \
+#     && curl -L https://download.civicrm.org/civicrm-<?php echo $vars['civi'];?>-l10n.tar.gz > civicrm-l10n.tar.gz \
+#     && tar xzf civicrm-l10n.tar.gz \
+#     && rm civicrm-l10n.tar.gz
 
 USER root
 
