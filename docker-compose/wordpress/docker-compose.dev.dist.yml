@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   civicrm:
-    image: michaelmcandrew/civicrm-wordpress
+    image: michaelmcandrew/civicrm:wordpress
     hostname: civicrm
     environment:
       - PROJECT_NAME
