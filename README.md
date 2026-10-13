@@ -14,11 +14,7 @@ The following tags are available:
 
 <!--START_TAGS-->
 - 6, 6-php8.3, 6-wordpress, 6-wordpress-php8.3, 6.19, 6.19-php8.3, 6.19-wordpress, 6.19-wordpress-php8.3, 6.19.0, 6.19.0-php8.3, 6.19.0-wordpress, 6.19.0-wordpress-php8.3, latest, php8.3, wordpress, wordpress-php8.3 [6/wordpress/php8.3](6/wordpress/php8.3)
-- 6-php8.2, 6-wordpress-php8.2, 6.19-php8.2, 6.19-wordpress-php8.2, 6.19.0-php8.2, 6.19.0-wordpress-php8.2, php8.2, wordpress-php8.2 [6/wordpress/php8.2](6/wordpress/php8.2)
-- 6-php8.1, 6-wordpress-php8.1, 6.19-php8.1, 6.19-wordpress-php8.1, 6.19.0-php8.1, 6.19.0-wordpress-php8.1, php8.1, wordpress-php8.1 [6/wordpress/php8.1](6/wordpress/php8.1)
 - 6-drupal, 6-drupal-php8.3, 6.19-drupal, 6.19-drupal-php8.3, 6.19.0-drupal, 6.19.0-drupal-php8.3, drupal, drupal-php8.3 [6/drupal/php8.3](6/drupal/php8.3)
-- 6-drupal-php8.2, 6.19-drupal-php8.2, 6.19.0-drupal-php8.2, drupal-php8.2 [6/drupal/php8.2](6/drupal/php8.2)
-- 6-drupal-php8.1, 6.19-drupal-php8.1, 6.19.0-drupal-php8.1, drupal-php8.1 [6/drupal/php8.1](6/drupal/php8.1)
 <!--END_TAGS-->
 
 ## 'Quick' start
