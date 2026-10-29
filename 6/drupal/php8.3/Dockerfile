@@ -168,12 +168,12 @@ ENV PATH="/home/civicrm/.composer/vendor/bin:${PATH}"
 # RUN mkdir /var/www/html/sites/default/files
 
 # RUN cd /var/www/html/sites/all/modules \
-#     && curl -L https://download.civicrm.org/civicrm-6.19.2-drupal.tar.gz > civicrm-drupal.tar.gz \
+#     && curl -L https://download.civicrm.org/civicrm-6.19.3-drupal.tar.gz > civicrm-drupal.tar.gz \
 #     && tar xzf civicrm-drupal.tar.gz \
 #     && rm civicrm-drupal.tar.gz
 
 # RUN cd /var/www/html/sites/all/modules \
-#     && curl -L https://download.civicrm.org/civicrm-6.19.2-l10n.tar.gz > civicrm-l10n.tar.gz \
+#     && curl -L https://download.civicrm.org/civicrm-6.19.3-l10n.tar.gz > civicrm-l10n.tar.gz \
 #     && tar xzf civicrm-l10n.tar.gz \
 #     && rm civicrm-l10n.tar.gz
 
