@@ -25,11 +25,10 @@ fi
 
 # civicrm php.ini settings
 cat <<EOF >/usr/local/etc/php/conf.d/civicrm.ini
-memory_limit = 1024M
 upload_max_filesize = 64M
 post_max_size = 64M
-max_execution_time=300
-max_input_time  = -1
+max_execution_time = 120
+max_input_time = -1
 max_input_vars = 10000
 sendmail_path=/usr/local/bin/msmtp-wrapper
 date.timezone=$PHP_DATE_TIMEZONE
