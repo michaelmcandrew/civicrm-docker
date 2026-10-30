@@ -110,6 +110,8 @@ ENV APACHE_RUN_USER=civicrm
 
 ENV APACHE_RUN_GROUP=civicrm
 
+ENV APACHE_MAX_REQUEST_WORKERS=150
+
 USER civicrm
 
 # TODO: I think we only use cgr for drush. If we can find another way to install drush, then we can remove this dependency.
@@ -138,8 +140,14 @@ RUN a2enconf civicrm
 COPY ./apache-sites-available-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Configure php
+ENV PHP_MEMORY_LIMIT=256M
 
-RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+ENV PHP_CLI_MEMORY_LIMIT=-1
+
+RUN cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
+  && cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php-cli.ini" \
+  && echo 'memory_limit = ${PHP_MEMORY_LIMIT}\n'  >> $PHP_INI_DIR/php.ini \
+  && echo 'memory_limit = ${PHP_CLI_MEMORY_LIMIT}\n' >> $PHP_INI_DIR/php-cli.ini
 
 COPY ./civicrm-docker-load /usr/local/bin
 
