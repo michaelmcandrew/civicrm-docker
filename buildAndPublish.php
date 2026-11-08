@@ -3,7 +3,7 @@ $images = json_decode(file_get_contents(__DIR__ . '/combos.json'));
 
 $builder = "amd_and_arm";
 $platforms = "linux/arm64,linux/amd64";
-$imageName = "michaelmcandrew/civicrm-next";
+$imageName = "michaelmcandrew/civicrm";
 
 $commands = [];
 
