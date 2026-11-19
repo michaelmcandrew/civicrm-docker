@@ -1,5 +1,5 @@
 {
-    "6.20.0/wordpress/8.3": {
+    "6.20.1/wordpress/8.3": {
         "dir": "6/wordpress/php8.3",
         "tags": [
             "6",
@@ -10,35 +10,35 @@
             "6.20-php8.3",
             "6.20-wordpress",
             "6.20-wordpress-php8.3",
-            "6.20.0",
-            "6.20.0-php8.3",
-            "6.20.0-wordpress",
-            "6.20.0-wordpress-php8.3",
+            "6.20.1",
+            "6.20.1-php8.3",
+            "6.20.1-wordpress",
+            "6.20.1-wordpress-php8.3",
             "latest",
             "php8.3",
             "wordpress",
             "wordpress-php8.3"
         ],
         "variables": {
-            "civi": "6.20.0",
+            "civi": "6.20.1",
             "cms": "wordpress",
             "php": "8.3"
         }
     },
-    "6.20.0/drupal/8.3": {
+    "6.20.1/drupal/8.3": {
         "dir": "6/drupal/php8.3",
         "tags": [
             "6-drupal",
             "6-drupal-php8.3",
             "6.20-drupal",
             "6.20-drupal-php8.3",
-            "6.20.0-drupal",
-            "6.20.0-drupal-php8.3",
+            "6.20.1-drupal",
+            "6.20.1-drupal-php8.3",
             "drupal",
             "drupal-php8.3"
         ],
         "variables": {
-            "civi": "6.20.0",
+            "civi": "6.20.1",
             "cms": "drupal",
             "php": "8.3"
         }
