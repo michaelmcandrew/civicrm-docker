@@ -13,8 +13,8 @@ Please share your experiences using these images so we can improve them as we go
 The following tags are available:
 
 <!--START_TAGS-->
-- 6, 6-php8.3, 6-wordpress, 6-wordpress-php8.3, 6.20, 6.20-php8.3, 6.20-wordpress, 6.20-wordpress-php8.3, 6.20.1, 6.20.1-php8.3, 6.20.1-wordpress, 6.20.1-wordpress-php8.3, latest, php8.3, wordpress, wordpress-php8.3 [6/wordpress/php8.3](6/wordpress/php8.3)
-- 6-drupal, 6-drupal-php8.3, 6.20-drupal, 6.20-drupal-php8.3, 6.20.1-drupal, 6.20.1-drupal-php8.3, drupal, drupal-php8.3 [6/drupal/php8.3](6/drupal/php8.3)
+- 6, 6-php8.3, 6-wordpress, 6-wordpress-php8.3, 6.20, 6.20-php8.3, 6.20-wordpress, 6.20-wordpress-php8.3, 6.20.2, 6.20.2-php8.3, 6.20.2-wordpress, 6.20.2-wordpress-php8.3, latest, php8.3, wordpress, wordpress-php8.3 [6/wordpress/php8.3](6/wordpress/php8.3)
+- 6-drupal, 6-drupal-php8.3, 6.20-drupal, 6.20-drupal-php8.3, 6.20.2-drupal, 6.20.2-drupal-php8.3, drupal, drupal-php8.3 [6/drupal/php8.3](6/drupal/php8.3)
 <!--END_TAGS-->
 
 ## 'Quick' start
